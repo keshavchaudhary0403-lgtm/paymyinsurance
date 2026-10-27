@@ -218,10 +218,15 @@ svg.i{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-
 /* Marquee */
 .marquee-sec{padding:28px 0 8px}
 .marquee-label{text-align:center;font-size:13px;font-weight:600;color:var(--ink-4);margin-bottom:16px}
-.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee{overflow:hidden;padding:4px 0 6px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
 .marquee-track{display:flex;gap:14px;width:max-content;animation:marquee 32s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
-.marquee-item{padding:12px 22px;border-radius:14px;border:1px solid var(--line);background:#fff;font-size:15px;font-weight:700;color:var(--ink-2);white-space:nowrap}
+.marquee-item{display:inline-flex;align-items:center;gap:6px;padding:13px 24px;border-radius:14px;border:1px solid var(--line);background:#fff;font-size:17px;letter-spacing:-0.01em;white-space:nowrap;box-shadow:var(--shadow);transition:transform .2s}
+.marquee-item:hover{transform:translateY(-2px)}
+.marquee-item b{font-weight:800}
+.marquee-item .dot{width:7px;height:7px;border-radius:50%;margin-left:2px}
+.marquee-item.more{font-size:14px;font-weight:600;color:var(--ink-3)}
+.marquee-note{text-align:center;font-size:11px;color:var(--ink-4);margin-top:12px}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
 /* Stats */
@@ -697,8 +702,9 @@ canvas{width:100%;display:block}
   <div class="marquee-sec">
     <div class="marquee-label">Works with the policy you already own</div>
     <div class="marquee"><div class="marquee-track" id="marquee">
-      <span class="marquee-item">LIC</span><span class="marquee-item">HDFC Life</span><span class="marquee-item">ICICI Prudential</span><span class="marquee-item">SBI Life</span><span class="marquee-item">Tata AIA</span><span class="marquee-item">Max Life</span><span class="marquee-item">Bajaj Allianz</span><span class="marquee-item">Kotak Life</span><span class="marquee-item">& more</span>
+      <span class="marquee-item"><b style="color:#0b4a9c">LIC</b><i class="dot" style="background:#f7c600"></i></span><span class="marquee-item"><b style="color:#004c8f">HDFC</b> <b style="color:#e31e24">Life</b></span><span class="marquee-item"><b style="color:#b02a30">ICICI</b> <b style="color:#f58220">Prudential</b></span><span class="marquee-item"><b style="color:#1c3f94">SBI</b> <b style="color:#d0006f">Life</b></span><span class="marquee-item"><b style="color:#1f4e9c">TATA</b> <b style="color:#d31145">AIA</b></span><span class="marquee-item"><b style="color:#97144d">Axis Max</b> <b style="color:#f37021">Life</b></span><span class="marquee-item"><b style="color:#005baa">Bajaj</b> <b style="color:#00a0e3">Life</b></span><span class="marquee-item"><b style="color:#ed1c24">Kotak</b> <b style="color:#003874">Life</b></span><span class="marquee-item more">&amp; more</span>
     </div></div>
+    <div class="marquee-note">Names are trademarks of their respective owners. Pay My Insurance is not affiliated with any insurer.</div>
   </div>
 </header>
 
