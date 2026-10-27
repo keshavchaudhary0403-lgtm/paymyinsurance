@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pay My Insurance — Your insurance, funded for life</title>
+<meta name="description" content="Pay My Insurance — Your insurance, funded for life. Build a small monthly contribution and let us cover all your future premiums, even if your income stops.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300d09c'/%3E%3Cstop offset='1' stop-color='%2300b386'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Inter,Arial,sans-serif' font-size='40' font-weight='700' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300d09c'/%3E%3Cstop offset='1' stop-color='%2300b386'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Inter,Arial,sans-serif' font-size='40' font-weight='700' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#00d09c">
+
+<!-- Build marker: v59 — Top marker text shortened to keep page-source searches clean. The footer comment below is the single canonical place to find the deployed build number. -->
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBLQHZ20J6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JBLQHZ20J6', { 'anonymize_ip': true });
+</script>
+
+<!-- Microsoft Clarity (v57: deferred — loads 3s after window.load to keep FCP/LCP fast on mobile) -->
+<script type="text/javascript">
+  function loadClarity(){
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wnhhgjayij");
+  }
+  if(document.readyState==='complete'){setTimeout(loadClarity,3000)}
+  else{window.addEventListener('load',function(){setTimeout(loadClarity,3000)})}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- v57: media=print trick makes the font CSS download non-render-blocking; onload swaps to media=all once loaded -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+<style>
+:root{
+  --bg:#f3f5f8;
+  --surface:#fff;
+  --surface-2:#f8f9fb;
+  --border:#d4d9e0;
+  --border-2:#dfe3e9;
+  --text:#1a1a1a;
+  --text-2:#44475a;
+  --text-3:#7d8493;
+  --text-4:#a4abb8;
+  --primary:#00d09c;
+  --primary-dark:#00b386;
+  --primary-soft:#e6faf4;
+  --accent:#5367ff;
+  --accent-soft:#eef0ff;
+  --warn:#ff7a59;
+  --warn-soft:#fff1ed;
+  --gold:#f5a623;
+  --gold-soft:#fff7e6;
+  --purple:#a060c8;
+  --purple-soft:#f4ecfa;
+  --shadow:0 2px 6px rgba(20,30,50,0.06),0 1px 2px rgba(20,30,50,0.04);
+  --shadow-md:0 6px 16px rgba(20,30,50,0.08),0 2px 6px rgba(20,30,50,0.05);
+  --shadow-lg:0 14px 28px rgba(20,30,50,0.10),0 4px 10px rgba(20,30,50,0.06);
+  --radius:12px;
+  --radius-sm:8px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:14px}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input,select,textarea{font-family:inherit;outline:none}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input[type=number]{-moz-appearance:textfield}
+
+.app{max-width:1280px;margin:0 auto;padding:32px 24px 80px}
+.narrow{max-width:780px;margin-left:auto;margin-right:auto}
+
+/* Nav */
+body{padding-top:0}
+.nav{position:sticky;top:0;z-index:100;background:rgba(243,245,248,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-2);width:100%}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:14px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.nav-brand-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;box-shadow:0 4px 8px rgba(0,208,156,0.2)}
+.nav-brand-name{font-size:16px;font-weight:700;letter-spacing:-0.02em}
+.nav-brand-name span{color:var(--primary)}
+.nav-links{display:none;align-items:center;gap:6px}
+.nav-link{padding:8px 14px;font-size:13.5px;font-weight:600;color:var(--text-2);text-decoration:none;border-radius:8px;transition:all 0.15s}
+.nav-link:hover{color:var(--text);background:var(--surface-2)}
+.nav-cta{margin-left:8px;padding:9px 18px;background:var(--primary);color:#fff;border-radius:8px;font-size:13.5px;font-weight:700;text-decoration:none;transition:all 0.15s;box-shadow:0 2px 6px rgba(0,208,156,0.25)}
+.nav-cta:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,208,156,0.3)}
+.nav-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1px solid var(--border);color:var(--text);cursor:pointer;flex-shrink:0}
+.nav-toggle:hover{background:var(--surface-2)}
+.nav-toggle svg{width:20px;height:20px}
+.nav-mobile{display:none;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 0;box-shadow:0 4px 12px rgba(0,0,0,0.04)}
+.nav-mobile.open{display:block}
+.nav-mobile-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:2px}
+.nav-mobile a{padding:12px 12px;font-size:14px;font-weight:600;color:var(--text-2);text-decoration:none;border-radius:8px;transition:all 0.15s}
+.nav-mobile a:hover,.nav-mobile a:active{color:var(--text);background:var(--surface-2)}
+.nav-mobile a.cta{background:var(--primary);color:#fff;text-align:center;margin-top:6px;margin-bottom:6px}
+.nav-mobile a.cta:hover{background:var(--primary-dark);color:#fff}
+@media (min-width:768px){.nav-links{display:flex}.nav-toggle{display:none}.nav-mobile{display:none !important}}
+
+/* Hero */
+.hero{text-align:center;margin-bottom:36px;padding:0 8px;max-width:780px;margin-left:auto;margin-right:auto}
+@media (min-width:1024px){.hero{margin-bottom:32px;padding:24px 8px 0}}
+.hero-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--primary-soft);border-radius:100px;font-size:11px;font-weight:600;color:var(--primary-dark);letter-spacing:0.02em;margin-bottom:18px}
+.hero-pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 3px rgba(0,208,156,0.2)}
+.hero h1{font-size:clamp(28px,5.5vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:14px;color:var(--text)}
+.hero h1 em{font-style:normal;color:var(--primary);font-weight:800}
+.hero-sub{font-size:clamp(15px,2vw,18px);color:var(--text-2);max-width:560px;margin:0 auto;line-height:1.55}
+
+/* Intro Row */
+.intro-row{max-width:1140px;margin:0 auto 28px;padding:0 8px;display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:1024px){.intro-row{grid-template-columns:1fr 1fr !important;gap:20px !important;align-items:stretch !important}}
+
+.concept-strip{display:flex;flex-direction:column;min-width:0}
+.concept-grid{display:grid;grid-template-columns:1fr;gap:12px;flex:1}
+@media (min-width:768px) and (max-width:1023.98px){.concept-grid{grid-template-columns:repeat(3,1fr) !important;gap:14px}}
+@media (min-width:1024px){.concept-grid{grid-template-columns:1fr !important;gap:14px}}
+.concept-step{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;box-shadow:var(--shadow);transition:all 0.2s;flex:1;min-width:0}
+.concept-step:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.concept-num{flex-shrink:0;width:38px;height:38px;border-radius:10px;background:var(--primary-soft);font-size:18px;display:flex;align-items:center;justify-content:center;line-height:1}
+.concept-text{flex:1;font-size:13.5px;line-height:1.5;color:var(--text-2);min-width:0}
+.concept-text strong{color:var(--text);font-weight:700;display:block;margin-bottom:2px;font-size:14px}
+
+.example-block{display:flex;flex-direction:column;min-width:0}
+.example-card{background:linear-gradient(135deg,#f4f6ff 0%,#fff 60%);border:1.5px solid rgba(83,103,255,0.18);border-radius:16px;padding:24px;box-shadow:var(--shadow-md);position:relative;overflow:hidden;flex:1;display:flex;flex-direction:column}
+.example-tag{display:inline-block;padding:4px 12px;background:var(--accent-soft);color:var(--accent);border-radius:100px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;align-self:flex-start}
+.example-headline{font-size:clamp(16px,2.5vw,19px);font-weight:700;color:var(--text);letter-spacing:-0.01em;line-height:1.4;margin-bottom:6px}
+.example-sub{font-size:13.5px;color:var(--text-3);margin-bottom:18px;line-height:1.5}
+.example-flow{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:18px}
+@media (min-width:680px) and (max-width:1023.98px){.example-flow{grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}}
+@media (min-width:1024px){.example-flow{grid-template-columns:repeat(3,1fr);gap:12px;align-items:stretch}}
+.example-cell{background:#fff;border:1px solid var(--border-2);border-radius:10px;padding:14px 16px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.example-cell-label{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
+.example-cell-val{font-size:clamp(16px,2.5vw,20px);font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--text);margin-bottom:3px}
+.example-cell-sub{font-size:11px;color:var(--text-3)}
+.example-cell.highlight{background:linear-gradient(135deg,#f8fdfb 0%,#f0fbf6 100%);border:1.5px solid rgba(0,208,156,0.3)}
+.example-cell.highlight .example-cell-val{color:var(--primary-dark)}
+.example-cta{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;margin-top:auto}
+.example-cta-text{font-size:13.5px;color:var(--text-2);font-weight:500}
+.example-cta-text strong{color:var(--text);font-weight:700}
+.example-cta-btn{margin-top:6px;display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--primary);color:#fff;border-radius:10px;font-size:14px;font-weight:700;border:none;cursor:pointer;transition:all 0.15s;box-shadow:0 4px 12px rgba(0,208,156,0.25)}
+.example-cta-btn:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,208,156,0.3)}
+.example-cta-btn .arrow{display:inline-block;transition:transform 0.2s}
+.example-cta-btn:hover .arrow{transform:translateY(2px)}
+.example-disclaimer{font-size:10.5px;color:var(--text-4);text-align:center;margin-top:12px;line-height:1.5}
+
+/* Calculator */
+.calc-wrap{display:grid;grid-template-columns:1fr;gap:18px;max-width:780px;margin:0 auto}
+@media (min-width:1024px){.calc-wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;max-width:1240px;align-items:stretch}}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px;box-shadow:var(--shadow-md);display:flex;flex-direction:column}
+@media (min-width:1024px){
+  .card.input-card,.card.output-card{height:calc(100vh - 140px);min-height:680px;max-height:920px}
+  .card.input-card .card-body,.card.output-card .card-body{flex:1;overflow-y:auto;overflow-x:hidden;padding-right:8px;margin-right:-8px}
+  .card-body::-webkit-scrollbar{width:8px}
+  .card-body::-webkit-scrollbar-track{background:transparent}
+  .card-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+  .card-body::-webkit-scrollbar-thumb:hover{background:var(--text-4)}
+  .card-body{scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+}
+.card-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;margin-bottom:20px;border-bottom:1px solid var(--border-2);flex-shrink:0}
+.card-head-title{font-size:13px;font-weight:700;color:var(--text);letter-spacing:-0.01em;display:flex;align-items:center;gap:8px}
+.card-head-title-icon{width:26px;height:26px;border-radius:7px;background:var(--primary-soft);color:var(--primary-dark);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.card-head-status{font-size:11px;font-weight:600;color:var(--text-3);display:flex;align-items:center;gap:6px}
+.card-head-status .dot{width:7px;height:7px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 3px rgba(0,208,156,0.18)}
+.card-head-status.calc .dot{background:var(--gold);box-shadow:0 0 0 3px rgba(245,166,35,0.18);animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.card-title{font-size:11px;font-weight:700;color:var(--text-3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:8px;padding-bottom:14px;border-bottom:1px solid var(--border-2)}
+.card-title-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--primary-soft);color:var(--primary-dark);border-radius:6px;font-size:11px;font-weight:700}
+
+.label{display:block;font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:8px}
+.input,.select{width:100%;padding:11px 14px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:14px;color:var(--text);transition:all 0.15s;font-weight:500}
+.input:focus,.select:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+.select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%237d8493' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.input::placeholder{color:var(--text-4)}
+.row{display:flex;gap:8px}
+.row > .input{flex:1}
+.row > .select{max-width:140px}
+
+.toggle-group{display:flex;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:4px;gap:4px}
+.toggle-btn{flex:1;padding:9px 12px;border-radius:6px;font-size:13px;font-weight:600;color:var(--text-3);transition:all 0.15s;background:transparent}
+.toggle-btn.active{background:#fff;color:var(--text);box-shadow:var(--shadow)}
+.toggle-btn.primary.active{background:var(--primary);color:#fff;box-shadow:0 2px 6px rgba(0,208,156,0.25)}
+
+.chip{padding:5px 12px;border-radius:100px;font-size:11px;font-weight:600;border:1.5px solid var(--border);background:transparent;color:var(--text-3);transition:all 0.15s}
+.chip.on{border-color:var(--primary);background:var(--primary-soft);color:var(--primary-dark)}
+.chip-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+
+.slider-wrap{display:flex;align-items:center;gap:12px;margin-top:10px}
+.slider{flex:1;-webkit-appearance:none;appearance:none;height:4px;background:var(--border);border-radius:2px;outline:none}
+.slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--primary);cursor:pointer;box-shadow:0 2px 4px rgba(0,0,0,0.1);transition:transform 0.15s}
+.slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+.slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--primary);cursor:pointer}
+.slider-val{min-width:52px;padding:4px 8px;background:var(--primary-soft);color:var(--primary-dark);border-radius:6px;font-weight:700;font-size:13px;text-align:center;font-variant-numeric:tabular-nums}
+
+.policy{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px;transition:all 0.15s;box-shadow:var(--shadow)}
+.policy:hover{border-color:var(--text-4);box-shadow:var(--shadow-md)}
+.policy-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.policy-num{display:flex;align-items:center;gap:10px}
+.policy-badge{width:24px;height:24px;border-radius:6px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;color:#fff}
+.policy-name{background:transparent;border:none;border-bottom:1px dashed transparent;padding:3px 4px;font-size:14px;font-weight:600;color:var(--text);width:180px;outline:none;border-radius:0}
+.policy-name:focus,.policy-name:hover{border-bottom-color:var(--border)}
+.policy-remove{width:28px;height:28px;border-radius:6px;color:var(--text-4);font-size:18px;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.policy-remove:hover{background:var(--warn-soft);color:var(--warn)}
+
+.field{margin-bottom:14px}
+.field:last-child{margin-bottom:0}
+.divider{height:1px;background:var(--border);margin:18px 0}
+.month-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.month-pill{padding:3px 10px;border-radius:100px;font-size:11px;font-weight:600;background:var(--primary-soft);color:var(--primary-dark)}
+.field-hint{font-size:11px;color:var(--text-4);margin-top:6px;line-height:1.5}
+
+.policy-result{margin-top:16px;padding:14px 16px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);display:flex;flex-wrap:wrap;gap:18px;box-shadow:var(--shadow)}
+.policy-result-item{display:flex;flex-direction:column;gap:3px}
+.policy-result-label{font-size:10px;font-weight:600;color:var(--text-3);letter-spacing:0.05em;text-transform:uppercase}
+.policy-result-val{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+
+.add-policy{width:100%;padding:12px;border:1.5px dashed var(--border);border-radius:var(--radius-sm);color:var(--primary-dark);font-size:13px;font-weight:600;background:transparent;transition:all 0.15s}
+.add-policy:hover{border-color:var(--primary);background:var(--primary-soft)}
+
+.btn-primary{width:100%;padding:14px;background:var(--primary);color:#fff;border-radius:var(--radius-sm);font-size:15px;font-weight:700;letter-spacing:0.01em;transition:all 0.15s;box-shadow:0 4px 12px rgba(0,208,156,0.25)}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,208,156,0.3)}
+.btn-primary:active{transform:translateY(0)}
+@media (min-width:1024px){.btn-primary.mobile-only{display:none}}
+
+.output-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;flex:1}
+.output-empty-icon{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,var(--primary-soft),#fff);display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:18px;box-shadow:var(--shadow)}
+.output-empty-title{font-size:17px;font-weight:700;color:var(--text);letter-spacing:-0.01em;margin-bottom:8px}
+.output-empty-sub{font-size:13.5px;color:var(--text-3);max-width:300px;line-height:1.6}
+
+.output-body{display:flex;flex-direction:column;gap:16px}
+
+.compare-box{background:linear-gradient(135deg,#f8fdfb 0%,#f0fbf6 100%);border:1.5px solid var(--primary-soft);border-radius:14px;padding:20px}
+.compare-title{text-align:center;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.compare-cell{padding:14px;background:#fff;border-radius:10px;text-align:center;border:1px solid var(--border-2)}
+.compare-cell.bad{border-color:rgba(255,122,89,0.3)}
+.compare-cell.good{border-color:rgba(0,208,156,0.3)}
+.compare-label{font-size:10px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
+.compare-cell.bad .compare-label{color:var(--warn)}
+.compare-cell.good .compare-label{color:var(--primary-dark)}
+.compare-val{font-size:clamp(18px,3.5vw,24px);font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-bottom:3px}
+.compare-cell.bad .compare-val{color:var(--warn)}
+.compare-cell.good .compare-val{color:var(--primary-dark)}
+.compare-sub{font-size:11px;color:var(--text-3);font-weight:500}
+.savings-strip{padding:14px 16px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:10px;color:#fff;text-align:center;box-shadow:0 6px 18px rgba(0,208,156,0.25)}
+.savings-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.9;margin-bottom:4px}
+.savings-val{font-size:clamp(22px,4.5vw,30px);font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
+.savings-sub{font-size:12px;opacity:0.95;margin-top:4px}
+
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(95px,1fr));background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.timeline-cell{padding:14px 8px;text-align:center;border-right:1px solid var(--border-2)}
+.timeline-cell:last-child{border-right:none}
+.timeline-icon{font-size:18px;margin-bottom:4px}
+.timeline-label{font-size:9px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3);margin-bottom:3px}
+.timeline-val{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.timeline-sub{font-size:10px;color:var(--text-4);margin-top:1px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);transition:all 0.15s}
+.stat:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.stat.hero-stat{background:linear-gradient(135deg,#f4f6ff 0%,#eef0ff 100%);border:1.5px solid rgba(83,103,255,0.25);box-shadow:0 4px 12px rgba(83,103,255,0.08)}
+.stat.hero-stat .stat-val{font-size:clamp(20px,4vw,26px)}
+.stat-label{font-size:10px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.stat-val{font-size:clamp(15px,2.5vw,18px);font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-bottom:3px}
+.stat-sub{font-size:11px;color:var(--text-3)}
+
+.plan-summary{background:linear-gradient(135deg,#f4f6ff 0%,#fff 50%,#f0fdf8 100%);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:0}
+.plan-cell{padding:10px 14px;text-align:center;border-right:1px solid var(--border-2)}
+.plan-cell:last-child{border-right:none}
+.plan-cell-label{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
+.plan-cell-val{font-size:clamp(20px,3.6vw,26px);font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;line-height:1.15;margin-bottom:4px}
+.plan-cell-sub{font-size:11px;color:var(--text-3);font-weight:500}
+@media(max-width:520px){
+.plan-summary{grid-template-columns:1fr}
+.plan-cell{border-right:none;border-bottom:1px solid var(--border-2)}
+.plan-cell:last-child{border-bottom:none}
+}
+
+.details-toggle{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px 16px;background:transparent;border:1px dashed var(--border);border-radius:var(--radius);font-size:12.5px;font-weight:600;color:var(--text-3);cursor:pointer;transition:all 0.15s;font-family:inherit;letter-spacing:0.02em}
+.details-toggle:hover{border-color:var(--text-3);color:var(--text-2);background:rgba(255,255,255,0.5)}
+.details-toggle .toggle-arrow{display:inline-block;transition:transform 0.2s;font-size:10px}
+.details-panel{display:none;flex-direction:column;gap:10px}
+.details-panel.open{display:flex;animation:fadeIn 0.25s ease-out}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+.breakdown{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.breakdown-head{padding:11px 16px;background:var(--surface-2);border-bottom:1px solid var(--border-2);display:flex;justify-content:space-between;align-items:center}
+.breakdown-title{font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3)}
+.breakdown-total{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--text)}
+.breakdown-row{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid var(--border-2);flex-wrap:wrap}
+.breakdown-row:last-child{border-bottom:none}
+.breakdown-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.breakdown-name{flex:1;font-size:13px;font-weight:600;color:var(--text);min-width:80px}
+.breakdown-meta{font-size:11px;color:var(--text-3);font-variant-numeric:tabular-nums}
+.breakdown-tag{padding:2px 7px;border-radius:100px;font-size:10px;font-weight:600}
+.breakdown-tag.warn{background:var(--warn-soft);color:var(--warn)}
+.breakdown-tag.purple{background:var(--purple-soft);color:var(--purple)}
+.breakdown-val{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.breakdown-pct{font-size:10px;color:var(--text-4);font-variant-numeric:tabular-nums}
+
+.schedule{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.schedule-head{padding:11px 16px;background:var(--gold-soft);border-bottom:1px solid var(--border-2);display:flex;justify-content:space-between;align-items:center}
+.schedule-title{font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#a87600}
+.schedule-toggle{font-size:11px;font-weight:600;color:var(--text-3);text-transform:uppercase;cursor:pointer}
+.schedule-table{width:100%;border-collapse:collapse;font-size:12px}
+.schedule-table th{padding:9px 12px;text-align:left;font-size:10px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3);background:var(--surface-2);border-bottom:1px solid var(--border-2);white-space:nowrap}
+.schedule-table td{padding:8px 12px;border-bottom:1px solid var(--border-2);font-variant-numeric:tabular-nums}
+.schedule-table tr:last-child td{border-bottom:none}
+.schedule-month-pill{display:inline-block;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:700;color:#fff}
+
+.chart-wrap{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.chart-head{padding:11px 16px;background:var(--accent-soft);border-bottom:1px solid var(--border-2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.chart-title{font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--accent)}
+.chart-legend{display:flex;gap:14px;font-size:11px;color:var(--text-3);font-weight:600}
+.chart-legend span{display:inline-flex;align-items:center;gap:4px}
+.chart-dot{width:8px;height:8px;border-radius:50%}
+.chart-body{padding:14px 8px 6px}
+canvas{width:100%;display:block}
+
+.insight{background:var(--gold-soft);border:1px solid rgba(245,166,35,0.2);border-radius:var(--radius);padding:14px 18px;font-size:13px;line-height:1.7;color:var(--text-2)}
+.insight strong{font-weight:700}
+
+.cta-block{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);border-radius:14px;padding:24px;text-align:center;color:#fff;box-shadow:0 8px 24px rgba(0,208,156,0.2)}
+.cta-pill{display:inline-block;padding:6px 14px;background:rgba(255,255,255,0.2);border-radius:100px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;backdrop-filter:blur(10px)}
+.cta-tag{font-size:18px;font-weight:600;margin-bottom:18px;line-height:1.4}
+.cta-btn{padding:12px 32px;background:#fff;color:var(--primary-dark);border-radius:var(--radius-sm);font-size:14px;font-weight:700;letter-spacing:0.01em;transition:all 0.15s;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,0.15)}
+.cta-trust{font-size:11px;opacity:0.85;margin-top:12px;font-weight:500}
+
+.disclaimer{text-align:center;font-size:11px;color:var(--text-4);line-height:1.7;padding:12px 14px;margin-top:8px}
+
+.section-header{text-align:center;margin:56px auto 24px;padding:0 8px;max-width:760px;scroll-margin-top:80px}
+@media (min-width:1024px){.section-header{margin:80px auto 32px}}
+.section-tag{display:inline-block;padding:5px 14px;background:var(--primary-soft);border-radius:100px;font-size:11px;font-weight:700;color:var(--primary-dark);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px}
+.section-h2{font-size:clamp(24px,4vw,40px);font-weight:800;letter-spacing:-0.02em;line-height:1.15;color:var(--text);margin-bottom:12px}
+.section-h2 em{font-style:normal;color:var(--primary)}
+.section-sub{font-size:clamp(14px,2vw,17px);color:var(--text-2);max-width:580px;margin:0 auto;line-height:1.6}
+
+.steps{display:grid;gap:14px;margin:0 auto 18px;max-width:1080px}
+@media (min-width:768px){.steps{grid-template-columns:repeat(2,1fr);gap:16px}}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;gap:18px;align-items:flex-start;box-shadow:var(--shadow);transition:all 0.2s}
+.step:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.step-num{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,208,156,0.25)}
+.step-body{flex:1}
+.step-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.01em}
+.step-desc{font-size:14px;color:var(--text-2);line-height:1.6}
+
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:0 auto 18px;max-width:1080px}
+@media (min-width:1024px){.trust-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+.trust-item{display:flex;gap:14px;padding:18px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow)}
+.trust-icon{flex-shrink:0;width:38px;height:38px;border-radius:10px;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;font-size:18px}
+.trust-content{flex:1}
+.trust-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;letter-spacing:-0.01em}
+.trust-desc{font-size:12.5px;color:var(--text-2);line-height:1.55}
+
+.founder-row{display:grid;grid-template-columns:1fr;gap:18px;max-width:860px;margin:0 auto 18px}
+@media (min-width:1024px){.founder-row{grid-template-columns:1fr 1fr;gap:20px;max-width:1140px;align-items:stretch}}
+
+.founder{background:linear-gradient(135deg,#f4f6ff 0%,#fff 60%);border:1px solid var(--border);border-radius:14px;padding:26px;display:flex;gap:20px;align-items:flex-start;box-shadow:var(--shadow-md);height:100%}
+.founder-avatar{flex-shrink:0;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#3a4cd8);color:#fff;font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;letter-spacing:-0.02em;box-shadow:0 4px 12px rgba(83,103,255,0.25)}
+.founder-body{flex:1;min-width:0;display:flex;flex-direction:column}
+.founder-meta{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.founder-name{font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px;letter-spacing:-0.01em}
+.founder-quote{font-size:14.5px;color:var(--text-2);line-height:1.75;font-style:normal;margin-bottom:8px;padding-left:18px;border-left:3px solid var(--accent-soft);font-weight:400;flex:1}
+.founder-tagline{font-size:13px;color:var(--text-3);font-weight:500;margin-top:10px}
+
+.testimonials{background:linear-gradient(135deg,var(--gold-soft) 0%,#fff 80%);border:1.5px dashed var(--gold);border-radius:14px;padding:32px 26px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%}
+.testimonials-icon{font-size:32px;margin-bottom:10px}
+.testimonials-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:8px;letter-spacing:-0.01em}
+.testimonials-desc{font-size:14px;color:var(--text-2);max-width:440px;margin:0 auto;line-height:1.6}
+
+.contact-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;margin:0 auto 18px;box-shadow:var(--shadow-md);max-width:860px}
+@media (min-width:1024px){.contact-block{max-width:1080px;padding:40px 48px}}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:20px;align-items:stretch}
+@media (min-width:1024px){.contact-grid{gap:48px}}
+.contact-methods{display:flex;flex-direction:column;gap:12px;justify-content:center}
+.contact-btn{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;font-weight:600;text-decoration:none;transition:all 0.15s;cursor:pointer;width:100%;text-align:left;font-family:inherit}
+.contact-btn:hover{border-color:var(--primary);background:#fff;transform:translateY(-1px);box-shadow:var(--shadow)}
+.contact-btn-icon{flex-shrink:0;width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px}
+.contact-btn-icon.wa{background:#25d36622;color:#25d366}
+.contact-btn-icon.email{background:#5367ff22;color:#5367ff}
+.contact-btn-icon.cal{background:#a060c822;color:#a060c8}
+.contact-btn-content{flex:1;min-width:0}
+.contact-btn-label{font-size:11px;font-weight:600;color:var(--text-3);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:2px}
+.contact-btn-val{font-size:14.5px;font-weight:600;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.contact-btn.disabled{opacity:0.6;cursor:not-allowed}
+.contact-btn.disabled:hover{border-color:var(--border);background:var(--surface-2);transform:none;box-shadow:none}
+.coming-soon-tag{margin-left:auto;padding:2px 8px;background:var(--gold-soft);color:#a87600;border-radius:100px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em}
+
+.lead-form{display:flex;flex-direction:column;gap:10px}
+.lead-form-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;letter-spacing:-0.01em}
+.lead-form-sub{font-size:12.5px;color:var(--text-3);margin-bottom:8px;line-height:1.5}
+.lead-form input{padding:11px 14px;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;color:var(--text);outline:none;transition:all 0.15s}
+.lead-form input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+.lead-form-btn{padding:12px;background:var(--primary);color:#fff;border-radius:10px;font-size:14px;font-weight:700;border:none;cursor:pointer;transition:all 0.15s}
+.lead-form-btn:hover{background:var(--primary-dark);transform:translateY(-1px)}
+.lead-form-success{display:none;padding:32px 24px;background:linear-gradient(135deg,var(--primary-soft) 0%,#fff 100%);border:1.5px solid var(--primary);border-radius:12px;color:var(--primary-dark);font-size:15px;font-weight:600;text-align:center;line-height:1.6;box-shadow:var(--shadow);align-self:center}
+.lead-form-success::before{content:'';display:block;width:48px;height:48px;margin:0 auto 14px;border-radius:50%;background:var(--primary);position:relative;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:24px;box-shadow:0 4px 12px rgba(0,208,156,0.3)}
+
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;max-width:860px;margin-left:auto;margin-right:auto}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:all 0.15s}
+.faq-item:hover{box-shadow:var(--shadow-md)}
+.faq-q{width:100%;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:transparent;border:none;cursor:pointer;font-size:15px;font-weight:600;color:var(--text);text-align:left;font-family:inherit;letter-spacing:-0.01em}
+.faq-q:hover{background:var(--surface-2)}
+.faq-toggle{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--primary-soft);color:var(--primary-dark);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;transition:transform 0.2s}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:all 0.25s ease;font-size:14px;color:var(--text-2);line-height:1.7}
+.faq-item.open .faq-a{max-height:600px;padding:0 20px 18px}
+
+.seo-content{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:30px 28px;margin-bottom:18px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.75;color:var(--text-2);max-width:860px;margin-left:auto;margin-right:auto}
+@media (min-width:768px){.seo-content{padding:40px 48px;font-size:15px}}
+.seo-content h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px;letter-spacing:-0.01em}
+.seo-content h4{font-size:15px;font-weight:700;color:var(--text);margin:18px 0 8px;letter-spacing:-0.01em}
+.seo-content p{margin-bottom:12px}
+.seo-content strong{color:var(--text);font-weight:700}
+.seo-content ul{padding-left:22px;margin-bottom:12px}
+.seo-content li{margin-bottom:6px}
+
+.footer{margin-top:56px;padding:32px 0 0;border-top:1.5px solid var(--border);text-align:center}
+.footer-brand{font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.02em}
+.footer-brand span{color:var(--primary)}
+.footer-tagline{font-size:13px;color:var(--text-3);margin-bottom:18px}
+.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 20px;margin-bottom:18px;font-size:13px}
+.footer-links a{color:var(--text-2);text-decoration:none;font-weight:500;transition:color 0.15s}
+.footer-links a:hover{color:var(--primary)}
+.footer-divider{height:1px;background:var(--border-2);margin:18px 0}
+.footer-meta{font-size:11.5px;color:var(--text-3);line-height:1.7;max-width:600px;margin:0 auto;padding:0 12px}
+.footer-meta strong{color:var(--text-2);font-weight:600}
+.footer-domain{font-size:12px;color:var(--text-3);margin-top:14px}
+
+@media (max-width:580px){
+  .app{padding:20px 14px 70px}
+  .stats{grid-template-columns:1fr 1fr}
+  .compare-grid{gap:8px}
+  .timeline{grid-template-columns:repeat(3,1fr)}
+  .contact-grid{grid-template-columns:1fr;gap:24px}
+  .founder{flex-direction:column;gap:14px}
+  .step{flex-direction:row;gap:14px}
+  .step-num{width:36px;height:36px;font-size:15px;border-radius:10px}
+  .card{padding:22px 18px}
+  .footer-links{gap:6px 14px}
+}
+@media (min-width:768px) and (max-width:1023px){.app{padding:32px 28px 80px}}
+@media (min-width:1024px){
+  .app{padding:40px 40px 100px}
+  .card{padding:28px}
+  .step{padding:24px}
+  .step-num{width:48px;height:48px;font-size:20px}
+  .step-title{font-size:17px}
+  .step-desc{font-size:14.5px}
+  .founder{padding:32px}
+  .founder-avatar{width:72px;height:72px;font-size:28px}
+  .trust-item{padding:20px}
+  .hero h1{margin-bottom:18px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-mark">P</div>
+      <div class="nav-brand-name">Pay My <span>Insurance</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#how-it-works" class="nav-link" onclick="track('nav_click',{section:'how_it_works'})">How It Works</a>
+      <a href="#why-trust-us" class="nav-link" onclick="track('nav_click',{section:'why_trust'})">Why Trust Us</a>
+      <a href="#faq" class="nav-link" onclick="track('nav_click',{section:'faq'})">FAQ</a>
+      <a href="#contact" class="nav-link" onclick="track('nav_click',{section:'contact'})">Contact</a>
+      <a href="#contact" class="nav-cta" onclick="track('nav_cta_click')">Talk to Us</a>
+    </div>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile-inner">
+      <a href="#how-it-works" onclick="closeNav();track('nav_click',{section:'how_it_works'})">How It Works</a>
+      <a href="#why-trust-us" onclick="closeNav();track('nav_click',{section:'why_trust'})">Why Trust Us</a>
+      <a href="#faq" onclick="closeNav();track('nav_click',{section:'faq'})">FAQ</a>
+      <a href="#contact" onclick="closeNav();track('nav_click',{section:'contact'})">Contact</a>
+      <a href="privacy-policy.html" onclick="track('nav_click',{section:'privacy'})">Privacy Policy</a>
+      <a href="terms-of-service.html" onclick="track('nav_click',{section:'terms'})">Terms of Service</a>
+      <a href="disclaimer.html" onclick="track('nav_click',{section:'disclaimer'})">Disclaimer</a>
+      <a href="#contact" class="cta" onclick="closeNav();track('nav_cta_click')">Talk to Us</a>
+    </div>
+  </div>
+</nav>
+
+<div class="app">
+
+  <div class="hero">
+    <div class="hero-pill">Premium Coverage Service</div>
+    <h1>Your insurance,<br><em>funded for life</em></h1>
+    <p class="hero-sub">Tell us your premium. We'll show you a small monthly contribution that's designed to cover your premiums for life — even if your income stops.</p>
+  </div>
+
+  <div class="intro-row">
+    <div class="concept-strip">
+      <div class="concept-grid">
+        <div class="concept-step">
+          <div class="concept-num">🛡️</div>
+          <div class="concept-text"><strong>Your insurance shouldn't depend on your income</strong>Life insurance is a 20–30 year commitment. But careers, salaries, and savings don't follow a stable path for that long.</div>
+        </div>
+        <div class="concept-step">
+          <div class="concept-num">🤲</div>
+          <div class="concept-text"><strong>Insurance is meant to protect — not to add another worry</strong>A policy you bought to protect your family shouldn't become a source of anxiety about whether you will be able to keep paying.</div>
+        </div>
+        <div class="concept-step">
+          <div class="concept-num">📈</div>
+          <div class="concept-text"><strong>Money that grows beats money that's spent</strong>Premiums paid year-by-year are gone the moment they're paid. Money built once and grown over time keeps working for you.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-card">
+        <div class="example-tag">Example</div>
+        <div class="example-headline">Meet Raj — 29, salaried, with a ₹20,000 annual premium</div>
+        <div class="example-sub">His premium is paid every <strong>November</strong>, with <strong>31 years</strong> remaining on his policy (cover till age 60). Raj picks <strong>"PMI pays from Day 1"</strong> for instant peace of mind, and contributes monthly for <strong>4 years</strong>. Here's his Premium Freedom Plan:</div>
+        <div class="example-flow">
+          <div class="example-cell">
+            <div class="example-cell-label">Contribute</div>
+            <div class="example-cell-val">₹5,422/mo</div>
+            <div class="example-cell-sub">for just 4 years</div>
+          </div>
+          <div class="example-cell">
+            <div class="example-cell-label">Insurance covered for</div>
+            <div class="example-cell-val">31 yrs</div>
+            <div class="example-cell-sub">from the very first month</div>
+          </div>
+          <div class="example-cell highlight">
+            <div class="example-cell-label">Saves vs. direct payment</div>
+            <div class="example-cell-val">₹3.60 L</div>
+            <div class="example-cell-sub">over 31 years</div>
+          </div>
+        </div>
+        <div class="example-cta">
+          <div class="example-cta-text">Want to see <strong>your own numbers?</strong></div>
+          <button class="example-cta-btn" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'});track('cta_try_calculator')">Try the Calculator <span class="arrow">↓</span></button>
+        </div>
+        <div class="example-disclaimer">Illustrative example based on 8% conservative growth assumption. Actual outcomes depend on market performance. Mutual fund investments are subject to market risks.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-wrap" id="calculator">
+    <div class="card input-card">
+      <div class="card-head">
+        <div class="card-head-title">
+          <div class="card-head-title-icon">📝</div>
+          <span>Your Policy Details</span>
+        </div>
+        <div class="card-head-status" id="inputStatus">
+          <span class="dot"></span>
+          <span>Ready</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title"><span class="card-title-num">1</span> How many policies do you have?</div>
+        <div class="toggle-group" style="margin-bottom:22px">
+          <button class="toggle-btn active" id="modeSingle" onclick="setMulti(false)">Just One</button>
+          <button class="toggle-btn" id="modeMulti" onclick="setMulti(true)">Multiple Policies</button>
+        </div>
+        <div class="card-title"><span class="card-title-num">2</span> <span id="policyHeader">Tell us about your policy</span></div>
+        <div id="policiesContainer"></div>
+        <button class="add-policy" id="addBtn" onclick="addPolicy()" style="display:none">+ Add Another Policy</button>
+        <div class="divider" style="margin:22px 0"></div>
+        <div class="card-title"><span class="card-title-num">3</span> Your Plan</div>
+        <div class="field">
+          <label class="label">What would you like to plan?</label>
+          <div class="toggle-group">
+            <button class="toggle-btn active" id="planMonthly" onclick="setMode('monthly')">Find Monthly Contribution</button>
+            <button class="toggle-btn" id="planYears" onclick="setMode('yr')">Find Period</button>
+          </div>
+        </div>
+        <div class="field" id="yrsField">
+          <label class="label">How many years would you like to contribute?</label>
+          <input type="number" class="input" id="yrsIn" placeholder="e.g. 4">
+          <div class="field-hint">After this period, Pay My Insurance handles all your future premiums automatically.</div>
+        </div>
+        <div class="field" id="amtField" style="display:none">
+          <label class="label">How much can you contribute monthly? (₹)</label>
+          <input type="number" class="input" id="amtIn" placeholder="e.g. 5000">
+          <div class="field-hint">We'll show you how many years until your premiums are covered for life</div>
+        </div>
+        <button class="btn-primary mobile-only" onclick="calculate(true)">Show My Plan</button>
+      </div>
+    </div>
+
+    <div class="card output-card">
+      <div class="card-head">
+        <div class="card-head-title">
+          <div class="card-head-title-icon" style="background:#eef0ff;color:#5367ff">📊</div>
+          <span>Your Premium Freedom Plan</span>
+        </div>
+        <div class="card-head-status" id="outputStatus" style="display:none">
+          <span class="dot"></span>
+          <span>Plan updated</span>
+        </div>
+      </div>
+      <div class="card-body" id="results">
+        <div class="output-empty">
+          <div class="output-empty-icon">✨</div>
+          <div class="output-empty-title">Your plan will appear here</div>
+          <div class="output-empty-sub">Fill in your policy details and your Premium Freedom Plan will calculate automatically.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header" id="how-it-works">
+    <div class="section-tag">How It Works</div>
+    <h2 class="section-h2">Four simple steps to <em>premium freedom</em></h2>
+    <p class="section-sub">No jargon. No surprises. Just a clear path from where you are today to insurance that's funded for life.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Tell us about your insurance policy</div>
+        <div class="step-desc">Enter your premium amount, frequency, and how many years remain on your policy. Use the calculator above to see your personalised plan instantly — no signup needed.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Start a small monthly contribution</div>
+        <div class="step-desc">Set up an auto-debit from your bank account into your own dedicated <strong>Premium Reserve Fund</strong>. The money stays in <em>your name</em>, in <em>your folio</em> — managed across reputed funds like HDFC, Nippon, and Edelweiss for steady, conservative growth.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Your reserve grows over a few years</div>
+        <div class="step-desc">During your contribution period (typically 3–7 years), your Premium Reserve grows steadily at a target rate of 8% per year. We monitor and rebalance it monthly to keep it on track — no action needed from you.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Your reserve pays your premiums — for life</div>
+        <div class="step-desc">Once your reserve is built, every premium is set up to be paid automatically from it — on time, until your policy term ends. Your insurance is designed to stay funded even if your job, income, or circumstances change. <strong>That's premium freedom.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header" id="why-trust-us">
+    <div class="section-tag">Why Trust Pay My Insurance</div>
+    <h2 class="section-h2">Built on <em>transparency</em>, not promises</h2>
+    <p class="section-sub">We're a young company. Here's exactly how we protect your money and your trust from Day 1.</p>
+  </div>
+
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-icon">🔒</div>
+      <div class="trust-content">
+        <div class="trust-title">Your money stays in your name</div>
+        <div class="trust-desc">Your Premium Reserve sits in a mutual fund folio registered to <strong>you</strong> — not to us. We never hold your money. You can verify your balance directly on the AMC's app any time.</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">📊</div>
+      <div class="trust-content">
+        <div class="trust-title">Conservative 8% planning</div>
+        <div class="trust-desc">We calculate your plan assuming 8% annual growth — far below the 12–15% Indian mutual funds have historically delivered over 10+ years. The gap is your built-in safety buffer.</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🏛️</div>
+      <div class="trust-content">
+        <div class="trust-title">Regulated by SEBI &amp; AMFI</div>
+        <div class="trust-desc">Pay My Insurance operates as an AMFI-registered Mutual Fund Distributor. Every investment is in a SEBI-regulated mutual fund. We follow all distributor compliance norms.</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🧑‍💼</div>
+      <div class="trust-content">
+        <div class="trust-title">Real founder, real face</div>
+        <div class="trust-desc">Built by an Indian founder who's worked in private sector and felt the same anxiety you feel about long-term premium commitments. Not a faceless company.</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🚪</div>
+      <div class="trust-content">
+        <div class="trust-title">Exit anytime, no lock-in</div>
+        <div class="trust-desc">Your Premium Reserve is yours. Stop contributing whenever you want. Withdraw your full balance whenever you want. You're in control — always.</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">💬</div>
+      <div class="trust-content">
+        <div class="trust-title">Free 45-min consultation</div>
+        <div class="trust-desc">Before you commit anything, we walk you through your complete plan in a one-on-one session — your premiums, your reserve, your numbers. Free. No commitment.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="founder-row">
+    <div class="founder">
+      <div class="founder-avatar">K</div>
+      <div class="founder-body">
+        <div class="founder-meta">From the founder</div>
+        <div class="founder-name">Keshav - Pay My Insurance</div>
+        <div class="founder-quote">When I bought my first life insurance policy to protect my family, I felt good about the decision — but a quiet anxiety stayed with me. I'd just committed to paying premiums for decades, and the alternatives the insurer offered upfront felt out of reach. No matter how stable life looks today, none of us really knows what's coming. One unexpected expense, one tough year, and the policy I was paying for to protect my family could lapse.<br><br>So one weekend, I sat down with the calculations to see if there was a way to fund my premiums once and stop worrying about them. The math worked. I built Pay My Insurance so it can work for you too.</div>
+        <div class="founder-tagline">Reach me directly: keshav@paymyinsurance.in · WhatsApp +91 88006 11923</div>
+      </div>
+    </div>
+    <div class="testimonials">
+      <div class="testimonials-icon">⭐</div>
+      <div class="testimonials-title">Be one of our first members</div>
+      <div class="testimonials-desc">We're just getting started. Real customer testimonials will appear here as we grow. Want to be one of our first stories? <strong>Talk to us today</strong> — we'd love to build your Premium Freedom Plan personally.</div>
+    </div>
+  </div>
+
+  <div class="section-header" id="contact">
+    <div class="section-tag">Talk to Us</div>
+    <h2 class="section-h2">Have questions? <em>We're here.</em></h2>
+    <p class="section-sub">Three easy ways to reach us — or leave your details and we'll call you back within 24 hours.</p>
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-grid">
+      <div class="contact-methods">
+        <a href="https://wa.me/918800611923?text=Hi%2C%20I%27m%20interested%20in%20Pay%20My%20Insurance" target="_blank" rel="noopener" class="contact-btn" onclick="track('contact_whatsapp')">
+          <div class="contact-btn-icon wa">💬</div>
+          <div class="contact-btn-content">
+            <div class="contact-btn-label">WhatsApp</div>
+            <div class="contact-btn-val">+91 88006 11923</div>
+          </div>
+        </a>
+        <a href="mailto:keshav@paymyinsurance.in?subject=Pay%20My%20Insurance%20Enquiry" class="contact-btn" onclick="track('contact_email')">
+          <div class="contact-btn-icon email">✉️</div>
+          <div class="contact-btn-content">
+            <div class="contact-btn-label">Email</div>
+            <div class="contact-btn-val">keshav@paymyinsurance.in</div>
+          </div>
+        </a>
+        <button class="contact-btn disabled" onclick="track('contact_calendly_clicked');alert('Online booking opening soon. For now, please reach us via WhatsApp or email.')">
+          <div class="contact-btn-icon cal">📅</div>
+          <div class="contact-btn-content">
+            <div class="contact-btn-label">Book a Free Consultation</div>
+            <div class="contact-btn-val">45-min planning session</div>
+          </div>
+          <div class="coming-soon-tag">Soon</div>
+        </button>
+      </div>
+      <form class="lead-form" id="leadForm" onsubmit="return submitLead(event)" novalidate>
+        <div class="lead-form-title">Or — get a callback</div>
+        <div class="lead-form-sub">Leave your details. We'll personally walk you through your Premium Freedom Plan within 24 hours.</div>
+        <input type="text" name="name" id="leadName" placeholder="Your name" required>
+        <input type="tel" name="phone" id="leadPhone" placeholder="WhatsApp number (e.g. 98765 43210)" required>
+        <input type="email" name="email" id="leadEmail" placeholder="Email (optional)">
+        <textarea name="message" id="leadMessage" placeholder="Anything you'd like us to know? (optional)" style="padding:11px 14px;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;color:var(--text);outline:none;transition:all 0.15s;resize:vertical;min-height:60px"></textarea>
+        <button type="submit" class="lead-form-btn" id="leadSubmitBtn">Request a callback</button>
+      </form>
+      <div class="lead-form-success" id="leadSuccess">Thank you! We'll reach out within 24 hours.</div>
+    </div>
+  </div>
+
+  <div class="section-header" id="faq">
+    <div class="section-tag">Frequently Asked</div>
+    <h2 class="section-h2">Your questions, <em>answered</em></h2>
+    <p class="section-sub">The questions we hear most often from people exploring Pay My Insurance.</p>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What exactly is Pay My Insurance?<span class="faq-toggle">+</span></button>
+      <div class="faq-a">Pay My Insurance is a premium coverage planning service. You contribute a small amount monthly for a few years, we build a dedicated Premium Reserve Fund in your own name across reputed Indian mutual funds, and once that fund is built, all your future insurance premiums are paid automatically from it — for the rest of your policy term. You don't have to worry about premium payments again, even if your job changes or income stops.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is my money safe? Where does it actually go?<span class="faq-toggle">+</span></button>
+      <div class="faq-a">Your money goes directly into a SEBI-regulated mutual fund folio registered in <strong>your name</strong> — not Pay My Insurance's name. We never hold or touch your money. You can verify your balance any time on the AMC's official app or website. If we ever ceased to exist, your money would still sit safely in your own folio, fully accessible to you.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What's the catch? How does Pay My Insurance make money?<span class="faq-toggle">+</span></button>
+      <div class="faq-a">No hidden catch. We earn a small trail commission directly from the mutual fund AMCs (a standard industry practice for distributors) — typically around 0.5–1% per year on your reserve. <strong>You pay us nothing extra.</strong> The AMC pays us; you pay only the standard mutual fund expense ratio you'd pay anyway. We may also charge a one-time success fee on any surplus your reserve generates above your premium needs — but only on the surplus, never on your principal, and only if you choose to withdraw it.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Are you regulated by IRDAI?<span class="faq-toggle">+</span></button>
+      <div class="faq-a">Pay My Insurance is not an insurance company — we don't sell insurance, so we don't need IRDAI registration. We operate as an AMFI-registered Mutual Fund Distributor under SEBI's framework. Our service is to help you plan and fund the premiums of insurance policies you already own.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Insurers offer single-pay and 5-year pay options too. Why is Pay My Insurance cheaper than those?<span class="faq-toggle">+</span></button>
+      <div class="faq-a">Insurers do offer single-pay and limited-pay options — but the lump sum they ask for is typically much higher than what you'd build through Pay My Insurance for the same policy. Here's why: insurers price their lump-sum options using <strong>actuarial science</strong> — accounting for mortality risk, claim probabilities, regulatory reserves, and a margin for the protection they provide. That's their actual job, and it's legitimate. Pay My Insurance does something different — <strong>pure financial math</strong>, planning your premium funding at a conservative 8% growth assumption, which is roughly in line with what Indian fixed deposits and long-term bonds have historically delivered. We're not pricing risk; we're just funding payments that already exist on your insurance policy. If we used a lower assumption like 4–5%, our numbers would converge with what insurers quote. It's not that insurers are overcharging — they're solving one problem. We're just solving a different one: how to fund payments on a policy you already bought.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What returns do you guarantee?<span class="faq-toggle">+</span></button>
+      <div class="faq-a">We don't guarantee returns — and any service that does in India is operating illegally under SEBI rules. What we do is plan conservatively at <strong>8% per year</strong>, while Indian mutual funds have historically delivered 12–15% over the long term. That gap is your built-in safety buffer. If markets underperform, your reserve still has cushion. If markets do well, you may end up with a surplus you can take back or roll into other coverage.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How is this different from just doing a SIP myself?<span class="faq-toggle">+</span></button>
+      <div class="faq-a">Three things: <strong>(1) Goal-specific planning</strong> — we calculate the exact monthly amount for your specific premium and timeline, so you don't over-save or under-save; <strong>(2) Active management</strong> — we monitor your reserve monthly, rebalance across funds, and shift to safer assets as your coverage date approaches; <strong>(3) Automated premium payouts</strong> — once built, premiums get paid automatically from your reserve. You can technically do it yourself, but most people don't because it requires consistent attention.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Does this work with my existing insurance policy?<span class="faq-toggle">+</span></button>
+      <div class="faq-a">Yes — Pay My Insurance works with any Indian life insurance policy you already own (LIC, HDFC Life, ICICI Pru, SBI Life, Tata AIA, Max Life, and others). You don't need to buy a new policy. Just tell us your existing premium and remaining term, and we'll calculate your plan. Health insurance support is coming soon.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What if I need to stop or withdraw early?<span class="faq-toggle">+</span></button>
+      <div class="faq-a">You can stop or withdraw any time. Your Premium Reserve is your money in your folio — there's no lock-in, no exit penalty from us. We'll show you exactly what happens to your premium coverage if you withdraw early, so you can make an informed choice. Most customers continue because they understand the long-term value, but the option to exit is always yours.</div>
+    </div>
+  </div>
+
+  <div class="seo-content">
+    <h3>Why long-term insurance premium planning matters in India today</h3>
+    <p>Indian insurance premiums have been rising steadily — health insurance premiums alone went up by over 25% in 2024 for more than half of policyholders. Add to this the reality that around two-thirds of Indian life insurance policies lapse within five years, mostly because policyholders couldn't sustain premium payments after a job change, salary cut, or unexpected expense.</p>
+    <p>The problem isn't that Indians don't want insurance. It's that <strong>insurance is structured as a 20–30 year financial commitment</strong> — but most people's incomes don't follow a stable, predictable path for that long. Job changes, career breaks, relocations, family responsibilities, medical events — any of these can break the premium chain and cost a family their entire investment in coverage.</p>
+    <h4>How Pay My Insurance solves this</h4>
+    <p>Instead of betting that your income will stay perfect for the next 20-30 years, you build a one-time <strong>Premium Reserve Fund</strong> over a shorter, manageable period — typically 3 to 7 years. Once built, this reserve quietly funds all your future premiums automatically. Your insurance keeps running. Your family stays protected. Even if your income changes, your coverage doesn't.</p>
+    <h4>Who is this for?</h4>
+    <ul>
+      <li><strong>Salaried professionals</strong> in private sector worried about job continuity over a long policy term</li>
+      <li><strong>Self-employed individuals</strong> and freelancers with variable income</li>
+      <li><strong>Parents</strong> who want to lock in their child's insurance protection regardless of their own future income</li>
+      <li><strong>Anyone with an existing life insurance policy</strong> (LIC, HDFC Life, ICICI Pru, SBI Life, Max Life, Tata AIA, and others) who wants long-term peace of mind</li>
+      <li><strong>Indians planning early retirement or career breaks</strong> who need their insurance to keep running without active income</li>
+    </ul>
+    <h4>What makes Pay My Insurance different from a regular SIP or mutual fund investment?</h4>
+    <p>A regular SIP grows your money for general goals. Pay My Insurance is purpose-built around your specific insurance premiums — calculating the exact monthly contribution required, managing the reserve actively across multiple reputed mutual funds, and automatically paying your premiums when due. It's the difference between "saving money" and "solving a specific long-term problem."</p>
+    <h4>Is Pay My Insurance safe?</h4>
+    <p>Your money never sits with Pay My Insurance. It goes into a mutual fund folio in your own name, regulated by SEBI. We're an AMFI-registered Mutual Fund Distributor. You can verify your reserve balance any time on the AMC's app. There is no lock-in — you can exit and withdraw whenever you choose. Returns are not guaranteed (no SEBI-regulated entity can guarantee returns), but our planning is conservative at 8% per year while Indian markets have historically delivered 12–15% over 10+ year periods.</p>
+  </div>
+
+  <div class="cta-block" style="margin:18px auto 0;max-width:780px">
+    <div class="cta-pill">Ready to build your plan?</div>
+    <div class="cta-tag">Use the calculator above. Then book a free 45-min planning session with us — no commitment.</div>
+    <button class="cta-btn" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'});track('cta_scroll_to_calc')">Try the Calculator</button>
+    <div class="cta-trust">Free • No signup needed • Built by Indians, for Indians</div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">Pay My <span>Insurance</span></div>
+    <div class="footer-tagline">Your insurance, funded for life — job or no job.</div>
+    <div class="footer-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#why-trust-us">Why Trust Us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-meta">
+      <strong>Pay My Insurance</strong> is a premium coverage planning service operated by an AMFI-registered Mutual Fund Distributor. We do not sell insurance policies. We do not guarantee returns. All investments are in SEBI-regulated mutual funds and are subject to market risks. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future results. For grievances, write to us at keshav@paymyinsurance.in.
+    </div>
+    <div class="footer-domain">© 2026 Pay My Insurance · paymyinsurance.in</div>
+    <!-- VERSION: v59 (deployed: replace with actual upload date) -->
+  </div>
+</div>
+
+<script>
+const RM = 0.08/12;
+const MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const PC = ['#00d09c','#5367ff','#f5a623','#a060c8','#ff7a59'];
+
+function track(eventName, params){
+  try{
+    if(typeof gtag==='function'){gtag('event',eventName,params||{})}
+    if(typeof clarity==='function'&&params){
+      Object.keys(params).forEach(k=>{
+        try{clarity('set',`${eventName}_${k}`,String(params[k]))}catch(e){}
+      });
+    }
+    if(typeof clarity==='function'){
+      try{clarity('event',eventName)}catch(e){}
+    }
+  }catch(e){}
+}
+
+let nextId = 1;
+let multiMode = false;
+let policies = [newPol(1,1)];
+let mode = 'monthly';
+let lastResult = null;
+let schedVis = false;
+let liveCalcTimer = null;
+const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
+
+function newPol(id,num){return{id,name:'Policy '+num,amt:'',freq:1,m1:1,term:'',inflOn:false,infl:0,suOn:false,su:0,coverMode:'after',_reserve:null,_monthly:null,_yrs:null,_totalC:null,_coverYrs:null}}
+
+function fmtINR(v){if(!v||isNaN(v))return'₹0';return'₹'+Math.round(v).toLocaleString('en-IN')}
+
+function simSWP(C0,premStart,mos,coverYrs,infl){
+  let c=C0,cp=premStart;const sm=[...mos].sort((a,b)=>a-b);
+  for(let yr=1;yr<=coverYrs;yr++)for(let mo=1;mo<=12;mo++){
+    c*=(1+RM);
+    if(mo===1&&yr>1)cp*=(1+infl);
+    if(sm.includes(mo))c-=cp;
+  }
+  return c;
+}
+
+function premiumAtCoverStart(prem,infl,contribYrs){return prem*Math.pow(1+infl,contribYrs)}
+
+function calcReserveAfter(prem,mos,policyTerm,contribYrs,infl){
+  const coverYrs=policyTerm-contribYrs;
+  if(coverYrs<=0)return 0;
+  const premStart=premiumAtCoverStart(prem,infl,contribYrs);
+  let lo=0,hi=premStart*mos.length*coverYrs*15;
+  for(let i=0;i<80;i++){const m=(lo+hi)/2;simSWP(m,premStart,mos,coverYrs,infl)>0?hi=m:lo=m}
+  return(lo+hi)/2;
+}
+
+function simDay1(C0,monthlyContrib,suR,prem,mos,policyTerm,contribYrs,infl){
+  let c=C0,cp=prem,s=monthlyContrib;
+  const sm=[...mos].sort((a,b)=>a-b);
+  const contribMonths=Math.round(contribYrs*12);
+  for(let yr=1;yr<=policyTerm;yr++)for(let mo=1;mo<=12;mo++){
+    const monthIdx=(yr-1)*12+mo;
+    c*=(1+RM);
+    if(mo===1&&yr>1)s*=(1+suR);
+    if(monthIdx<=contribMonths)c+=s;
+    if(mo===1&&yr>1)cp*=(1+infl);
+    if(sm.includes(mo))c-=cp;
+  }
+  return c;
+}
+
+function calcMonthlyDay1(prem,mos,policyTerm,contribYrs,infl,suR){
+  let lo=0,hi=prem*mos.length*policyTerm;
+  for(let i=0;i<80;i++){
+    const s=(lo+hi)/2;
+    simDay1(0,s,suR,prem,mos,policyTerm,contribYrs,infl)>0?hi=s:lo=s;
+  }
+  return(lo+hi)/2;
+}
+
+function calcYrsDay1(prem,mos,policyTerm,monthlyContrib,infl,suR){
+  let lo=0.1,hi=policyTerm;
+  if(simDay1(0,monthlyContrib,suR,prem,mos,policyTerm,policyTerm,infl)<0)return null;
+  for(let i=0;i<80;i++){
+    const y=(lo+hi)/2;
+    simDay1(0,monthlyContrib,suR,prem,mos,policyTerm,y,infl)>0?hi=y:lo=y;
+  }
+  return(lo+hi)/2;
+}
+
+function reserveAtEndOfContribDay1(monthlyContrib,suR,prem,mos,contribYrs,infl){
+  let c=0,cp=prem,s=monthlyContrib;
+  const sm=[...mos].sort((a,b)=>a-b);
+  const contribMonths=Math.round(contribYrs*12);
+  for(let m=1;m<=contribMonths;m++){
+    const yr=Math.ceil(m/12), mo=((m-1)%12)+1;
+    c*=(1+RM);
+    if(mo===1&&yr>1)s*=(1+suR);
+    c+=s;
+    if(mo===1&&yr>1)cp*=(1+infl);
+    if(sm.includes(mo))c-=cp;
+  }
+  return c;
+}
+
+function reserveFV(s0,yrs,su){let fv=0,s=s0;for(let m=1;m<=Math.round(yrs*12);m++){if(m>1&&(m-1)%12===0)s*=(1+su);fv=fv*(1+RM)+s}return fv}
+function calcMonthly(reserve,yrs,su){if(yrs<=0||reserve<=0)return 0;let lo=1,hi=reserve;for(let i=0;i<80;i++){const m=(lo+hi)/2;reserveFV(m,yrs,su)>=reserve?hi=m:lo=m}return(lo+hi)/2}
+function calcYrs(reserve,s0,su){if(reserveFV(s0,100,su)<reserve)return null;let lo=.5,hi=100;for(let i=0;i<80;i++){const m=(lo+hi)/2;reserveFV(s0,m,su)>=reserve?hi=m:lo=m}return(lo+hi)/2}
+function totalContrib(s0,yrs,su){let t=0,s=s0;for(let m=1;m<=Math.round(yrs*12);m++){if(m>1&&(m-1)%12===0)s*=(1+su);t+=s}return t}
+function getMonths(freq,m1){if(freq===12)return[1,2,3,4,5,6,7,8,9,10,11,12];if(freq===1)return[m1];if(freq===2)return[m1,((m1-1+6)%12)+1];return[m1,((m1-1+3)%12)+1,((m1-1+6)%12)+1,((m1-1+9)%12)+1]}
+
+function setMulti(v){
+  multiMode=v;
+  track('toggle_policy_mode',{mode:v?'multiple':'single'});
+  document.getElementById('modeSingle').classList.toggle('active',!v);
+  document.getElementById('modeMulti').classList.toggle('active',v);
+  document.getElementById('policyHeader').textContent=v?'Tell us about your policies':'Tell us about your policy';
+  document.getElementById('addBtn').style.display=v?'block':'none';
+  if(!v)policies=[policies[0]];
+  renderPolicies();
+  scheduleLiveCalc();
+}
+
+function setMode(m){
+  mode=m;
+  track('toggle_plan_mode',{plan:m==='monthly'?'find_monthly':'find_period'});
+  document.getElementById('planMonthly').classList.toggle('active',m==='monthly');
+  document.getElementById('planYears').classList.toggle('active',m==='yr');
+  document.getElementById('yrsField').style.display=m==='monthly'?'block':'none';
+  document.getElementById('amtField').style.display=m==='yr'?'block':'none';
+  scheduleLiveCalc();
+}
+
+function addPolicy(){
+  if(policies.length>=5){alert('Maximum 5 policies.');return}
+  nextId++;
+  policies.push(newPol(nextId,nextId));
+  track('add_policy',{total_policies:policies.length});
+  renderPolicies();
+  scheduleLiveCalc();
+}
+
+function removePolicy(id){
+  policies=policies.filter(p=>p.id!==id);
+  renderPolicies();
+  scheduleLiveCalc();
+}
+
+const SILENT_FIELDS = new Set(['amt','term','name']);
+
+function updPol(id,field,val,opts){
+  const p=policies.find(x=>x.id===id);
+  if(!p)return;
+  const skipRender = (opts && opts.skipRender) || SILENT_FIELDS.has(field);
+
+  if(field==='freq'){p.freq=parseInt(val);p.m1=1;track('change_frequency',{frequency:val})}
+  else if(field==='m1'){p.m1=parseFloat(val)}
+  else if(field==='infl'||field==='su'){
+    p[field]=parseFloat(val);
+    const sliderEl=document.querySelector(`.policy[data-pid="${id}"] .slider[data-field="${field}"]`);
+    if(sliderEl){
+      const pill=sliderEl.parentElement.querySelector('.slider-val');
+      if(pill)pill.textContent=p[field]+'%';
+      const hint=sliderEl.closest('.field').querySelector('.field-hint');
+      if(hint){
+        if(field==='infl')hint.innerHTML=`Premium rises ${p.infl}%/yr — your reserve will cover the increase`;
+        if(field==='su')hint.innerHTML=`Increase your monthly contribution ${p.su}%/yr (matches salary growth)`;
+      }
+    }
+    scheduleLiveCalc();
+    return;
+  }
+  else if(field==='inflOn'||field==='suOn'){
+    p[field]=val;
+    if(val)track(field==='inflOn'?'enable_inflation':'enable_stepup');
+  }
+  else if(field==='coverMode'){
+    p[field]=val;
+    track('change_cover_mode',{cover_mode:val});
+  }
+  else p[field]=val;
+
+  if(!skipRender)renderPolicies();
+  scheduleLiveCalc();
+}
+
+function updatePolicyResultBlocks(){
+  policies.forEach((pol,i)=>{
+    const polEl=document.querySelector(`.policy[data-pid="${pol.id}"]`);
+    if(!polEl)return;
+    const col=PC[i%PC.length];
+    const hasReserve=pol._reserve!=null;
+    const hasMonthly=pol._monthly!=null;
+    const existing=polEl.querySelector('.policy-result');
+    if(!hasReserve){
+      if(existing)existing.remove();
+      return;
+    }
+    const html=`
+      ${hasMonthly?`<div class="policy-result-item">
+        <div class="policy-result-label">${mode==='monthly'?'Monthly Contribution':'Period Needed'}</div>
+        <div class="policy-result-val" style="color:#5367ff">${mode==='monthly'?fmtINR(pol._monthly):pol._yrs.toFixed(1)+' yrs'}</div>
+      </div>`:''}
+      ${pol._totalC!=null?`<div class="policy-result-item">
+        <div class="policy-result-label">Total Contribution</div>
+        <div class="policy-result-val" style="color:#a060c8">${fmtINR(pol._totalC)}</div>
+      </div>`:''}
+      <div class="policy-result-item">
+        <div class="policy-result-label">Reserve Required</div>
+        <div class="policy-result-val" style="color:${col}">${fmtINR(pol._reserve)}</div>
+      </div>`;
+    if(existing){
+      existing.innerHTML=html;
+    } else {
+      const div=document.createElement('div');
+      div.className='policy-result';
+      div.innerHTML=html;
+      polEl.appendChild(div);
+    }
+  });
+}
+
+function renderPolicies(){
+  const container=document.getElementById('policiesContainer');
+  container.innerHTML='';
+  policies.forEach((pol,i)=>{
+    const num=i+1;
+    const col=PC[(num-1)%PC.length];
+    const months=getMonths(pol.freq,pol.m1);
+    const sorted=[...months].sort((a,b)=>a-b);
+    const m2disp=pol.freq===2?MN[((pol.m1-1+6)%12)]:null;
+    const qRest=pol.freq===4?[((pol.m1-1+3)%12)+1,((pol.m1-1+6)%12)+1,((pol.m1-1+9)%12)+1].map(m=>MN[m-1]).join(', '):null;
+    const canRemove=multiMode&&policies.length>1;
+    const hasReserve=pol._reserve!=null;
+    const hasMonthly=pol._monthly!=null;
+
+    let monthsField='';
+    if(pol.freq===12)monthsField=`<div class="field-hint">Every month — no selection needed</div>`;
+    else if(pol.freq===1)monthsField=`<select class="select" style="max-width:180px" onchange="updPol(${pol.id},'m1',this.value)">${MN.map((m,j)=>`<option value="${j+1}" ${pol.m1===j+1?'selected':''}>${m}</option>`).join('')}</select>`;
+    else if(pol.freq===2)monthsField=`<div class="row" style="align-items:center;gap:10px"><div style="flex:1"><select class="select" onchange="updPol(${pol.id},'m1',this.value)">${MN.slice(0,6).map((m,j)=>`<option value="${j+1}" ${pol.m1===j+1?'selected':''}>${m}</option>`).join('')}</select><div class="field-hint" style="margin-top:4px">First payment</div></div><div style="color:var(--text-3);font-weight:600">+</div><div style="flex:1"><div class="input" style="background:var(--surface-2);color:var(--text-3);font-weight:600">${m2disp}</div><div class="field-hint" style="margin-top:4px">Auto +6 months</div></div></div>`;
+    else if(pol.freq===4)monthsField=`<div class="row" style="align-items:center;gap:10px"><div style="flex:1"><select class="select" onchange="updPol(${pol.id},'m1',this.value)">${MN.slice(0,3).map((m,j)=>`<option value="${j+1}" ${pol.m1===j+1?'selected':''}>${m}</option>`).join('')}</select><div class="field-hint" style="margin-top:4px">First payment</div></div><div style="color:var(--text-3);font-size:11px">→ every 3mo:</div><div style="color:var(--text-3);font-size:11px;flex:1;font-weight:600">${qRest}</div></div>`;
+
+    const monthPills=`<div class="month-pills">${sorted.map(m=>`<span class="month-pill">${MN[m-1]}</span>`).join('')}</div>`;
+
+    const inflSection=`
+      <div class="field">
+        <div class="chip-row">
+          <label class="label" style="margin:0">Annual Premium Increase</label>
+          <button class="chip ${pol.inflOn?'on':''}" onclick="updPol(${pol.id},'inflOn',${!pol.inflOn})">${pol.inflOn?'✓ On':'+ Enable'}</button>
+        </div>
+        ${pol.inflOn?`<div class="slider-wrap">
+          <input type="range" class="slider" data-field="infl" min="0" max="15" step="0.5" value="${pol.infl}" oninput="updPol(${pol.id},'infl',this.value)">
+          <div class="slider-val">${pol.infl}%</div>
+        </div><div class="field-hint">Premium rises ${pol.infl}%/yr — your reserve will cover the increase</div>`:''}
+      </div>`;
+
+    const suSection=`
+      <div class="field">
+        <div class="chip-row">
+          <label class="label" style="margin:0">Contribution Step-Up</label>
+          <button class="chip ${pol.suOn?'on':''}" onclick="updPol(${pol.id},'suOn',${!pol.suOn})">${pol.suOn?'✓ On':'+ Enable'}</button>
+        </div>
+        ${pol.suOn?`<div class="slider-wrap">
+          <input type="range" class="slider" data-field="su" min="0" max="30" step="1" value="${pol.su}" oninput="updPol(${pol.id},'su',this.value)">
+          <div class="slider-val">${pol.su}%</div>
+        </div><div class="field-hint">Increase your monthly contribution ${pol.su}%/yr (matches salary growth)</div>`:''}
+      </div>`;
+
+    const resultBlock=hasReserve?`
+      <div class="policy-result">
+        ${hasMonthly?`<div class="policy-result-item">
+          <div class="policy-result-label">${mode==='monthly'?'Monthly Contribution':'Period Needed'}</div>
+          <div class="policy-result-val" style="color:#5367ff">${mode==='monthly'?fmtINR(pol._monthly):pol._yrs.toFixed(1)+' yrs'}</div>
+        </div>`:''}
+        ${pol._totalC!=null?`<div class="policy-result-item">
+          <div class="policy-result-label">Total Contribution</div>
+          <div class="policy-result-val" style="color:#a060c8">${fmtINR(pol._totalC)}</div>
+        </div>`:''}
+        <div class="policy-result-item">
+          <div class="policy-result-label">Reserve Required</div>
+          <div class="policy-result-val" style="color:${col}">${fmtINR(pol._reserve)}</div>
+        </div>
+      </div>`:'';
+
+    const polHTML=`
+      <div class="policy" data-pid="${pol.id}" style="border-color:${col}66;border-left:4px solid ${col}">
+        <div class="policy-head">
+          <div class="policy-num">
+            <div class="policy-badge" style="background:${col}">${num}</div>
+            <input class="policy-name" value="${pol.name}" oninput="updPol(${pol.id},'name',this.value)" placeholder="Policy name">
+          </div>
+          ${canRemove?`<button class="policy-remove" onclick="removePolicy(${pol.id})">×</button>`:''}
+        </div>
+        <div class="field">
+          <label class="label">Premium Amount & Frequency</label>
+          <div class="row">
+            <input type="number" class="input" value="${pol.amt}" placeholder="e.g. 20000" oninput="updPol(${pol.id},'amt',this.value)">
+            <select class="select" onchange="updPol(${pol.id},'freq',this.value)">
+              <option value="12" ${pol.freq===12?'selected':''}>Monthly</option>
+              <option value="4" ${pol.freq===4?'selected':''}>Quarterly</option>
+              <option value="2" ${pol.freq===2?'selected':''}>Half-Yearly</option>
+              <option value="1" ${pol.freq===1?'selected':''}>Annually</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Premium Due Month(s)</label>
+          ${monthsField}
+          ${monthPills}
+        </div>
+        <div class="field">
+          <label class="label">Years Remaining on Policy</label>
+          <input type="number" class="input" value="${pol.term}" placeholder="e.g. 20" min="1" oninput="updPol(${pol.id},'term',this.value)">
+        </div>
+        <div class="field">
+          <label class="label">Who pays the premium during your contribution period?</label>
+          <div class="toggle-group">
+            <button class="toggle-btn ${pol.coverMode==='after'?'active':''}" onclick="updPol(${pol.id},'coverMode','after')">I'll pay during contribution</button>
+            <button class="toggle-btn ${pol.coverMode==='day1'?'active':''}" onclick="updPol(${pol.id},'coverMode','day1')">PMI pays from Day 1</button>
+          </div>
+          <div class="field-hint">${pol.coverMode==='after'?`Lower monthly contribution — but you also pay your insurer directly during the contribution years. <strong>Higher total outflow.</strong>`:`Higher monthly contribution — but PMI handles your premiums from month one, and you don't pay the insurer separately. <strong>Lower total outflow.</strong>`}</div>
+        </div>
+        <div class="divider"></div>
+        ${inflSection}
+        ${suSection}
+        ${resultBlock}
+      </div>`;
+    container.insertAdjacentHTML('beforeend',polHTML);
+  });
+}
+
+function scheduleLiveCalc(){
+  if(!isDesktop())return;
+  const status=document.getElementById('inputStatus');
+  status.classList.add('calc');
+  status.querySelector('span:last-child').textContent='Updating…';
+  if(liveCalcTimer)clearTimeout(liveCalcTimer);
+  liveCalcTimer=setTimeout(()=>{
+    calculate(false);
+    status.classList.remove('calc');
+    status.querySelector('span:last-child').textContent='Live';
+  },350);
+}
+
+function calculate(showAlerts){
+  for(const pol of policies){
+    const amt=parseFloat(pol.amt),term=parseFloat(pol.term);
+    if(!amt||!term){
+      if(showAlerts)alert(`Please complete all fields for "${pol.name}".`);
+      if(!showAlerts)showOutputEmpty('Almost there','Fill in premium amount and policy term to see your plan.');
+      return;
+    }
+  }
+  const yrsIn=document.getElementById('yrsIn').value;
+  const amtIn=document.getElementById('amtIn').value;
+  const globalYrs=mode==='monthly'?parseFloat(yrsIn):null;
+  const globalAmt=mode==='yr'?parseFloat(amtIn):null;
+  if(mode==='monthly'&&(!globalYrs||globalYrs<=0)){
+    if(showAlerts)alert('Please enter your contribution period.');
+    if(!showAlerts)showOutputEmpty('One more step','Enter how many years you can contribute.');
+    return;
+  }
+  if(mode==='yr'&&(!globalAmt||globalAmt<=0)){
+    if(showAlerts)alert('Please enter your monthly contribution amount.');
+    if(!showAlerts)showOutputEmpty('One more step','Enter how much you can contribute monthly.');
+    return;
+  }
+
+  if(mode==='monthly'){
+    for(const pol of policies){
+      if(pol.coverMode==='after'&&globalYrs>=parseFloat(pol.term)){
+        const msg=`For "${pol.name}": contribution period (${globalYrs} yrs) must be less than policy term (${pol.term} yrs) when you choose "I'll pay during contribution". Either reduce contribution period or switch to "PMI pays from Day 1".`;
+        if(showAlerts)alert(msg);
+        if(!showAlerts)showOutputEmpty('Adjust your inputs','Contribution period must be less than the policy term — or switch the policy to "PMI pays from Day 1".');
+        return;
+      }
+    }
+  }
+
+  const pd=policies.map((pol,i)=>{
+    const amt=parseFloat(pol.amt),term=parseFloat(pol.term);
+    const mos=getMonths(pol.freq,pol.m1);
+    const inflR=pol.inflOn?pol.infl/100:0;
+    const suR=pol.suOn?pol.su/100:0;
+    return{...pol,amt,term,mos,inflR,suR,col:PC[i%PC.length]}
+  });
+
+  let totalMonthly=0,totalContributed=0,totalReserve=0,globalYrs2=globalYrs;
+
+  if(mode==='monthly'){
+    pd.forEach(p=>{
+      if(p.coverMode==='after'){
+        const coverYrs=p.term-globalYrs;
+        const reserve=calcReserveAfter(p.amt,p.mos,p.term,globalYrs,p.inflR);
+        const monthly=calcMonthly(reserve,globalYrs,p.suR);
+        const tC=totalContrib(monthly,globalYrs,p.suR);
+        p.reserve=reserve;p._monthly=monthly;p._yrs=globalYrs;p._totalC=tC;p._coverYrs=coverYrs;
+      } else {
+        const monthly=calcMonthlyDay1(p.amt,p.mos,p.term,globalYrs,p.inflR,p.suR);
+        const tC=totalContrib(monthly,globalYrs,p.suR);
+        const reserve=reserveAtEndOfContribDay1(monthly,p.suR,p.amt,p.mos,globalYrs,p.inflR);
+        p.reserve=reserve;p._monthly=monthly;p._yrs=globalYrs;p._totalC=tC;p._coverYrs=p.term;
+      }
+      totalMonthly+=p._monthly;totalContributed+=p._totalC;totalReserve+=p.reserve;
+    });
+  } else {
+    const weights=pd.map(p=>p.amt*p.freq*p.term);
+    const totW=weights.reduce((a,b)=>a+b,0);
+    let bail=false;
+    pd.forEach((p,i)=>{
+      if(bail)return;
+      const polAmt=globalAmt*(weights[i]/totW);
+      let yrs;
+      if(p.coverMode==='after'){
+        let lo=0.5,hi=p.term-0.1;
+        for(let it=0;it<60;it++){
+          const y=(lo+hi)/2;
+          const r=calcReserveAfter(p.amt,p.mos,p.term,y,p.inflR);
+          const m=calcMonthly(r,y,p.suR);
+          m>polAmt?lo=y:hi=y;
+        }
+        yrs=(lo+hi)/2;
+        const reserve=calcReserveAfter(p.amt,p.mos,p.term,yrs,p.inflR);
+        const monthly=calcMonthly(reserve,yrs,p.suR);
+        const tC=totalContrib(monthly,yrs,p.suR);
+        p.reserve=reserve;p._monthly=monthly;p._yrs=yrs;p._totalC=tC;p._coverYrs=p.term-yrs;
+      } else {
+        yrs=calcYrsDay1(p.amt,p.mos,p.term,polAmt,p.inflR,p.suR);
+        if(!yrs){
+          if(showAlerts)alert(`Monthly contribution too low for "${p.name}".`);
+          if(!showAlerts)showOutputEmpty('Try a higher amount',`Your monthly amount is too low to fund "${p.name}". Try a higher contribution.`);
+          bail=true;return;
+        }
+        const reserve=reserveAtEndOfContribDay1(polAmt,p.suR,p.amt,p.mos,yrs,p.inflR);
+        const tC=totalContrib(polAmt,yrs,p.suR);
+        p.reserve=reserve;p._monthly=polAmt;p._yrs=yrs;p._totalC=tC;p._coverYrs=p.term;
+      }
+      totalMonthly+=p._monthly;totalContributed+=p._totalC;totalReserve+=p.reserve;
+    });
+    if(bail)return;
+    globalYrs2=Math.max(...pd.map(p=>p._yrs||0));
+  }
+
+  const tR=totalReserve;
+  const tY=pd.reduce((s,p)=>s+p.amt*p.freq,0);
+  const maxT=Math.max(...pd.map(p=>p.term));
+  const anyInfl=pd.some(p=>p.inflOn);
+  const anySu=pd.some(p=>p.suOn);
+  const anyDay1=pd.some(p=>p.coverMode==='day1');
+
+  const cYrsI=Math.round(globalYrs2);
+  const schedRows=[];
+  pd.forEach(p=>{
+    const sm=[...p.mos].sort((a,b)=>a-b);
+    let cp=p.amt;
+    const startYr=p.coverMode==='after'?(cYrsI+1):1;
+    const endYr=p.coverMode==='after'?p.term:p.term;
+    if(p.coverMode==='after'&&cYrsI>0)cp=p.amt*Math.pow(1+p.inflR,cYrsI);
+    for(let yr=startYr;yr<=endYr;yr++){
+      for(let mo=1;mo<=12;mo++){
+        if(yr>startYr&&mo===1)cp*=(1+p.inflR);
+        if(sm.includes(mo)){
+          schedRows.push({yr,mo,name:p.name,col:p.col,w:cp,coverMode:p.coverMode});
+        }
+      }
+    }
+  });
+  schedRows.sort((a,b)=>a.yr-b.yr||a.mo-b.mo);
+
+  policies.forEach(pol=>{
+    const p=pd.find(x=>x.id===pol.id);
+    if(p){pol._reserve=p.reserve;pol._monthly=p._monthly;pol._yrs=p._yrs;pol._totalC=p._totalC;pol._coverYrs=p._coverYrs}
+  });
+
+  const directPayment=pd.reduce((sum,p)=>{
+    if(p.inflOn){let total=0,cur=p.amt;for(let y=1;y<=p.term;y++){total+=cur*p.freq;if(y<p.term)cur*=(1+p.inflR)}return sum+total}
+    return sum+p.amt*p.freq*p.term;
+  },0);
+  // v47 fix: in 'after' coverMode, the customer ALSO pays premiums out-of-pocket during the contribution years.
+  // True total outflow = MF contributions + self-paid premiums during contrib period. Savings must reflect this.
+  const selfPaidContrib=pd.reduce((sum,p)=>{
+    if(p.coverMode!=='after')return sum;
+    const yrs=Math.min(cYrsI,p.term);
+    if(yrs<=0)return sum;
+    if(p.inflOn){let total=0,cur=p.amt;for(let y=1;y<=yrs;y++){total+=cur*p.freq;if(y<yrs)cur*=(1+p.inflR)}return sum+total}
+    return sum+p.amt*p.freq*yrs;
+  },0);
+  const totalOutflow=totalContributed+selfPaidContrib;
+  const savings=directPayment-totalOutflow;
+
+  lastResult={tR,tY,maxT,pd,monthly:totalMonthly,cYrs:globalYrs2,tC:totalContributed,cYrsI,schedRows,anyInfl,anySu,anyDay1,directPayment,selfPaidContrib,totalOutflow,savings};
+
+
+  if(showAlerts){
+    function bucket(n){
+      if(n<10000)return '<10k';
+      if(n<25000)return '10k-25k';
+      if(n<50000)return '25k-50k';
+      if(n<100000)return '50k-1L';
+      if(n<300000)return '1L-3L';
+      return '3L+';
+    }
+    track('calculate_plan',{
+      policy_count: pd.length,
+      plan_mode: mode,
+      contribution_yrs: Math.round(globalYrs2),
+      avg_policy_term: Math.round(pd.reduce((s,p)=>s+p.term,0)/pd.length),
+      total_annual_premium_bucket: bucket(tY),
+      monthly_contribution_bucket: bucket(totalMonthly),
+      has_inflation: anyInfl,
+      has_stepup: anySu,
+      has_day1_mode: anyDay1,
+      is_multi_policy: pd.length>1
+    });
+  }
+
+  renderResults();
+  updatePolicyResultBlocks();
+
+  const outStatus=document.getElementById('outputStatus');
+  if(outStatus){
+    outStatus.style.display='flex';
+    outStatus.querySelector('span:last-child').textContent='Plan updated';
+  }
+
+  if(showAlerts&&!isDesktop()){
+    document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+function showOutputEmpty(title,sub){
+  const resDiv=document.getElementById('results');
+  resDiv.innerHTML=`<div class="output-empty">
+    <div class="output-empty-icon">✨</div>
+    <div class="output-empty-title">${title}</div>
+    <div class="output-empty-sub">${sub}</div>
+  </div>`;
+  const outStatus=document.getElementById('outputStatus');
+  if(outStatus)outStatus.style.display='none';
+}
+
+function renderResults(){
+  const r=lastResult;
+  if(!r){showOutputEmpty('Your plan will appear here','Fill in your policy details and your Premium Freedom Plan will calculate automatically.');return}
+
+  const totalCoverYrs=r.pd.reduce((s,p)=>s+(p._coverYrs||0),0);
+  const avgCoverYrs=totalCoverYrs/r.pd.length;
+  // v51: cover-mode-aware sub copy for the "Insurance Covered For" hero cell
+  let coverSubText;
+  if(r.pd.length===1){
+    coverSubText=r.pd[0].coverMode==='day1'?'starting day 1':'after your contribution';
+  }else if(r.pd.every(p=>p.coverMode==='day1')){
+    coverSubText=`avg across your ${r.pd.length} policies`;
+  }else if(r.pd.every(p=>p.coverMode==='after')){
+    coverSubText=`avg across your ${r.pd.length} policies`;
+  }else{
+    coverSubText=`avg across ${r.pd.length} policies (mixed modes)`;
+  }
+
+  const timelineCells=[
+    {icon:'📈',label:'Contribute',val:r.cYrs.toFixed(1)+' yrs',sub:r.anySu?'Step-up on':'Build reserve'},
+    {icon:'🛡️',label:'PMI Pays',val:avgCoverYrs.toFixed(1)+' yrs',sub:r.anyDay1?'mixed modes':r.pd.length>1?'avg per policy':'after contrib'},
+    {icon:'📋',label:'Policies',val:r.pd.length,sub:'covered'},
+    ...(r.anyInfl?[{icon:'📊',label:'Premium Rise',val:'Per policy',sub:'absorbed'}]:[]),
+  ];
+
+  const html=`
+    <div class="output-body">
+    <div class="compare-box">
+      <div class="compare-title">The Difference</div>
+      <div class="compare-grid">
+        <div class="compare-cell bad">
+          <div class="compare-label">Pay Insurer Directly</div>
+          <div class="compare-val">${fmtINR(r.directPayment)}</div>
+          <div class="compare-sub">over ${r.maxT} years</div>
+        </div>
+        <div class="compare-cell good">
+          <div class="compare-label">With Pay My Insurance</div>
+          <div class="compare-val">${fmtINR(r.totalOutflow)}</div>
+          <div class="compare-sub">${r.selfPaidContrib>0?`${fmtINR(r.tC)} contributed + ${fmtINR(r.selfPaidContrib)} premiums (yrs 1-${r.cYrsI})`:`contribute for ${r.cYrs.toFixed(1)} yrs only`}</div>
+        </div>
+      </div>
+      ${r.savings>0?`<div class="savings-strip">
+        <div class="savings-label">You Save</div>
+        <div class="savings-val">${fmtINR(r.savings)}</div>
+        <div class="savings-sub">${((r.savings/r.directPayment)*100).toFixed(0)}% less outflow + zero stress about future premiums</div>
+      </div>`:''}
+    </div>
+    <div class="plan-summary">
+      <div class="plan-cell">
+        <div class="plan-cell-label">Monthly Contribution</div>
+        <div class="plan-cell-val" style="color:#00b386">${fmtINR(r.monthly)}</div>
+        <div class="plan-cell-sub">for ${r.cYrs.toFixed(1)} years only</div>
+      </div>
+      <div class="plan-cell">
+        <div class="plan-cell-label">Insurance Covered For</div>
+        <div class="plan-cell-val" style="color:#00b386">${Math.round(avgCoverYrs)} yrs</div>
+        <div class="plan-cell-sub">${coverSubText}</div>
+      </div>
+    </div>
+    <button class="details-toggle" onclick="(function(b){var p=b.nextElementSibling,o=p.classList.toggle('open');b.querySelector('.toggle-text').textContent=o?'Hide other details':'View other details';b.querySelector('.toggle-arrow').style.transform=o?'rotate(180deg)':'rotate(0)'})(this)" aria-label="Toggle other details">
+      <span class="toggle-text">View other details</span>
+      <span class="toggle-arrow">▾</span>
+    </button>
+    <div class="details-panel">
+      <div class="timeline">
+        ${timelineCells.map(t=>`<div class="timeline-cell">
+          <div class="timeline-icon">${t.icon}</div>
+          <div class="timeline-label">${t.label}</div>
+          <div class="timeline-val">${t.val}</div>
+          <div class="timeline-sub">${t.sub}</div>
+        </div>`).join('')}
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-label">Total Contribution</div>
+          <div class="stat-val" style="color:#a060c8">${fmtINR(r.tC)}</div>
+          <div class="stat-sub">${r.anySu?'step-up included':'over the period'}</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Total Annual Premiums</div>
+          <div class="stat-val" style="color:#f5a623">${fmtINR(r.tY)}</div>
+          <div class="stat-sub">across ${r.pd.length} polic${r.pd.length>1?'ies':'y'}</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Premium Reserve</div>
+          <div class="stat-val" style="color:#00d09c">${fmtINR(r.tR)}</div>
+          <div class="stat-sub">funds ${Math.round(avgCoverYrs)} yrs of premiums</div>
+        </div>
+      </div>
+    </div>
+    <div class="breakdown">
+      <div class="breakdown-head">
+        <span class="breakdown-title">Per-Policy Breakdown</span>
+        <span class="breakdown-total">${fmtINR(r.tR)}</span>
+      </div>
+      ${r.pd.map(p=>`
+        <div class="breakdown-row">
+          <div class="breakdown-dot" style="background:${p.col}"></div>
+          <div class="breakdown-name">${p.name}</div>
+          <div class="breakdown-meta">${p.term}yr · PMI covers ${p._coverYrs.toFixed(1)}yr</div>
+          ${p.coverMode==='day1'?`<span class="breakdown-tag" style="background:#eef0ff;color:#5367ff">Day 1</span>`:''}
+          ${p.inflOn?`<span class="breakdown-tag warn">+${p.infl}%/yr</span>`:''}
+          ${p.suOn?`<span class="breakdown-tag purple">SU ${p.su}%</span>`:''}
+          <div class="breakdown-val" style="color:${p.col}">${fmtINR(p.reserve)}</div>
+          <div class="breakdown-pct">${((p.reserve/r.tR)*100).toFixed(1)}%</div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="schedule">
+      <div class="schedule-head">
+        <span class="schedule-title">Premium Payment Schedule</span>
+        <button class="schedule-toggle" onclick="toggleSched()">${schedVis?'Hide ▴':'Show ▾'}</button>
+      </div>
+      ${schedVis?`<div style="overflow-x:auto"><table class="schedule-table">
+        <thead><tr>${['Year','Month','Policy','Premium Paid by PMI','Mode'].map(h=>`<th>${h}</th>`).join('')}</tr></thead>
+        <tbody>${r.schedRows.map(row=>`
+          <tr>
+            <td style="color:#44475a">Yr ${row.yr}</td>
+            <td><span class="schedule-month-pill" style="background:${row.col}">${MN[row.mo-1]}</span></td>
+            <td style="color:#44475a">${row.name}</td>
+            <td style="color:#ff7a59;font-weight:600">${fmtINR(row.w)}</td>
+            <td style="color:#7d8493;font-size:11px">${row.coverMode==='day1'?'Day 1':'After contrib'}</td>
+          </tr>
+        `).join('')}</tbody>
+      </table></div>`:''}
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-head">
+        <span class="chart-title">Premium Reserve Growth</span>
+        <div class="chart-legend">
+          <span><span class="chart-dot" style="background:#5367ff"></span>Building</span>
+          <span><span class="chart-dot" style="background:#00d09c"></span>Covering</span>
+          <span><span class="chart-dot" style="background:#ff7a59"></span>Premium Paid</span>
+        </div>
+      </div>
+      <div class="chart-body"><canvas id="chartCanvas"></canvas></div>
+    </div>
+    <div class="insight">
+      💡 Contribute <strong style="color:#5367ff">${fmtINR(r.monthly)}/month</strong> for <strong style="color:#5367ff">${r.cYrs.toFixed(1)} years</strong> to build a Premium Reserve of <strong style="color:#00d09c">${fmtINR(r.tR)}</strong>. Your reserve is then designed to handle all premiums for ${r.pd.map((p,i)=>`${i>0?', ':''}<strong style="color:${p.col}">${p.name}</strong>${p.inflOn?` <span style="color:#ff7a59">(+${p.infl}%/yr increase covered)</span>`:''}`).join('')}. Your insurance is designed to be funded for life — even if your income stops.
+    </div>
+    <div class="cta-block">
+      <div class="cta-pill">Ready to start?</div>
+      <div class="cta-tag">"Your insurance, funded for life — job or no job."</div>
+      <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});track('cta_start_plan',{plan_value_inr:Math.round(r.tC),plan_savings_inr:Math.round(r.savings)})">Start My Premium Freedom Plan</button>
+      <div class="cta-trust">Free 45-min consultation • No commitment • Built for Indian families</div>
+    </div>
+    <div class="disclaimer">
+      Pay My Insurance is a premium coverage planning service. Your contributions are managed conservatively at an assumed 8% annual growth — historically, Indian markets have delivered 12–15% over the long term, providing a built-in safety buffer. Plans include market-linked components; full details in service agreement.
+    </div>
+    </div>
+  `;
+
+  const resDiv=document.getElementById('results');
+  resDiv.innerHTML=html;
+  setTimeout(drawChart,50);
+}
+
+function toggleSched(){schedVis=!schedVis;renderResults()}
+
+function drawChart(){
+  const canvas=document.getElementById('chartCanvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const W=canvas.parentElement.clientWidth-16||580,H=240;
+  const dpr=window.devicePixelRatio||1;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  canvas.style.width=W+'px';canvas.style.height=H+'px';
+  ctx.scale(dpr,dpr);
+  const r=lastResult;
+  const cI=Math.round(r.cYrs);
+  const totalYears=r.maxT;
+  const labels=['Start'],dCon=[],dCov=[],dPay=[];
+  const polState=r.pd.map(p=>({
+    monthly:p._monthly||0, suR:p.suOn?p.su/100:0,
+    cp:p.amt, infl:p.inflR, mos:[...p.mos].sort((a,b)=>a-b),
+    term:p.term, coverMode:p.coverMode, contribMonths:Math.round(r.cYrs*12),
+    cumS:p._monthly||0,
+  }));
+  let c=0;
+  dCon.push(0);dCov.push(null);dPay.push(null);
+
+  for(let yr=1;yr<=totalYears;yr++){
+    let payHadThisYr=false;
+    for(let mo=1;mo<=12;mo++){
+      const monthIdx=(yr-1)*12+mo;
+      c*=(1+RM);
+      if(mo===1&&yr>1){
+        polState.forEach(p=>{
+          if(monthIdx<=p.contribMonths)p.cumS*=(1+p.suR);
+          p.cp*=(1+p.infl);
+        });
+      }
+      polState.forEach(p=>{if(monthIdx<=p.contribMonths)c+=p.cumS});
+      polState.forEach(p=>{
+        if(yr>p.term)return;
+        const startYr=p.coverMode==='after'?(cI+1):1;
+        if(yr<startYr)return;
+        if(p.mos.includes(mo)){c-=p.cp;payHadThisYr=true}
+      });
+    }
+    labels.push(`Yr ${yr}`);
+    if(yr<=cI){dCon.push(Math.round(Math.max(0,c)));dCov.push(null)}
+    else{dCon.push(null);dCov.push(Math.round(Math.max(0,c)))}
+    dPay.push(payHadThisYr?Math.round(Math.max(0,c)):null);
+  }
+
+  const N=labels.length,pad={t:24,r:14,b:32,l:64};
+  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+  const allVals=[...dCon.filter(v=>v!=null),...dCov.filter(v=>v!=null)];
+  const maxV=Math.max(...allVals,1)*1.1;
+  const xOf=i=>pad.l+i*(cW/(N-1));
+  const yOf=v=>pad.t+cH-(v/maxV)*cH;
+  ctx.clearRect(0,0,W,H);
+  ctx.strokeStyle='#eef0f3';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=pad.t+i*cH/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke()}
+  ctx.fillStyle='#7d8493';ctx.font='500 11px Inter';ctx.textAlign='right';
+  for(let i=0;i<=4;i++){const v=maxV*(1-i/4),y=pad.t+i*cH/4;const l=v>=1e7?'₹'+(v/1e7).toFixed(1)+'Cr':v>=1e5?'₹'+(v/1e5).toFixed(1)+'L':v>=1e3?'₹'+(v/1e3).toFixed(0)+'K':'₹'+Math.round(v);ctx.fillText(l,pad.l-6,y+4)}
+  ctx.textAlign='center';const step=Math.max(1,Math.floor(N/8));
+  labels.forEach((l,i)=>{if(i%step===0||i===N-1)ctx.fillText(l,xOf(i),H-pad.b+14)});
+  function drawArea(pts,stroke){
+    if(pts.length<2)return;
+    const g=ctx.createLinearGradient(0,pad.t,0,pad.t+cH);
+    g.addColorStop(0,stroke+'33');g.addColorStop(1,stroke+'00');
+    ctx.beginPath();ctx.moveTo(pts[0].x,yOf(0));pts.forEach(p=>ctx.lineTo(p.x,p.y));ctx.lineTo(pts[pts.length-1].x,yOf(0));ctx.closePath();ctx.fillStyle=g;ctx.fill();
+    ctx.beginPath();ctx.strokeStyle=stroke;ctx.lineWidth=2.5;ctx.lineJoin='round';pts.forEach((p,i)=>i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y));ctx.stroke();
+  }
+  const conPts=[];const covPts=[];
+  for(let i=0;i<N;i++){
+    if(dCon[i]!=null)conPts.push({x:xOf(i),y:yOf(dCon[i])});
+    if(dCov[i]!=null)covPts.push({x:xOf(i),y:yOf(dCov[i])});
+  }
+  if(conPts.length>0&&covPts.length>0){
+    covPts.unshift(conPts[conPts.length-1]);
+  }
+  drawArea(conPts,'#5367ff');
+  conPts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,3.5,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.lineWidth=2;ctx.strokeStyle='#5367ff';ctx.stroke()});
+  drawArea(covPts,'#00d09c');
+  dPay.forEach((v,i)=>{if(v==null)return;const x=xOf(i),y=yOf(v),sz=5;ctx.beginPath();ctx.moveTo(x,y-sz);ctx.lineTo(x+sz,y+sz*.6);ctx.lineTo(x-sz,y+sz*.6);ctx.closePath();ctx.fillStyle='#ff7a59';ctx.fill()});
+  if(cI>0&&cI<N-1){const x=xOf(cI);ctx.save();ctx.beginPath();ctx.moveTo(x,pad.t);ctx.lineTo(x,H-pad.b);ctx.strokeStyle='rgba(0,208,156,0.5)';ctx.lineWidth=1.5;ctx.setLineDash([5,4]);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#00b386';ctx.font='600 10px Inter';ctx.textAlign='center';ctx.fillText('Contribution Ends',x,pad.t+12);ctx.restore()}
+}
+
+function toggleNav(){
+  const m=document.getElementById('navMobile');
+  m.classList.toggle('open');
+  track('nav_mobile_toggle',{state:m.classList.contains('open')?'open':'closed'});
+}
+function closeNav(){
+  const m=document.getElementById('navMobile');
+  m.classList.remove('open');
+}
+
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const wasOpen=item.classList.contains('open');
+  item.classList.toggle('open');
+  if(!wasOpen)track('faq_open',{question:btn.textContent.replace('+','').trim().substring(0,60)});
+}
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xjgleqra';
+
+async function submitLead(e){
+  e.preventDefault();
+  const form=document.getElementById('leadForm');
+  const name=document.getElementById('leadName').value.trim();
+  const phone=document.getElementById('leadPhone').value.trim();
+  const email=document.getElementById('leadEmail').value.trim();
+  const message=document.getElementById('leadMessage').value.trim();
+  const btn=document.getElementById('leadSubmitBtn');
+
+  if(!name||!phone){alert('Please enter your name and phone number.');return false}
+
+  btn.disabled=true;
+  btn.style.opacity='0.7';
+  btn.style.cursor='wait';
+  btn.textContent='Sending…';
+
+  track('lead_form_submitted',{has_email:email.length>0,has_message:message.length>0});
+
+  const fd = new FormData();
+  fd.append('name', name);
+  fd.append('phone', phone);
+  if(email) fd.append('email', email);
+  if(message) fd.append('message', message);
+  fd.append('_subject', 'New lead from Pay My Insurance: ' + name);
+  if(email) fd.append('_replyto', email);
+
+  try{
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: fd
+    });
+
+    if(res.ok){
+      form.style.display='none';
+      const succ=document.getElementById('leadSuccess');
+      succ.style.display='block';
+      succ.textContent='';
+      const heading=document.createElement('div');
+      heading.style.cssText='font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px';
+      heading.textContent='Thank you, '+name.split(' ')[0]+'!';
+      const body=document.createTextNode("We've received your details. We will reach out personally within 24 hours.");
+      succ.appendChild(heading);
+      succ.appendChild(body);
+      track('lead_form_success');
+    } else {
+      let errMsg='Submission failed';
+      try{
+        const data=await res.json();
+        if(data.errors&&data.errors.length){
+          errMsg=data.errors.map(e=>e.message).join(', ');
+        }
+      }catch(e){}
+      throw new Error(errMsg);
+    }
+  } catch(err){
+    btn.disabled=false;
+    btn.style.opacity='1';
+    btn.style.cursor='pointer';
+    btn.textContent='Request a callback';
+    console.error('Lead form submission error:', err);
+    const waMsg='Hi Keshav, I\'m interested in Pay My Insurance.%0A%0AName: '+encodeURIComponent(name)+'%0APhone: '+encodeURIComponent(phone)+(email?'%0AEmail: '+encodeURIComponent(email):'')+(message?'%0A%0A'+encodeURIComponent(message):'');
+    const waUrl='https://wa.me/918800611923?text='+waMsg;
+    if(confirm('Sorry, we couldn\'t submit your form right now. Would you like to reach us on WhatsApp instead? Your details will be pre-filled.')){
+      window.open(waUrl,'_blank','noopener');
+      track('lead_form_fallback_whatsapp');
+    }
+  }
+  return false;
+}
+
+renderPolicies();
+window.addEventListener('resize',()=>{if(lastResult)drawChart()});
+
+document.getElementById('yrsIn').addEventListener('input',scheduleLiveCalc);
+document.getElementById('amtIn').addEventListener('input',scheduleLiveCalc);
+</script>
+</body>
+</html>

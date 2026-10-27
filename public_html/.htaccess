@@ -1,0 +1,50 @@
+# =====================================================================
+# Pay My Insurance — .htaccess cache & compression rules
+# v59 (matches index.html v57+)
+# =====================================================================
+# Place this file in public_html/ alongside index.html
+# Works on Hostinger's Apache and LiteSpeed servers
+# =====================================================================
+
+# --- HTML pages: always check for updates ---
+# When you upload a new index.html, visitors see it on next visit.
+# The browser sends a quick "still current?" check; if YES the server
+# replies 304 Not Modified (~50ms, no full re-download). If NO, fresh
+# HTML downloads automatically. No hard refresh needed by visitors.
+<FilesMatch "\.(html|htm)$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, must-revalidate"
+  </IfModule>
+</FilesMatch>
+
+# --- Static assets: cache for 1 year ---
+# Fonts, images, favicon, CSS/JS files (if any are added later).
+# "immutable" tells the browser these never change so don't even
+# bother revalidating — fastest possible repeat visits.
+<FilesMatch "\.(css|js|woff|woff2|ttf|eot|otf|svg|ico|png|jpg|jpeg|gif|webp|avif)$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </IfModule>
+</FilesMatch>
+
+# --- Gzip compression for text-based files ---
+# Shrinks HTML, CSS, JS transfer size by ~70%. Faster downloads on mobile.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# --- Security headers (small bonus) ---
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
