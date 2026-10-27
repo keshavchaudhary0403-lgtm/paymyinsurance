@@ -5,11 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pay My Insurance — Your insurance, funded for life</title>
 <meta name="description" content="Pay My Insurance — Your insurance, funded for life. Build a small monthly contribution and let us cover all your future premiums, even if your income stops.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300d09c'/%3E%3Cstop offset='1' stop-color='%2300b386'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Inter,Arial,sans-serif' font-size='40' font-weight='700' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300d09c'/%3E%3Cstop offset='1' stop-color='%2300b386'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Inter,Arial,sans-serif' font-size='40' font-weight='700' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
-<meta name="theme-color" content="#00d09c">
+<link rel="canonical" href="https://www.paymyinsurance.in/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.paymyinsurance.in/">
+<meta property="og:title" content="Pay My Insurance — Your insurance, funded for life">
+<meta property="og:description" content="Contribute a small amount for a few years. Your Premium Reserve, held in your own name, pays your insurance premiums for the rest of the policy term.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230c3b2e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='600' fill='%23f7f4ee' text-anchor='middle'%3EP%3C/text%3E%3Ccircle cx='47' cy='18' r='5' fill='%23e39a4b'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230c3b2e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='600' fill='%23f7f4ee' text-anchor='middle'%3EP%3C/text%3E%3Ccircle cx='47' cy='18' r='5' fill='%23e39a4b'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0c3b2e">
 
-<!-- Build marker: v59 — Top marker text shortened to keep page-source searches clean. The footer comment below is the single canonical place to find the deployed build number. -->
+<!-- Build marker: v60 — full redesign. Previous design (v59) is preserved at git tag "design-v1". -->
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBLQHZ20J6"></script>
@@ -20,7 +26,7 @@
   gtag('config', 'G-JBLQHZ20J6', { 'anonymize_ip': true });
 </script>
 
-<!-- Microsoft Clarity (v57: deferred — loads 3s after window.load to keep FCP/LCP fast on mobile) -->
+<!-- Microsoft Clarity (deferred — loads 3s after window.load to keep FCP/LCP fast on mobile) -->
 <script type="text/javascript">
   function loadClarity(){
     (function(c,l,a,r,i,t,y){
@@ -35,742 +41,804 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- v57: media=print trick makes the font CSS download non-render-blocking; onload swaps to media=all once loaded -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+<!-- media=print trick makes the font CSS non-render-blocking; onload swaps to media=all -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <style>
 :root{
-  --bg:#f3f5f8;
-  --surface:#fff;
-  --surface-2:#f8f9fb;
-  --border:#d4d9e0;
-  --border-2:#dfe3e9;
-  --text:#1a1a1a;
-  --text-2:#44475a;
-  --text-3:#7d8493;
-  --text-4:#a4abb8;
-  --primary:#00d09c;
-  --primary-dark:#00b386;
-  --primary-soft:#e6faf4;
-  --accent:#5367ff;
-  --accent-soft:#eef0ff;
-  --warn:#ff7a59;
-  --warn-soft:#fff1ed;
-  --gold:#f5a623;
-  --gold-soft:#fff7e6;
-  --purple:#a060c8;
-  --purple-soft:#f4ecfa;
-  --shadow:0 2px 6px rgba(20,30,50,0.06),0 1px 2px rgba(20,30,50,0.04);
-  --shadow-md:0 6px 16px rgba(20,30,50,0.08),0 2px 6px rgba(20,30,50,0.05);
-  --shadow-lg:0 14px 28px rgba(20,30,50,0.10),0 4px 10px rgba(20,30,50,0.06);
-  --radius:12px;
-  --radius-sm:8px;
+  --paper:#f7f4ee;
+  --paper-2:#efe9dd;
+  --surface:#fffdf9;
+  --ink:#14211b;
+  --ink-2:#3d4842;
+  --ink-3:#6b736d;
+  --ink-4:#9aa19b;
+  --line:#e2dccf;
+  --line-2:#ece7dc;
+  --green:#0f7a5a;
+  --green-dark:#0b5e45;
+  --green-deep:#0c3b2e;
+  --green-soft:#e2f0e8;
+  --amber:#e39a4b;
+  --amber-soft:#fbf0e2;
+  --terra:#c4532a;
+  --terra-soft:#f8e7df;
+  --blue:#2f5d8a;
+  --blue-soft:#e8eef5;
+  --plum:#7a4b8c;
+  --plum-soft:#f1e9f4;
+  --ochre:#a86d12;
+  /* aliases used by inline styles inside the calculator script */
+  --text:var(--ink);--text-2:var(--ink-2);--text-3:var(--ink-3);--text-4:var(--ink-4);
+  --surface-2:#f8f5ef;--border:var(--line);--border-2:var(--line-2);
+  --primary:var(--green);--primary-dark:var(--green-dark);--primary-soft:var(--green-soft);
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --radius:14px;--radius-sm:10px;
+  --shadow:0 1px 2px rgba(20,33,27,0.05),0 2px 8px rgba(20,33,27,0.04);
+  --shadow-md:0 2px 4px rgba(20,33,27,0.04),0 12px 32px rgba(20,33,27,0.07);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:14px}
-button{font-family:inherit;cursor:pointer;border:none;background:none}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.55;font-size:15px}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 input,select,textarea{font-family:inherit;outline:none}
 input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 input[type=number]{-moz-appearance:textfield}
+a{color:inherit}
+svg.i{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 
-.app{max-width:1280px;margin:0 auto;padding:32px 24px 80px}
-.narrow{max-width:780px;margin-left:auto;margin-right:auto}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+@media (min-width:768px){.wrap{padding:0 32px}}
+.band{padding:72px 0}
+@media (min-width:1024px){.band{padding:112px 0}}
+.band.tint{background:var(--paper-2)}
+.band.deep{background:var(--green-deep);color:#e9efe9}
+
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--green)}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:currentColor}
+.band.deep .eyebrow{color:var(--amber)}
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.6vw,52px);line-height:1.08;letter-spacing:-0.02em;margin:16px 0 16px;font-variation-settings:"opsz" 144}
+.h2 em{font-style:italic;color:var(--green)}
+.band.deep .h2 em{color:var(--amber)}
+.lede{font-size:clamp(16px,1.6vw,18px);color:var(--ink-2);max-width:560px;line-height:1.6}
+.band.deep .lede{color:#b9c8bf}
+.sec-head{margin-bottom:44px;max-width:720px}
+@media (min-width:1024px){.sec-head{margin-bottom:60px}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:100px;font-size:15px;font-weight:600;text-decoration:none;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;white-space:nowrap}
+.btn svg.i{width:18px;height:18px}
+.btn-solid{background:var(--green-deep);color:#fff}
+.btn-solid:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 8px 20px rgba(12,59,46,0.22)}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-amber{background:var(--amber);color:var(--green-deep)}
+.btn-amber:hover{background:#eba864;transform:translateY(-1px)}
 
 /* Nav */
-body{padding-top:0}
-.nav{position:sticky;top:0;z-index:100;background:rgba(243,245,248,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-2);width:100%}
-.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:14px}
-.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
-.nav-brand-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;box-shadow:0 4px 8px rgba(0,208,156,0.2)}
-.nav-brand-name{font-size:16px;font-weight:700;letter-spacing:-0.02em}
-.nav-brand-name span{color:var(--primary)}
-.nav-links{display:none;align-items:center;gap:6px}
-.nav-link{padding:8px 14px;font-size:13.5px;font-weight:600;color:var(--text-2);text-decoration:none;border-radius:8px;transition:all 0.15s}
-.nav-link:hover{color:var(--text);background:var(--surface-2)}
-.nav-cta{margin-left:8px;padding:9px 18px;background:var(--primary);color:#fff;border-radius:8px;font-size:13.5px;font-weight:700;text-decoration:none;transition:all 0.15s;box-shadow:0 2px 6px rgba(0,208,156,0.25)}
-.nav-cta:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,208,156,0.3)}
-.nav-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1px solid var(--border);color:var(--text);cursor:pointer;flex-shrink:0}
-.nav-toggle:hover{background:var(--surface-2)}
+.nav{position:sticky;top:0;z-index:100;background:rgba(247,244,238,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:14px}
+@media (min-width:768px){.nav-inner{padding:16px 32px}}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand-mark{position:relative;width:34px;height:34px;border-radius:10px;background:var(--green-deep);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:20px;line-height:1}
+.brand-mark::after{content:"";position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.brand-name{font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:-0.01em}
+.brand-name em{font-style:italic;color:var(--green)}
+.nav-links{display:none;align-items:center;gap:4px}
+.nav-link{padding:8px 14px;font-size:14px;font-weight:500;color:var(--ink-2);text-decoration:none;border-radius:100px;transition:all .15s}
+.nav-link:hover{color:var(--ink);background:rgba(20,33,27,0.06)}
+.nav-cta{margin-left:10px;padding:10px 20px;font-size:14px}
+.nav-toggle{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:100px;border:1px solid var(--line);color:var(--ink)}
 .nav-toggle svg{width:20px;height:20px}
-.nav-mobile{display:none;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 0;box-shadow:0 4px 12px rgba(0,0,0,0.04)}
+.nav-mobile{display:none;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 0 16px}
 .nav-mobile.open{display:block}
-.nav-mobile-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:2px}
-.nav-mobile a{padding:12px 12px;font-size:14px;font-weight:600;color:var(--text-2);text-decoration:none;border-radius:8px;transition:all 0.15s}
-.nav-mobile a:hover,.nav-mobile a:active{color:var(--text);background:var(--surface-2)}
-.nav-mobile a.cta{background:var(--primary);color:#fff;text-align:center;margin-top:6px;margin-bottom:6px}
-.nav-mobile a.cta:hover{background:var(--primary-dark);color:#fff}
-@media (min-width:768px){.nav-links{display:flex}.nav-toggle{display:none}.nav-mobile{display:none !important}}
+.nav-mobile-inner{padding:0 20px;display:flex;flex-direction:column;gap:2px}
+.nav-mobile a{padding:13px 12px;font-size:16px;font-weight:500;color:var(--ink-2);text-decoration:none;border-radius:10px}
+.nav-mobile a:hover{background:rgba(20,33,27,0.05);color:var(--ink)}
+.nav-mobile a.small{font-size:14px;padding:9px 12px;color:var(--ink-3)}
+.nav-mobile a.cta{background:var(--green-deep);color:#fff;text-align:center;margin-top:10px;border-radius:100px}
+@media (min-width:880px){.nav-links{display:flex}.nav-toggle{display:none}.nav-mobile{display:none !important}}
 
 /* Hero */
-.hero{text-align:center;margin-bottom:36px;padding:0 8px;max-width:780px;margin-left:auto;margin-right:auto}
-@media (min-width:1024px){.hero{margin-bottom:32px;padding:24px 8px 0}}
-.hero-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--primary-soft);border-radius:100px;font-size:11px;font-weight:600;color:var(--primary-dark);letter-spacing:0.02em;margin-bottom:18px}
-.hero-pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 3px rgba(0,208,156,0.2)}
-.hero h1{font-size:clamp(28px,5.5vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:14px;color:var(--text)}
-.hero h1 em{font-style:normal;color:var(--primary);font-weight:800}
-.hero-sub{font-size:clamp(15px,2vw,18px);color:var(--text-2);max-width:560px;margin:0 auto;line-height:1.55}
+.hero{padding:40px 0 72px}
+@media (min-width:1024px){.hero{padding:72px 0 112px}}
+.hero-grid{display:grid;gap:48px;align-items:center}
+@media (min-width:1024px){.hero-grid{grid-template-columns:1.08fr 0.92fr;gap:72px}}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,7.4vw,88px);line-height:0.98;letter-spacing:-0.035em;margin:22px 0 24px;font-variation-settings:"opsz" 144}
+.hero h1 em{font-style:italic;color:var(--green);font-weight:400}
+.hero-sub{font-size:clamp(17px,1.8vw,20px);color:var(--ink-2);max-width:520px;line-height:1.55;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+@media (max-width:480px){.hero-actions .btn{flex:1 1 auto;padding:14px 18px}}
+.hero-proof{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:13.5px;color:var(--ink-3);font-weight:500}
+.hero-proof span{display:inline-flex;align-items:center;gap:8px}
+.hero-proof svg.i{width:16px;height:16px;color:var(--green)}
 
-/* Intro Row */
-.intro-row{max-width:1140px;margin:0 auto 28px;padding:0 8px;display:grid;grid-template-columns:1fr;gap:16px}
-@media (min-width:1024px){.intro-row{grid-template-columns:1fr 1fr !important;gap:20px !important;align-items:stretch !important}}
+.ledger{background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-md);overflow:hidden}
+.ledger-top{padding:22px 24px 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:10px 12px}
+.ledger-tag{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3)}
+.ledger-who{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:-0.01em;margin-top:4px}
+.ledger-pill{flex-shrink:0;padding:6px 12px;border-radius:100px;background:var(--green-soft);color:var(--green-dark);font-size:12px;font-weight:600}
+.ledger-rows{padding:14px 24px 4px}
+.ledger-row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.ledger-row:last-child{border-bottom:none}
+.ledger-row span:first-child{color:var(--ink-3)}
+.ledger-row span:last-child{font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.ledger-chart{padding:6px 12px 0;position:relative}
+.ledger-chart svg{display:block;width:100%;height:auto}
+.ledger-foot{background:var(--green-deep);color:#fff;padding:20px 24px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.ledger-foot-label{font-size:12px;color:#a9c2b5;font-weight:500;margin-bottom:2px}
+.ledger-foot-val{font-family:var(--serif);font-size:clamp(34px,4vw,44px);font-weight:500;letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums}
+.ledger-foot-sub{font-size:12.5px;color:#a9c2b5;text-align:right;max-width:150px;line-height:1.4}
+.ledger-note{font-size:11.5px;color:var(--ink-4);margin-top:14px;line-height:1.5;padding:0 4px}
 
-.concept-strip{display:flex;flex-direction:column;min-width:0}
-.concept-grid{display:grid;grid-template-columns:1fr;gap:12px;flex:1}
-@media (min-width:768px) and (max-width:1023.98px){.concept-grid{grid-template-columns:repeat(3,1fr) !important;gap:14px}}
-@media (min-width:1024px){.concept-grid{grid-template-columns:1fr !important;gap:14px}}
-.concept-step{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;box-shadow:var(--shadow);transition:all 0.2s;flex:1;min-width:0}
-.concept-step:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
-.concept-num{flex-shrink:0;width:38px;height:38px;border-radius:10px;background:var(--primary-soft);font-size:18px;display:flex;align-items:center;justify-content:center;line-height:1}
-.concept-text{flex:1;font-size:13.5px;line-height:1.5;color:var(--text-2);min-width:0}
-.concept-text strong{color:var(--text);font-weight:700;display:block;margin-bottom:2px;font-size:14px}
+/* Principles */
+.principles{display:grid;gap:36px;border-top:1px solid var(--line);padding-top:44px}
+@media (min-width:860px){.principles{grid-template-columns:repeat(3,1fr);gap:48px}}
+.principle-num{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--green);margin-bottom:14px}
+.principle h3{font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.2;letter-spacing:-0.01em;margin-bottom:10px}
+.principle p{color:var(--ink-2);font-size:15.5px;line-height:1.6}
 
-.example-block{display:flex;flex-direction:column;min-width:0}
-.example-card{background:linear-gradient(135deg,#f4f6ff 0%,#fff 60%);border:1.5px solid rgba(83,103,255,0.18);border-radius:16px;padding:24px;box-shadow:var(--shadow-md);position:relative;overflow:hidden;flex:1;display:flex;flex-direction:column}
-.example-tag{display:inline-block;padding:4px 12px;background:var(--accent-soft);color:var(--accent);border-radius:100px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;align-self:flex-start}
-.example-headline{font-size:clamp(16px,2.5vw,19px);font-weight:700;color:var(--text);letter-spacing:-0.01em;line-height:1.4;margin-bottom:6px}
-.example-sub{font-size:13.5px;color:var(--text-3);margin-bottom:18px;line-height:1.5}
-.example-flow{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:18px}
-@media (min-width:680px) and (max-width:1023.98px){.example-flow{grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}}
-@media (min-width:1024px){.example-flow{grid-template-columns:repeat(3,1fr);gap:12px;align-items:stretch}}
-.example-cell{background:#fff;border:1px solid var(--border-2);border-radius:10px;padding:14px 16px;text-align:center;display:flex;flex-direction:column;justify-content:center}
-.example-cell-label{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
-.example-cell-val{font-size:clamp(16px,2.5vw,20px);font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--text);margin-bottom:3px}
-.example-cell-sub{font-size:11px;color:var(--text-3)}
-.example-cell.highlight{background:linear-gradient(135deg,#f8fdfb 0%,#f0fbf6 100%);border:1.5px solid rgba(0,208,156,0.3)}
-.example-cell.highlight .example-cell-val{color:var(--primary-dark)}
-.example-cta{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;margin-top:auto}
-.example-cta-text{font-size:13.5px;color:var(--text-2);font-weight:500}
-.example-cta-text strong{color:var(--text);font-weight:700}
-.example-cta-btn{margin-top:6px;display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--primary);color:#fff;border-radius:10px;font-size:14px;font-weight:700;border:none;cursor:pointer;transition:all 0.15s;box-shadow:0 4px 12px rgba(0,208,156,0.25)}
-.example-cta-btn:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,208,156,0.3)}
-.example-cta-btn .arrow{display:inline-block;transition:transform 0.2s}
-.example-cta-btn:hover .arrow{transform:translateY(2px)}
-.example-disclaimer{font-size:10.5px;color:var(--text-4);text-align:center;margin-top:12px;line-height:1.5}
-
-/* Calculator */
-.calc-wrap{display:grid;grid-template-columns:1fr;gap:18px;max-width:780px;margin:0 auto}
-@media (min-width:1024px){.calc-wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;max-width:1240px;align-items:stretch}}
-
-.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px;box-shadow:var(--shadow-md);display:flex;flex-direction:column}
+/* Calculator shell */
+.calc-head{display:grid;gap:20px;margin-bottom:40px}
+@media (min-width:1024px){.calc-head{grid-template-columns:1fr auto;align-items:end}}
+.calc-assume{font-size:13px;color:var(--ink-3);display:flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid var(--line);border-radius:100px;background:var(--surface);align-self:end;justify-self:start}
+.calc-assume b{color:var(--ink);font-weight:600}
+.calc-wrap{display:grid;grid-template-columns:1fr;gap:20px;scroll-margin-top:90px}
+@media (min-width:1024px){.calc-wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:start}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+@media (min-width:600px){.card{padding:30px}}
 @media (min-width:1024px){
-  .card.input-card,.card.output-card{height:calc(100vh - 140px);min-height:680px;max-height:920px}
-  .card.input-card .card-body,.card.output-card .card-body{flex:1;overflow-y:auto;overflow-x:hidden;padding-right:8px;margin-right:-8px}
-  .card-body::-webkit-scrollbar{width:8px}
-  .card-body::-webkit-scrollbar-track{background:transparent}
-  .card-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
-  .card-body::-webkit-scrollbar-thumb:hover{background:var(--text-4)}
-  .card-body{scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+  .card.output-card{position:sticky;top:88px;max-height:calc(100vh - 108px)}
+  .card.output-card .card-body{flex:1;overflow-y:auto;overflow-x:hidden;padding-right:8px;margin-right:-8px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
 }
-.card-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;margin-bottom:20px;border-bottom:1px solid var(--border-2);flex-shrink:0}
-.card-head-title{font-size:13px;font-weight:700;color:var(--text);letter-spacing:-0.01em;display:flex;align-items:center;gap:8px}
-.card-head-title-icon{width:26px;height:26px;border-radius:7px;background:var(--primary-soft);color:var(--primary-dark);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
-.card-head-status{font-size:11px;font-weight:600;color:var(--text-3);display:flex;align-items:center;gap:6px}
-.card-head-status .dot{width:7px;height:7px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 3px rgba(0,208,156,0.18)}
-.card-head-status.calc .dot{background:var(--gold);box-shadow:0 0 0 3px rgba(245,166,35,0.18);animation:pulse 1s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
-.card-title{font-size:11px;font-weight:700;color:var(--text-3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:8px;padding-bottom:14px;border-bottom:1px solid var(--border-2)}
-.card-title-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--primary-soft);color:var(--primary-dark);border-radius:6px;font-size:11px;font-weight:700}
+.card-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;margin-bottom:22px;border-bottom:1px solid var(--line-2);flex-shrink:0}
+.card-head-title{font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:-0.01em}
+.card-head-status{font-size:12px;font-weight:600;color:var(--ink-3);display:flex;align-items:center;gap:7px}
+.card-head-status .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+.card-head-status.calc .dot{background:var(--amber);box-shadow:0 0 0 3px var(--amber-soft);animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.45}}
+.card-title{font-size:12px;font-weight:600;color:var(--ink-3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.card-title-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--green);color:var(--green);font-size:11px;font-weight:700;letter-spacing:0}
 
-.label{display:block;font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:8px}
-.input,.select{width:100%;padding:11px 14px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:14px;color:var(--text);transition:all 0.15s;font-weight:500}
-.input:focus,.select:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
-.select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%237d8493' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
-.input::placeholder{color:var(--text-4)}
+.label{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:8px}
+.input,.select{width:100%;padding:12px 14px;background:#fff;border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:15px;color:var(--ink);transition:border-color .15s,box-shadow .15s;font-weight:500}
+.input:focus,.select:focus{border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft)}
+.select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%236b736d' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.input::placeholder{color:var(--ink-4)}
 .row{display:flex;gap:8px}
 .row > .input{flex:1}
-.row > .select{max-width:140px}
+.row > .select{max-width:150px}
 
-.toggle-group{display:flex;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:4px;gap:4px}
-.toggle-btn{flex:1;padding:9px 12px;border-radius:6px;font-size:13px;font-weight:600;color:var(--text-3);transition:all 0.15s;background:transparent}
-.toggle-btn.active{background:#fff;color:var(--text);box-shadow:var(--shadow)}
-.toggle-btn.primary.active{background:var(--primary);color:#fff;box-shadow:0 2px 6px rgba(0,208,156,0.25)}
+.toggle-group{display:flex;background:var(--paper-2);border-radius:100px;padding:4px;gap:4px}
+.toggle-btn{flex:1;padding:10px 12px;border-radius:100px;font-size:13.5px;font-weight:600;color:var(--ink-3);transition:all .15s;background:transparent;line-height:1.3}
+.toggle-btn:hover{color:var(--ink)}
+.toggle-btn.active{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(20,33,27,0.12)}
 
-.chip{padding:5px 12px;border-radius:100px;font-size:11px;font-weight:600;border:1.5px solid var(--border);background:transparent;color:var(--text-3);transition:all 0.15s}
-.chip.on{border-color:var(--primary);background:var(--primary-soft);color:var(--primary-dark)}
+.chip{padding:5px 12px;border-radius:100px;font-size:12px;font-weight:600;border:1.5px solid var(--line);background:transparent;color:var(--ink-3);transition:all .15s}
+.chip.on{border-color:var(--green);background:var(--green-soft);color:var(--green-dark)}
 .chip-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
 
 .slider-wrap{display:flex;align-items:center;gap:12px;margin-top:10px}
-.slider{flex:1;-webkit-appearance:none;appearance:none;height:4px;background:var(--border);border-radius:2px;outline:none}
-.slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--primary);cursor:pointer;box-shadow:0 2px 4px rgba(0,0,0,0.1);transition:transform 0.15s}
-.slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
-.slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--primary);cursor:pointer}
-.slider-val{min-width:52px;padding:4px 8px;background:var(--primary-soft);color:var(--primary-dark);border-radius:6px;font-weight:700;font-size:13px;text-align:center;font-variant-numeric:tabular-nums}
+.slider{flex:1;-webkit-appearance:none;appearance:none;height:4px;background:var(--line);border-radius:2px;outline:none}
+.slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--green-deep);border:3px solid #fff;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.25)}
+.slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--green-deep);border:3px solid #fff;cursor:pointer}
+.slider-val{min-width:54px;padding:4px 8px;background:var(--green-soft);color:var(--green-dark);border-radius:8px;font-weight:700;font-size:13px;text-align:center;font-variant-numeric:tabular-nums}
 
-.policy{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px;transition:all 0.15s;box-shadow:var(--shadow)}
-.policy:hover{border-color:var(--text-4);box-shadow:var(--shadow-md)}
+.policy{background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:14px}
 .policy-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
 .policy-num{display:flex;align-items:center;gap:10px}
-.policy-badge{width:24px;height:24px;border-radius:6px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;color:#fff}
-.policy-name{background:transparent;border:none;border-bottom:1px dashed transparent;padding:3px 4px;font-size:14px;font-weight:600;color:var(--text);width:180px;outline:none;border-radius:0}
-.policy-name:focus,.policy-name:hover{border-bottom-color:var(--border)}
-.policy-remove{width:28px;height:28px;border-radius:6px;color:var(--text-4);font-size:18px;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
-.policy-remove:hover{background:var(--warn-soft);color:var(--warn)}
+.policy-badge{width:26px;height:26px;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;color:#fff}
+.policy-name{background:transparent;border:none;border-bottom:1px dashed transparent;padding:3px 4px;font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);width:190px;outline:none;border-radius:0}
+.policy-name:focus,.policy-name:hover{border-bottom-color:var(--ink-4)}
+.policy-remove{width:30px;height:30px;border-radius:50%;color:var(--ink-4);font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.policy-remove:hover{background:var(--terra-soft);color:var(--terra)}
 
-.field{margin-bottom:14px}
+.field{margin-bottom:16px}
 .field:last-child{margin-bottom:0}
-.divider{height:1px;background:var(--border);margin:18px 0}
+.divider{height:1px;background:var(--line);margin:20px 0}
 .month-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
-.month-pill{padding:3px 10px;border-radius:100px;font-size:11px;font-weight:600;background:var(--primary-soft);color:var(--primary-dark)}
-.field-hint{font-size:11px;color:var(--text-4);margin-top:6px;line-height:1.5}
+.month-pill{padding:3px 10px;border-radius:100px;font-size:11.5px;font-weight:600;background:var(--green-soft);color:var(--green-dark)}
+.field-hint{font-size:12px;color:var(--ink-3);margin-top:7px;line-height:1.5}
+.field-hint strong{color:var(--ink-2)}
 
-.policy-result{margin-top:16px;padding:14px 16px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);display:flex;flex-wrap:wrap;gap:18px;box-shadow:var(--shadow)}
+.policy-result{margin-top:16px;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:12px;display:flex;flex-wrap:wrap;gap:20px}
 .policy-result-item{display:flex;flex-direction:column;gap:3px}
-.policy-result-label{font-size:10px;font-weight:600;color:var(--text-3);letter-spacing:0.05em;text-transform:uppercase}
-.policy-result-val{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+.policy-result-label{font-size:10.5px;font-weight:600;color:var(--ink-3);letter-spacing:0.06em;text-transform:uppercase}
+.policy-result-val{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
 
-.add-policy{width:100%;padding:12px;border:1.5px dashed var(--border);border-radius:var(--radius-sm);color:var(--primary-dark);font-size:13px;font-weight:600;background:transparent;transition:all 0.15s}
-.add-policy:hover{border-color:var(--primary);background:var(--primary-soft)}
+.add-policy{width:100%;padding:13px;border:1.5px dashed var(--line);border-radius:12px;color:var(--green-dark);font-size:14px;font-weight:600;background:transparent;transition:all .15s}
+.add-policy:hover{border-color:var(--green);background:var(--green-soft)}
 
-.btn-primary{width:100%;padding:14px;background:var(--primary);color:#fff;border-radius:var(--radius-sm);font-size:15px;font-weight:700;letter-spacing:0.01em;transition:all 0.15s;box-shadow:0 4px 12px rgba(0,208,156,0.25)}
-.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,208,156,0.3)}
-.btn-primary:active{transform:translateY(0)}
+.btn-primary{width:100%;padding:16px;margin-top:6px;background:var(--green-deep);color:#fff;border-radius:100px;font-size:15.5px;font-weight:600;transition:all .15s}
+.btn-primary:hover{background:var(--green-dark)}
 @media (min-width:1024px){.btn-primary.mobile-only{display:none}}
 
-.output-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;flex:1}
-.output-empty-icon{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,var(--primary-soft),#fff);display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:18px;box-shadow:var(--shadow)}
-.output-empty-title{font-size:17px;font-weight:700;color:var(--text);letter-spacing:-0.01em;margin-bottom:8px}
-.output-empty-sub{font-size:13.5px;color:var(--text-3);max-width:300px;line-height:1.6}
+/* Calculator output (markup generated by script) */
+.output-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px;flex:1}
+.output-empty-icon{width:64px;height:64px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.output-empty-icon svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.output-empty-title{font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:8px}
+.output-empty-sub{font-size:14px;color:var(--ink-3);max-width:300px;line-height:1.6}
+.output-body{display:flex;flex-direction:column;gap:14px}
 
-.output-body{display:flex;flex-direction:column;gap:16px}
+.compare-box{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px}
+.compare-title{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.compare-cell{padding:14px;background:#fff;border-radius:12px;border:1px solid var(--line-2)}
+.compare-label{font-size:11px;font-weight:600;color:var(--ink-3);margin-bottom:6px}
+.compare-cell.bad .compare-val{color:var(--ink-3);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(196,83,42,0.55)}
+.compare-cell.good .compare-label{color:var(--green-dark)}
+.compare-cell.good .compare-val{color:var(--green-dark)}
+.compare-val{font-family:var(--serif);font-size:clamp(20px,3.4vw,26px);font-weight:500;letter-spacing:-0.01em;font-variant-numeric:tabular-nums;margin-bottom:4px}
+.compare-sub{font-size:11.5px;color:var(--ink-3);line-height:1.4}
+.savings-strip{padding:18px;background:var(--green-deep);border-radius:12px;color:#fff;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px}
+.savings-label{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber)}
+.savings-val{font-family:var(--serif);font-size:clamp(28px,4.6vw,38px);font-weight:500;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;line-height:1}
+.savings-sub{flex-basis:100%;font-size:12.5px;color:#a9c2b5}
 
-.compare-box{background:linear-gradient(135deg,#f8fdfb 0%,#f0fbf6 100%);border:1.5px solid var(--primary-soft);border-radius:14px;padding:20px}
-.compare-title{text-align:center;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px}
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.compare-cell{padding:14px;background:#fff;border-radius:10px;text-align:center;border:1px solid var(--border-2)}
-.compare-cell.bad{border-color:rgba(255,122,89,0.3)}
-.compare-cell.good{border-color:rgba(0,208,156,0.3)}
-.compare-label{font-size:10px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
-.compare-cell.bad .compare-label{color:var(--warn)}
-.compare-cell.good .compare-label{color:var(--primary-dark)}
-.compare-val{font-size:clamp(18px,3.5vw,24px);font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-bottom:3px}
-.compare-cell.bad .compare-val{color:var(--warn)}
-.compare-cell.good .compare-val{color:var(--primary-dark)}
-.compare-sub{font-size:11px;color:var(--text-3);font-weight:500}
-.savings-strip{padding:14px 16px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:10px;color:#fff;text-align:center;box-shadow:0 6px 18px rgba(0,208,156,0.25)}
-.savings-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.9;margin-bottom:4px}
-.savings-val{font-size:clamp(22px,4.5vw,30px);font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
-.savings-sub{font-size:12px;opacity:0.95;margin-top:4px}
-
-.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(95px,1fr));background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-.timeline-cell{padding:14px 8px;text-align:center;border-right:1px solid var(--border-2)}
-.timeline-cell:last-child{border-right:none}
-.timeline-icon{font-size:18px;margin-bottom:4px}
-.timeline-label{font-size:9px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3);margin-bottom:3px}
-.timeline-val{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
-.timeline-sub{font-size:10px;color:var(--text-4);margin-top:1px}
-
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.stat{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);transition:all 0.15s}
-.stat:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
-.stat.hero-stat{background:linear-gradient(135deg,#f4f6ff 0%,#eef0ff 100%);border:1.5px solid rgba(83,103,255,0.25);box-shadow:0 4px 12px rgba(83,103,255,0.08)}
-.stat.hero-stat .stat-val{font-size:clamp(20px,4vw,26px)}
-.stat-label{font-size:10px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px;display:flex;align-items:center;gap:5px}
-.stat-val{font-size:clamp(15px,2.5vw,18px);font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-bottom:3px}
-.stat-sub{font-size:11px;color:var(--text-3)}
-
-.plan-summary{background:linear-gradient(135deg,#f4f6ff 0%,#fff 50%,#f0fdf8 100%);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:0}
-.plan-cell{padding:10px 14px;text-align:center;border-right:1px solid var(--border-2)}
+.plan-summary{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
+.plan-cell{padding:16px 18px;border-right:1px solid var(--line-2)}
 .plan-cell:last-child{border-right:none}
-.plan-cell-label{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
-.plan-cell-val{font-size:clamp(20px,3.6vw,26px);font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;line-height:1.15;margin-bottom:4px}
-.plan-cell-sub{font-size:11px;color:var(--text-3);font-weight:500}
-@media(max-width:520px){
-.plan-summary{grid-template-columns:1fr}
-.plan-cell{border-right:none;border-bottom:1px solid var(--border-2)}
-.plan-cell:last-child{border-bottom:none}
-}
+.plan-cell-label{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.plan-cell-val{font-family:var(--serif);font-size:clamp(24px,3.8vw,32px);font-weight:500;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;line-height:1.1;margin-bottom:4px}
+.plan-cell-sub{font-size:12px;color:var(--ink-3)}
+@media(max-width:520px){.plan-summary{grid-template-columns:1fr}.plan-cell{border-right:none;border-bottom:1px solid var(--line-2)}.plan-cell:last-child{border-bottom:none}}
 
-.details-toggle{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px 16px;background:transparent;border:1px dashed var(--border);border-radius:var(--radius);font-size:12.5px;font-weight:600;color:var(--text-3);cursor:pointer;transition:all 0.15s;font-family:inherit;letter-spacing:0.02em}
-.details-toggle:hover{border-color:var(--text-3);color:var(--text-2);background:rgba(255,255,255,0.5)}
-.details-toggle .toggle-arrow{display:inline-block;transition:transform 0.2s;font-size:10px}
+.details-toggle{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 16px;border:1px dashed var(--line);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-3);transition:all .15s}
+.details-toggle:hover{border-color:var(--ink-3);color:var(--ink)}
+.details-toggle .toggle-arrow{display:inline-block;transition:transform .2s;font-size:10px}
 .details-panel{display:none;flex-direction:column;gap:10px}
-.details-panel.open{display:flex;animation:fadeIn 0.25s ease-out}
+.details-panel.open{display:flex;animation:fadeIn .25s ease-out}
 @keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
 
-.breakdown{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-.breakdown-head{padding:11px 16px;background:var(--surface-2);border-bottom:1px solid var(--border-2);display:flex;justify-content:space-between;align-items:center}
-.breakdown-title{font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3)}
-.breakdown-total{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--text)}
-.breakdown-row{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid var(--border-2);flex-wrap:wrap}
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(95px,1fr));background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.timeline-cell{padding:14px 10px;border-right:1px solid var(--line-2)}
+.timeline-cell:last-child{border-right:none}
+.timeline-icon{display:none}
+.timeline-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.timeline-val{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.timeline-sub{font-size:11px;color:var(--ink-4);margin-top:1px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+.stat-label{font-size:10.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.stat-val{font-size:17px;font-weight:700;font-variant-numeric:tabular-nums;margin-bottom:3px}
+.stat-sub{font-size:11.5px;color:var(--ink-3)}
+
+.breakdown,.schedule,.chart-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.breakdown-head,.schedule-head,.chart-head{padding:12px 16px;border-bottom:1px solid var(--line-2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.breakdown-title,.schedule-title,.chart-title{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2)}
+.breakdown-total{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+.breakdown-row{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line-2);flex-wrap:wrap}
 .breakdown-row:last-child{border-bottom:none}
-.breakdown-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.breakdown-name{flex:1;font-size:13px;font-weight:600;color:var(--text);min-width:80px}
-.breakdown-meta{font-size:11px;color:var(--text-3);font-variant-numeric:tabular-nums}
-.breakdown-tag{padding:2px 7px;border-radius:100px;font-size:10px;font-weight:600}
-.breakdown-tag.warn{background:var(--warn-soft);color:var(--warn)}
-.breakdown-tag.purple{background:var(--purple-soft);color:var(--purple)}
-.breakdown-val{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
-.breakdown-pct{font-size:10px;color:var(--text-4);font-variant-numeric:tabular-nums}
-
-.schedule{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-.schedule-head{padding:11px 16px;background:var(--gold-soft);border-bottom:1px solid var(--border-2);display:flex;justify-content:space-between;align-items:center}
-.schedule-title{font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#a87600}
-.schedule-toggle{font-size:11px;font-weight:600;color:var(--text-3);text-transform:uppercase;cursor:pointer}
-.schedule-table{width:100%;border-collapse:collapse;font-size:12px}
-.schedule-table th{padding:9px 12px;text-align:left;font-size:10px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3);background:var(--surface-2);border-bottom:1px solid var(--border-2);white-space:nowrap}
-.schedule-table td{padding:8px 12px;border-bottom:1px solid var(--border-2);font-variant-numeric:tabular-nums}
+.breakdown-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.breakdown-name{flex:1;font-size:14px;font-weight:600;min-width:80px}
+.breakdown-meta{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.breakdown-tag{padding:2px 8px;border-radius:100px;font-size:10.5px;font-weight:600}
+.breakdown-tag.warn{background:var(--terra-soft);color:var(--terra)}
+.breakdown-tag.purple{background:var(--plum-soft);color:var(--plum)}
+.breakdown-val{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+.breakdown-pct{font-size:11px;color:var(--ink-4);font-variant-numeric:tabular-nums}
+.schedule-toggle{font-size:12px;font-weight:600;color:var(--green-dark)}
+.schedule-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.schedule-table th{padding:9px 12px;text-align:left;font-size:10.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-3);background:var(--surface-2);border-bottom:1px solid var(--line-2);white-space:nowrap}
+.schedule-table td{padding:8px 12px;border-bottom:1px solid var(--line-2);font-variant-numeric:tabular-nums}
 .schedule-table tr:last-child td{border-bottom:none}
-.schedule-month-pill{display:inline-block;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:700;color:#fff}
-
-.chart-wrap{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-.chart-head{padding:11px 16px;background:var(--accent-soft);border-bottom:1px solid var(--border-2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.chart-title{font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--accent)}
-.chart-legend{display:flex;gap:14px;font-size:11px;color:var(--text-3);font-weight:600}
-.chart-legend span{display:inline-flex;align-items:center;gap:4px}
+.schedule-month-pill{display:inline-block;padding:2px 8px;border-radius:100px;font-size:10.5px;font-weight:700;color:#fff}
+.chart-legend{display:flex;gap:14px;font-size:11.5px;color:var(--ink-3);font-weight:500}
+.chart-legend span{display:inline-flex;align-items:center;gap:5px}
 .chart-dot{width:8px;height:8px;border-radius:50%}
 .chart-body{padding:14px 8px 6px}
 canvas{width:100%;display:block}
 
-.insight{background:var(--gold-soft);border:1px solid rgba(245,166,35,0.2);border-radius:var(--radius);padding:14px 18px;font-size:13px;line-height:1.7;color:var(--text-2)}
+.insight{background:var(--amber-soft);border-left:3px solid var(--amber);border-radius:4px 12px 12px 4px;padding:14px 18px;font-size:14px;line-height:1.7;color:var(--ink-2)}
 .insight strong{font-weight:700}
 
-.cta-block{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);border-radius:14px;padding:24px;text-align:center;color:#fff;box-shadow:0 8px 24px rgba(0,208,156,0.2)}
-.cta-pill{display:inline-block;padding:6px 14px;background:rgba(255,255,255,0.2);border-radius:100px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;backdrop-filter:blur(10px)}
-.cta-tag{font-size:18px;font-weight:600;margin-bottom:18px;line-height:1.4}
-.cta-btn{padding:12px 32px;background:#fff;color:var(--primary-dark);border-radius:var(--radius-sm);font-size:14px;font-weight:700;letter-spacing:0.01em;transition:all 0.15s;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,0.15)}
-.cta-trust{font-size:11px;opacity:0.85;margin-top:12px;font-weight:500}
+.cta-block{background:var(--green-deep);border-radius:16px;padding:26px 22px;text-align:center;color:#fff}
+.cta-pill{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+.cta-tag{font-family:var(--serif);font-size:20px;font-weight:400;font-style:italic;margin-bottom:18px;line-height:1.4}
+.cta-btn{padding:13px 28px;background:var(--amber);color:var(--green-deep);border-radius:100px;font-size:14.5px;font-weight:600;transition:all .15s}
+.cta-btn:hover{background:#eba864;transform:translateY(-1px)}
+.cta-trust{font-size:12px;color:#a9c2b5;margin-top:12px}
+.disclaimer{font-size:11.5px;color:var(--ink-4);line-height:1.7;padding:4px 2px}
 
-.disclaimer{text-align:center;font-size:11px;color:var(--text-4);line-height:1.7;padding:12px 14px;margin-top:8px}
+/* How it works */
+.steps{display:grid;gap:0;counter-reset:step}
+@media (min-width:900px){.steps{grid-template-columns:repeat(4,1fr);gap:28px}}
+.step{position:relative;padding:0 0 36px 64px}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;left:21px;top:46px;bottom:0;width:1.5px;background:var(--line)}
+.step:last-child::before{display:none}
+@media (min-width:900px){
+  .step{padding:0}
+  .step::before{left:58px;right:-28px;top:22px;bottom:auto;width:auto;height:1.5px}
+}
+.step-num{position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:var(--paper);border:1.5px solid var(--green);color:var(--green);font-family:var(--serif);font-size:19px;font-style:italic;display:flex;align-items:center;justify-content:center}
+@media (min-width:900px){.step-num{position:relative;margin-bottom:24px}}
+.step:last-child .step-num{background:var(--green-deep);border-color:var(--green-deep);color:var(--amber)}
+.step-title{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.2;letter-spacing:-0.01em;margin-bottom:10px}
+.step-desc{font-size:15px;color:var(--ink-2);line-height:1.65}
+.step-desc strong{color:var(--ink)}
 
-.section-header{text-align:center;margin:56px auto 24px;padding:0 8px;max-width:760px;scroll-margin-top:80px}
-@media (min-width:1024px){.section-header{margin:80px auto 32px}}
-.section-tag{display:inline-block;padding:5px 14px;background:var(--primary-soft);border-radius:100px;font-size:11px;font-weight:700;color:var(--primary-dark);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px}
-.section-h2{font-size:clamp(24px,4vw,40px);font-weight:800;letter-spacing:-0.02em;line-height:1.15;color:var(--text);margin-bottom:12px}
-.section-h2 em{font-style:normal;color:var(--primary)}
-.section-sub{font-size:clamp(14px,2vw,17px);color:var(--text-2);max-width:580px;margin:0 auto;line-height:1.6}
+/* Trust */
+.trust-grid{display:grid;gap:1px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.1);border-radius:20px;overflow:hidden}
+@media (min-width:700px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.trust-grid{grid-template-columns:repeat(3,1fr)}}
+.trust-item{background:var(--green-deep);padding:30px 28px}
+.trust-icon{width:44px;height:44px;border-radius:12px;background:rgba(227,154,75,0.14);color:var(--amber);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.trust-title{font-family:var(--serif);font-size:21px;font-weight:500;color:#fff;margin-bottom:8px;letter-spacing:-0.01em}
+.trust-desc{font-size:14.5px;color:#b9c8bf;line-height:1.65}
+.trust-desc strong{color:#fff}
 
-.steps{display:grid;gap:14px;margin:0 auto 18px;max-width:1080px}
-@media (min-width:768px){.steps{grid-template-columns:repeat(2,1fr);gap:16px}}
-.step{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;gap:18px;align-items:flex-start;box-shadow:var(--shadow);transition:all 0.2s}
-.step:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
-.step-num{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,208,156,0.25)}
-.step-body{flex:1}
-.step-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.01em}
-.step-desc{font-size:14px;color:var(--text-2);line-height:1.6}
+/* Founder */
+.founder-grid{display:grid;gap:28px}
+@media (min-width:1024px){.founder-grid{grid-template-columns:1.6fr 1fr;gap:40px;align-items:stretch}}
+.founder blockquote{font-family:var(--serif);font-size:clamp(19px,2.1vw,24px);line-height:1.5;font-weight:400;color:var(--ink);letter-spacing:-0.005em}
+.founder blockquote p+p{margin-top:18px}
+.founder blockquote .mark{font-size:64px;line-height:0.5;color:var(--amber);display:block;height:26px}
+.founder-sig{display:flex;align-items:center;gap:14px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.founder-avatar{width:52px;height:52px;border-radius:50%;background:var(--green-deep);color:var(--paper);font-family:var(--serif);font-size:22px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.founder-name{font-weight:600;font-size:15.5px}
+.founder-role{font-size:13.5px;color:var(--ink-3)}
+.founder-role a{color:var(--green-dark);text-decoration:none;font-weight:500}
+.founder-role a:hover{text-decoration:underline}
+.first-members{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.first-members h3{font-family:var(--serif);font-size:26px;font-weight:500;line-height:1.2;letter-spacing:-0.01em;margin:14px 0 10px}
+.first-members p{color:var(--ink-2);font-size:15px;line-height:1.6}
+.first-seats{display:flex;gap:6px}
+.first-seats span{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.first-seats span:first-child{background:var(--amber)}
 
-.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:0 auto 18px;max-width:1080px}
-@media (min-width:1024px){.trust-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
-.trust-item{display:flex;gap:14px;padding:18px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow)}
-.trust-icon{flex-shrink:0;width:38px;height:38px;border-radius:10px;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;font-size:18px}
-.trust-content{flex:1}
-.trust-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;letter-spacing:-0.01em}
-.trust-desc{font-size:12.5px;color:var(--text-2);line-height:1.55}
-
-.founder-row{display:grid;grid-template-columns:1fr;gap:18px;max-width:860px;margin:0 auto 18px}
-@media (min-width:1024px){.founder-row{grid-template-columns:1fr 1fr;gap:20px;max-width:1140px;align-items:stretch}}
-
-.founder{background:linear-gradient(135deg,#f4f6ff 0%,#fff 60%);border:1px solid var(--border);border-radius:14px;padding:26px;display:flex;gap:20px;align-items:flex-start;box-shadow:var(--shadow-md);height:100%}
-.founder-avatar{flex-shrink:0;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#3a4cd8);color:#fff;font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;letter-spacing:-0.02em;box-shadow:0 4px 12px rgba(83,103,255,0.25)}
-.founder-body{flex:1;min-width:0;display:flex;flex-direction:column}
-.founder-meta{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
-.founder-name{font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px;letter-spacing:-0.01em}
-.founder-quote{font-size:14.5px;color:var(--text-2);line-height:1.75;font-style:normal;margin-bottom:8px;padding-left:18px;border-left:3px solid var(--accent-soft);font-weight:400;flex:1}
-.founder-tagline{font-size:13px;color:var(--text-3);font-weight:500;margin-top:10px}
-
-.testimonials{background:linear-gradient(135deg,var(--gold-soft) 0%,#fff 80%);border:1.5px dashed var(--gold);border-radius:14px;padding:32px 26px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%}
-.testimonials-icon{font-size:32px;margin-bottom:10px}
-.testimonials-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:8px;letter-spacing:-0.01em}
-.testimonials-desc{font-size:14px;color:var(--text-2);max-width:440px;margin:0 auto;line-height:1.6}
-
-.contact-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;margin:0 auto 18px;box-shadow:var(--shadow-md);max-width:860px}
-@media (min-width:1024px){.contact-block{max-width:1080px;padding:40px 48px}}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:20px;align-items:stretch}
-@media (min-width:1024px){.contact-grid{gap:48px}}
-.contact-methods{display:flex;flex-direction:column;gap:12px;justify-content:center}
-.contact-btn{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;font-weight:600;text-decoration:none;transition:all 0.15s;cursor:pointer;width:100%;text-align:left;font-family:inherit}
-.contact-btn:hover{border-color:var(--primary);background:#fff;transform:translateY(-1px);box-shadow:var(--shadow)}
-.contact-btn-icon{flex-shrink:0;width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px}
-.contact-btn-icon.wa{background:#25d36622;color:#25d366}
-.contact-btn-icon.email{background:#5367ff22;color:#5367ff}
-.contact-btn-icon.cal{background:#a060c822;color:#a060c8}
+/* Contact */
+.contact-grid{display:grid;gap:40px}
+@media (min-width:1024px){.contact-grid{grid-template-columns:1fr 1fr;gap:72px;align-items:start}}
+.contact-methods{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.contact-btn{display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;color:var(--ink);text-decoration:none;transition:all .15s;width:100%;text-align:left}
+.contact-btn:hover{border-color:var(--ink);transform:translateY(-1px)}
+.contact-btn-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--green-soft);color:var(--green-dark);flex-shrink:0}
 .contact-btn-content{flex:1;min-width:0}
-.contact-btn-label{font-size:11px;font-weight:600;color:var(--text-3);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:2px}
-.contact-btn-val{font-size:14.5px;font-weight:600;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.contact-btn-label{font-size:12px;font-weight:600;color:var(--ink-3);margin-bottom:1px}
+.contact-btn-val{font-size:16px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.contact-btn .arr{color:var(--ink-4);transition:transform .15s}
+.contact-btn:hover .arr{transform:translateX(3px);color:var(--ink)}
 .contact-btn.disabled{opacity:0.6;cursor:not-allowed}
-.contact-btn.disabled:hover{border-color:var(--border);background:var(--surface-2);transform:none;box-shadow:none}
-.coming-soon-tag{margin-left:auto;padding:2px 8px;background:var(--gold-soft);color:#a87600;border-radius:100px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em}
+.contact-btn.disabled:hover{border-color:var(--line);transform:none}
+.coming-soon-tag{padding:3px 10px;background:var(--amber-soft);color:var(--ochre);border-radius:100px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em}
 
-.lead-form{display:flex;flex-direction:column;gap:10px}
-.lead-form-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;letter-spacing:-0.01em}
-.lead-form-sub{font-size:12.5px;color:var(--text-3);margin-bottom:8px;line-height:1.5}
-.lead-form input{padding:11px 14px;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;color:var(--text);outline:none;transition:all 0.15s}
-.lead-form input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
-.lead-form-btn{padding:12px;background:var(--primary);color:#fff;border-radius:10px;font-size:14px;font-weight:700;border:none;cursor:pointer;transition:all 0.15s}
-.lead-form-btn:hover{background:var(--primary-dark);transform:translateY(-1px)}
-.lead-form-success{display:none;padding:32px 24px;background:linear-gradient(135deg,var(--primary-soft) 0%,#fff 100%);border:1.5px solid var(--primary);border-radius:12px;color:var(--primary-dark);font-size:15px;font-weight:600;text-align:center;line-height:1.6;box-shadow:var(--shadow);align-self:center}
-.lead-form-success::before{content:'';display:block;width:48px;height:48px;margin:0 auto 14px;border-radius:50%;background:var(--primary);position:relative;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:24px;box-shadow:0 4px 12px rgba(0,208,156,0.3)}
+.form-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px 22px;box-shadow:var(--shadow-md)}
+@media (min-width:600px){.form-card{padding:36px}}
+.lead-form{display:flex;flex-direction:column;gap:14px}
+.lead-form-title{font-family:var(--serif);font-size:26px;font-weight:500;letter-spacing:-0.01em}
+.lead-form-sub{font-size:14.5px;color:var(--ink-3);margin-bottom:6px;line-height:1.55}
+.lead-form label{font-size:13px;font-weight:600;color:var(--ink-2);display:flex;flex-direction:column;gap:7px}
+.lead-form label span{font-weight:400;color:var(--ink-4)}
+.lead-form input,.lead-form textarea{padding:13px 15px;background:#fff;border:1.5px solid var(--line);border-radius:12px;font-size:15px;color:var(--ink);transition:border-color .15s,box-shadow .15s;font-weight:400}
+.lead-form textarea{resize:vertical;min-height:84px}
+.lead-form input:focus,.lead-form textarea:focus{border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft)}
+.lead-form-btn{margin-top:4px;padding:16px;background:var(--green-deep);color:#fff;border-radius:100px;font-size:15.5px;font-weight:600;transition:all .15s}
+.lead-form-btn:hover{background:var(--green-dark)}
+.lead-form-fine{font-size:12px;color:var(--ink-4);text-align:center}
+.lead-form-fine a{color:var(--ink-3)}
+.lead-form-success{display:none;padding:40px 20px;text-align:center;font-size:15px;color:var(--ink-2);line-height:1.6}
+.lead-form-success::before{content:'';display:block;width:56px;height:56px;margin:0 auto 18px;border-radius:50%;background:var(--green-deep) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e39a4b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") no-repeat center/26px}
 
-.faq-list{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;max-width:860px;margin-left:auto;margin-right:auto}
-.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:all 0.15s}
-.faq-item:hover{box-shadow:var(--shadow-md)}
-.faq-q{width:100%;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:transparent;border:none;cursor:pointer;font-size:15px;font-weight:600;color:var(--text);text-align:left;font-family:inherit;letter-spacing:-0.01em}
-.faq-q:hover{background:var(--surface-2)}
-.faq-toggle{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--primary-soft);color:var(--primary-dark);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;transition:transform 0.2s}
-.faq-item.open .faq-toggle{transform:rotate(45deg)}
-.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:all 0.25s ease;font-size:14px;color:var(--text-2);line-height:1.7}
-.faq-item.open .faq-a{max-height:600px;padding:0 20px 18px}
+/* FAQ */
+.faq-grid{display:grid;gap:32px}
+@media (min-width:1024px){.faq-grid{grid-template-columns:0.8fr 1.2fr;gap:72px}.faq-grid .sec-head{position:sticky;top:110px;align-self:start}}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left;font-family:var(--serif);font-size:clamp(18px,1.9vw,21px);font-weight:500;letter-spacing:-0.005em;line-height:1.35;color:var(--ink)}
+.faq-q:hover{color:var(--green-dark)}
+.faq-toggle{flex-shrink:0;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line);color:var(--ink-2);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:19px;font-weight:400;transition:transform .2s,background .2s,border-color .2s}
+.faq-item.open .faq-toggle{transform:rotate(45deg);background:var(--green-deep);border-color:var(--green-deep);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:15.5px;color:var(--ink-2);line-height:1.75;padding-right:40px}
+.faq-a strong{color:var(--ink)}
+.faq-item.open .faq-a{max-height:700px;padding-bottom:24px}
 
-.seo-content{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:30px 28px;margin-bottom:18px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.75;color:var(--text-2);max-width:860px;margin-left:auto;margin-right:auto}
-@media (min-width:768px){.seo-content{padding:40px 48px;font-size:15px}}
-.seo-content h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:12px;letter-spacing:-0.01em}
-.seo-content h4{font-size:15px;font-weight:700;color:var(--text);margin:18px 0 8px;letter-spacing:-0.01em}
-.seo-content p{margin-bottom:12px}
-.seo-content strong{color:var(--text);font-weight:700}
-.seo-content ul{padding-left:22px;margin-bottom:12px}
-.seo-content li{margin-bottom:6px}
+/* Long-form guide */
+.guide{display:grid;gap:32px}
+@media (min-width:1024px){.guide{grid-template-columns:0.8fr 1.2fr;gap:72px}}
+.guide-body{font-size:16px;line-height:1.8;color:var(--ink-2)}
+.guide-body h4{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);margin:36px 0 10px;letter-spacing:-0.01em}
+.guide-body h4:first-child{margin-top:0}
+.guide-body p{margin-bottom:16px}
+.guide-body strong{color:var(--ink);font-weight:600}
+.guide-body ul{list-style:none;margin-bottom:16px}
+.guide-body li{position:relative;padding-left:22px;margin-bottom:10px}
+.guide-body li::before{content:"";position:absolute;left:0;top:12px;width:8px;height:1.5px;background:var(--green)}
 
-.footer{margin-top:56px;padding:32px 0 0;border-top:1.5px solid var(--border);text-align:center}
-.footer-brand{font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.02em}
-.footer-brand span{color:var(--primary)}
-.footer-tagline{font-size:13px;color:var(--text-3);margin-bottom:18px}
-.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 20px;margin-bottom:18px;font-size:13px}
-.footer-links a{color:var(--text-2);text-decoration:none;font-weight:500;transition:color 0.15s}
-.footer-links a:hover{color:var(--primary)}
-.footer-divider{height:1px;background:var(--border-2);margin:18px 0}
-.footer-meta{font-size:11.5px;color:var(--text-3);line-height:1.7;max-width:600px;margin:0 auto;padding:0 12px}
-.footer-meta strong{color:var(--text-2);font-weight:600}
-.footer-domain{font-size:12px;color:var(--text-3);margin-top:14px}
+/* Closing CTA */
+.closing{text-align:center}
+.closing .h2{font-size:clamp(36px,6vw,72px);max-width:900px;margin:18px auto 22px}
+.closing .lede{margin:0 auto 36px}
+.closing-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.closing .btn-ghost{border-color:rgba(255,255,255,0.35);color:#fff}
+.closing .btn-ghost:hover{background:#fff;color:var(--green-deep)}
+.closing-trust{margin-top:28px;font-size:13px;color:#8fab9c}
 
-@media (max-width:580px){
-  .app{padding:20px 14px 70px}
-  .stats{grid-template-columns:1fr 1fr}
-  .compare-grid{gap:8px}
-  .timeline{grid-template-columns:repeat(3,1fr)}
-  .contact-grid{grid-template-columns:1fr;gap:24px}
-  .founder{flex-direction:column;gap:14px}
-  .step{flex-direction:row;gap:14px}
-  .step-num{width:36px;height:36px;font-size:15px;border-radius:10px}
-  .card{padding:22px 18px}
-  .footer-links{gap:6px 14px}
-}
-@media (min-width:768px) and (max-width:1023px){.app{padding:32px 28px 80px}}
-@media (min-width:1024px){
-  .app{padding:40px 40px 100px}
-  .card{padding:28px}
-  .step{padding:24px}
-  .step-num{width:48px;height:48px;font-size:20px}
-  .step-title{font-size:17px}
-  .step-desc{font-size:14.5px}
-  .founder{padding:32px}
-  .founder-avatar{width:72px;height:72px;font-size:28px}
-  .trust-item{padding:20px}
-  .hero h1{margin-bottom:18px}
-}
+/* Footer */
+.footer{background:var(--ink);color:#aab4ae;padding:64px 0 36px}
+.footer-top{display:grid;gap:36px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.1)}
+@media (min-width:860px){.footer-top{grid-template-columns:1.4fr 1fr 1fr}}
+.footer .brand{color:#fff}
+.footer .brand-name em{color:var(--amber)}
+.footer .brand-mark{background:var(--green)}
+.footer-tagline{margin-top:14px;font-size:14.5px;max-width:320px;line-height:1.6}
+.footer-col h4{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.footer-col a{display:block;color:#aab4ae;text-decoration:none;font-size:14.5px;padding:5px 0;transition:color .15s}
+.footer-col a:hover{color:#fff}
+.footer-meta{padding-top:28px;font-size:12.5px;line-height:1.75;color:#7f8a84;max-width:900px}
+.footer-meta strong{color:#c6cec9;font-weight:600}
+.footer-domain{margin-top:18px;font-size:12.5px;color:#7f8a84}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
-<nav class="nav">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M10 10v8M14 10v8M19 10v8"/><path d="M3 21h18"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+  <symbol id="i-exit" viewBox="0 0 24 24"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4"/><path d="M10 8l-4 4 4 4"/><path d="M6 12h10"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11v6M8 15h2M12 15h2"/></symbol>
+</svg>
+
+<nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">
-      <div class="nav-brand-mark">P</div>
-      <div class="nav-brand-name">Pay My <span>Insurance</span></div>
+    <a href="index.html" class="brand">
+      <div class="brand-mark">P</div>
+      <div class="brand-name">Pay My <em>Insurance</em></div>
     </a>
     <div class="nav-links">
+      <a href="#calculator" class="nav-link" onclick="track('nav_click',{section:'calculator'})">Calculator</a>
       <a href="#how-it-works" class="nav-link" onclick="track('nav_click',{section:'how_it_works'})">How It Works</a>
       <a href="#why-trust-us" class="nav-link" onclick="track('nav_click',{section:'why_trust'})">Why Trust Us</a>
       <a href="#faq" class="nav-link" onclick="track('nav_click',{section:'faq'})">FAQ</a>
-      <a href="#contact" class="nav-link" onclick="track('nav_click',{section:'contact'})">Contact</a>
-      <a href="#contact" class="nav-cta" onclick="track('nav_cta_click')">Talk to Us</a>
+      <a href="#contact" class="btn btn-solid nav-cta" onclick="track('nav_cta_click')">Talk to Us</a>
     </div>
     <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
     </button>
   </div>
   <div class="nav-mobile" id="navMobile">
     <div class="nav-mobile-inner">
+      <a href="#calculator" onclick="closeNav();track('nav_click',{section:'calculator'})">Calculator</a>
       <a href="#how-it-works" onclick="closeNav();track('nav_click',{section:'how_it_works'})">How It Works</a>
       <a href="#why-trust-us" onclick="closeNav();track('nav_click',{section:'why_trust'})">Why Trust Us</a>
       <a href="#faq" onclick="closeNav();track('nav_click',{section:'faq'})">FAQ</a>
       <a href="#contact" onclick="closeNav();track('nav_click',{section:'contact'})">Contact</a>
-      <a href="privacy-policy.html" onclick="track('nav_click',{section:'privacy'})">Privacy Policy</a>
-      <a href="terms-of-service.html" onclick="track('nav_click',{section:'terms'})">Terms of Service</a>
-      <a href="disclaimer.html" onclick="track('nav_click',{section:'disclaimer'})">Disclaimer</a>
+      <a href="privacy-policy.html" class="small" onclick="track('nav_click',{section:'privacy'})">Privacy Policy</a>
+      <a href="terms-of-service.html" class="small" onclick="track('nav_click',{section:'terms'})">Terms of Service</a>
+      <a href="disclaimer.html" class="small" onclick="track('nav_click',{section:'disclaimer'})">Disclaimer</a>
       <a href="#contact" class="cta" onclick="closeNav();track('nav_cta_click')">Talk to Us</a>
     </div>
   </div>
 </nav>
 
-<div class="app">
-
-  <div class="hero">
-    <div class="hero-pill">Premium Coverage Service</div>
-    <h1>Your insurance,<br><em>funded for life</em></h1>
-    <p class="hero-sub">Tell us your premium. We'll show you a small monthly contribution that's designed to cover your premiums for life — even if your income stops.</p>
-  </div>
-
-  <div class="intro-row">
-    <div class="concept-strip">
-      <div class="concept-grid">
-        <div class="concept-step">
-          <div class="concept-num">🛡️</div>
-          <div class="concept-text"><strong>Your insurance shouldn't depend on your income</strong>Life insurance is a 20–30 year commitment. But careers, salaries, and savings don't follow a stable path for that long.</div>
-        </div>
-        <div class="concept-step">
-          <div class="concept-num">🤲</div>
-          <div class="concept-text"><strong>Insurance is meant to protect — not to add another worry</strong>A policy you bought to protect your family shouldn't become a source of anxiety about whether you will be able to keep paying.</div>
-        </div>
-        <div class="concept-step">
-          <div class="concept-num">📈</div>
-          <div class="concept-text"><strong>Money that grows beats money that's spent</strong>Premiums paid year-by-year are gone the moment they're paid. Money built once and grown over time keeps working for you.</div>
-        </div>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Premium coverage planning</div>
+      <h1>Your insurance, <em>funded for life.</em></h1>
+      <p class="hero-sub">Tell us your premium. We'll show you a small monthly contribution that's designed to cover your premiums for life — even if your income stops.</p>
+      <div class="hero-actions">
+        <a href="#calculator" class="btn btn-solid" onclick="track('cta_try_calculator')">Calculate my plan <svg class="i"><use href="#i-arrow"/></svg></a>
+        <a href="#how-it-works" class="btn btn-ghost" onclick="track('nav_click',{section:'how_it_works_hero'})">How it works</a>
+      </div>
+      <div class="hero-proof">
+        <span><svg class="i"><use href="#i-lock"/></svg>Money stays in your name</span>
+        <span><svg class="i"><use href="#i-bank"/></svg>AMFI-registered distributor</span>
+        <span><svg class="i"><use href="#i-exit"/></svg>No lock-in</span>
       </div>
     </div>
 
-    <div class="example-block">
-      <div class="example-card">
-        <div class="example-tag">Example</div>
-        <div class="example-headline">Meet Raj — 29, salaried, with a ₹20,000 annual premium</div>
-        <div class="example-sub">His premium is paid every <strong>November</strong>, with <strong>31 years</strong> remaining on his policy (cover till age 60). Raj picks <strong>"PMI pays from Day 1"</strong> for instant peace of mind, and contributes monthly for <strong>4 years</strong>. Here's his Premium Freedom Plan:</div>
-        <div class="example-flow">
-          <div class="example-cell">
-            <div class="example-cell-label">Contribute</div>
-            <div class="example-cell-val">₹5,422/mo</div>
-            <div class="example-cell-sub">for just 4 years</div>
+    <div>
+      <div class="ledger">
+        <div class="ledger-top">
+          <div>
+            <div class="ledger-tag">Example plan</div>
+            <div class="ledger-who">Raj, 29 · salaried</div>
           </div>
-          <div class="example-cell">
-            <div class="example-cell-label">Insurance covered for</div>
-            <div class="example-cell-val">31 yrs</div>
-            <div class="example-cell-sub">from the very first month</div>
-          </div>
-          <div class="example-cell highlight">
-            <div class="example-cell-label">Saves vs. direct payment</div>
-            <div class="example-cell-val">₹3.60 L</div>
-            <div class="example-cell-sub">over 31 years</div>
-          </div>
+          <div class="ledger-pill">PMI pays from Day 1</div>
         </div>
-        <div class="example-cta">
-          <div class="example-cta-text">Want to see <strong>your own numbers?</strong></div>
-          <button class="example-cta-btn" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'});track('cta_try_calculator')">Try the Calculator <span class="arrow">↓</span></button>
+        <div class="ledger-rows">
+          <div class="ledger-row"><span>Annual premium (every November)</span><span>₹20,000</span></div>
+          <div class="ledger-row"><span>Years left on policy</span><span>31 yrs · till age 60</span></div>
+          <div class="ledger-row"><span>Raj contributes</span><span>₹5,422/mo for 4 yrs</span></div>
+          <div class="ledger-row"><span>Insurance covered</span><span>31 yrs, from month one</span></div>
         </div>
-        <div class="example-disclaimer">Illustrative example based on 8% conservative growth assumption. Actual outcomes depend on market performance. Mutual fund investments are subject to market risks.</div>
+        <div class="ledger-chart" aria-hidden="true">
+          <svg viewBox="0 0 400 120">
+            <defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f7a5a" stop-opacity="0.22"/><stop offset="1" stop-color="#0f7a5a" stop-opacity="0"/></linearGradient></defs>
+            <path d="M8 108 C 30 92, 46 50, 60 30 C 120 34, 230 54, 300 76 C 340 88, 370 98, 392 106 L392 112 L8 112 Z" fill="url(#lg)"/>
+            <path d="M8 108 C 30 92, 46 50, 60 30 C 120 34, 230 54, 300 76 C 340 88, 370 98, 392 106" fill="none" stroke="#0f7a5a" stroke-width="2.2"/>
+            <line x1="60" y1="10" x2="60" y2="112" stroke="#e39a4b" stroke-width="1.4" stroke-dasharray="4 4"/>
+            <circle cx="60" cy="30" r="4.5" fill="#fff" stroke="#e39a4b" stroke-width="2"/>
+            <text x="70" y="18" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#6b736d">Contributions stop · reserve keeps paying</text>
+            <text x="8" y="12" font-family="Inter,sans-serif" font-size="10" fill="#9aa19b">Yr 1</text>
+            <text x="392" y="12" font-family="Inter,sans-serif" font-size="10" fill="#9aa19b" text-anchor="end">Yr 31</text>
+          </svg>
+        </div>
+        <div class="ledger-foot">
+          <div>
+            <div class="ledger-foot-label">Saves vs. paying the insurer directly</div>
+            <div class="ledger-foot-val">₹3.60 L</div>
+          </div>
+          <div class="ledger-foot-sub">over 31 years, with zero premium worry</div>
+        </div>
       </div>
+      <div class="ledger-note">Illustrative example based on 8% conservative growth assumption. Actual outcomes depend on market performance. Mutual fund investments are subject to market risks.</div>
     </div>
   </div>
 
-  <div class="calc-wrap" id="calculator">
-    <div class="card input-card">
-      <div class="card-head">
-        <div class="card-head-title">
-          <div class="card-head-title-icon">📝</div>
-          <span>Your Policy Details</span>
-        </div>
-        <div class="card-head-status" id="inputStatus">
-          <span class="dot"></span>
-          <span>Ready</span>
-        </div>
+  <div class="wrap" style="margin-top:72px">
+    <div class="principles">
+      <div class="principle reveal">
+        <div class="principle-num">01</div>
+        <h3>Your insurance shouldn't depend on your income</h3>
+        <p>Life insurance is a 20–30 year commitment. But careers, salaries, and savings don't follow a stable path for that long.</p>
       </div>
-      <div class="card-body">
-        <div class="card-title"><span class="card-title-num">1</span> How many policies do you have?</div>
-        <div class="toggle-group" style="margin-bottom:22px">
-          <button class="toggle-btn active" id="modeSingle" onclick="setMulti(false)">Just One</button>
-          <button class="toggle-btn" id="modeMulti" onclick="setMulti(true)">Multiple Policies</button>
-        </div>
-        <div class="card-title"><span class="card-title-num">2</span> <span id="policyHeader">Tell us about your policy</span></div>
-        <div id="policiesContainer"></div>
-        <button class="add-policy" id="addBtn" onclick="addPolicy()" style="display:none">+ Add Another Policy</button>
-        <div class="divider" style="margin:22px 0"></div>
-        <div class="card-title"><span class="card-title-num">3</span> Your Plan</div>
-        <div class="field">
-          <label class="label">What would you like to plan?</label>
-          <div class="toggle-group">
-            <button class="toggle-btn active" id="planMonthly" onclick="setMode('monthly')">Find Monthly Contribution</button>
-            <button class="toggle-btn" id="planYears" onclick="setMode('yr')">Find Period</button>
+      <div class="principle reveal">
+        <div class="principle-num">02</div>
+        <h3>Insurance should protect — not add another worry</h3>
+        <p>A policy you bought to protect your family shouldn't become a source of anxiety about whether you will be able to keep paying.</p>
+      </div>
+      <div class="principle reveal">
+        <div class="principle-num">03</div>
+        <h3>Money that grows beats money that's spent</h3>
+        <p>Premiums paid year-by-year are gone the moment they're paid. Money built once and grown over time keeps working for you.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="band tint">
+  <div class="wrap">
+    <div class="calc-head">
+      <div>
+        <div class="eyebrow">Calculator</div>
+        <h2 class="h2">See <em>your own</em> numbers</h2>
+        <p class="lede">Enter your policy details. Your Premium Freedom Plan updates as you type — no signup needed.</p>
+      </div>
+      <div class="calc-assume"><svg class="i" style="width:16px;height:16px;color:var(--green)"><use href="#i-shield"/></svg>Planned at a conservative <b>8% a year</b></div>
+    </div>
+
+    <div class="calc-wrap" id="calculator">
+      <div class="card input-card">
+        <div class="card-head">
+          <div class="card-head-title">Your policy details</div>
+          <div class="card-head-status" id="inputStatus">
+            <span class="dot"></span>
+            <span>Ready</span>
           </div>
         </div>
-        <div class="field" id="yrsField">
-          <label class="label">How many years would you like to contribute?</label>
-          <input type="number" class="input" id="yrsIn" placeholder="e.g. 4">
-          <div class="field-hint">After this period, Pay My Insurance handles all your future premiums automatically.</div>
+        <div class="card-body">
+          <div class="card-title"><span class="card-title-num">1</span> How many policies do you have?</div>
+          <div class="toggle-group" style="margin-bottom:26px">
+            <button class="toggle-btn active" id="modeSingle" onclick="setMulti(false)">Just one</button>
+            <button class="toggle-btn" id="modeMulti" onclick="setMulti(true)">Multiple policies</button>
+          </div>
+          <div class="card-title"><span class="card-title-num">2</span> <span id="policyHeader">Tell us about your policy</span></div>
+          <div id="policiesContainer"></div>
+          <button class="add-policy" id="addBtn" onclick="addPolicy()" style="display:none">+ Add another policy</button>
+          <div class="divider" style="margin:26px 0"></div>
+          <div class="card-title"><span class="card-title-num">3</span> Your plan</div>
+          <div class="field">
+            <label class="label">What would you like to plan?</label>
+            <div class="toggle-group">
+              <button class="toggle-btn active" id="planMonthly" onclick="setMode('monthly')">Find monthly amount</button>
+              <button class="toggle-btn" id="planYears" onclick="setMode('yr')">Find period</button>
+            </div>
+          </div>
+          <div class="field" id="yrsField">
+            <label class="label" for="yrsIn">How many years would you like to contribute?</label>
+            <input type="number" class="input" id="yrsIn" placeholder="e.g. 4">
+            <div class="field-hint">After this period, Pay My Insurance handles all your future premiums automatically.</div>
+          </div>
+          <div class="field" id="amtField" style="display:none">
+            <label class="label" for="amtIn">How much can you contribute monthly? (₹)</label>
+            <input type="number" class="input" id="amtIn" placeholder="e.g. 5000">
+            <div class="field-hint">We'll show you how many years until your premiums are covered for life</div>
+          </div>
+          <button class="btn-primary mobile-only" onclick="calculate(true)">Show my plan</button>
         </div>
-        <div class="field" id="amtField" style="display:none">
-          <label class="label">How much can you contribute monthly? (₹)</label>
-          <input type="number" class="input" id="amtIn" placeholder="e.g. 5000">
-          <div class="field-hint">We'll show you how many years until your premiums are covered for life</div>
-        </div>
-        <button class="btn-primary mobile-only" onclick="calculate(true)">Show My Plan</button>
       </div>
-    </div>
 
-    <div class="card output-card">
-      <div class="card-head">
-        <div class="card-head-title">
-          <div class="card-head-title-icon" style="background:#eef0ff;color:#5367ff">📊</div>
-          <span>Your Premium Freedom Plan</span>
+      <div class="card output-card">
+        <div class="card-head">
+          <div class="card-head-title">Your Premium Freedom Plan</div>
+          <div class="card-head-status" id="outputStatus" style="display:none">
+            <span class="dot"></span>
+            <span>Plan updated</span>
+          </div>
         </div>
-        <div class="card-head-status" id="outputStatus" style="display:none">
-          <span class="dot"></span>
-          <span>Plan updated</span>
-        </div>
-      </div>
-      <div class="card-body" id="results">
-        <div class="output-empty">
-          <div class="output-empty-icon">✨</div>
-          <div class="output-empty-title">Your plan will appear here</div>
-          <div class="output-empty-sub">Fill in your policy details and your Premium Freedom Plan will calculate automatically.</div>
+        <div class="card-body" id="results">
+          <div class="output-empty">
+            <div class="output-empty-icon"><svg viewBox="0 0 24 24"><use href="#i-calc"/></svg></div>
+            <div class="output-empty-title">Your plan will appear here</div>
+            <div class="output-empty-sub">Fill in your policy details and your Premium Freedom Plan will calculate automatically.</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="section-header" id="how-it-works">
-    <div class="section-tag">How It Works</div>
-    <h2 class="section-h2">Four simple steps to <em>premium freedom</em></h2>
-    <p class="section-sub">No jargon. No surprises. Just a clear path from where you are today to insurance that's funded for life.</p>
-  </div>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-body">
+<section class="band" id="how-it-works" style="scroll-margin-top:40px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How it works</div>
+      <h2 class="h2">Four simple steps to <em>premium freedom</em></h2>
+      <p class="lede">No jargon. No surprises. Just a clear path from where you are today to insurance that's funded for life.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
         <div class="step-title">Tell us about your insurance policy</div>
         <div class="step-desc">Enter your premium amount, frequency, and how many years remain on your policy. Use the calculator above to see your personalised plan instantly — no signup needed.</div>
       </div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-body">
+      <div class="step reveal">
+        <div class="step-num">2</div>
         <div class="step-title">Start a small monthly contribution</div>
         <div class="step-desc">Set up an auto-debit from your bank account into your own dedicated <strong>Premium Reserve Fund</strong>. The money stays in <em>your name</em>, in <em>your folio</em> — managed across reputed funds like HDFC, Nippon, and Edelweiss for steady, conservative growth.</div>
       </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-body">
+      <div class="step reveal">
+        <div class="step-num">3</div>
         <div class="step-title">Your reserve grows over a few years</div>
         <div class="step-desc">During your contribution period (typically 3–7 years), your Premium Reserve grows steadily at a target rate of 8% per year. We monitor and rebalance it monthly to keep it on track — no action needed from you.</div>
       </div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-body">
+      <div class="step reveal">
+        <div class="step-num">4</div>
         <div class="step-title">Your reserve pays your premiums — for life</div>
         <div class="step-desc">Once your reserve is built, every premium is set up to be paid automatically from it — on time, until your policy term ends. Your insurance is designed to stay funded even if your job, income, or circumstances change. <strong>That's premium freedom.</strong></div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="section-header" id="why-trust-us">
-    <div class="section-tag">Why Trust Pay My Insurance</div>
-    <h2 class="section-h2">Built on <em>transparency</em>, not promises</h2>
-    <p class="section-sub">We're a young company. Here's exactly how we protect your money and your trust from Day 1.</p>
-  </div>
-
-  <div class="trust-grid">
-    <div class="trust-item">
-      <div class="trust-icon">🔒</div>
-      <div class="trust-content">
+<section class="band deep" id="why-trust-us" style="scroll-margin-top:40px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Why trust Pay My Insurance</div>
+      <h2 class="h2">Built on <em>transparency</em>, not promises</h2>
+      <p class="lede">We're a young company. Here's exactly how we protect your money and your trust from Day 1.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon"><svg class="i"><use href="#i-lock"/></svg></div>
         <div class="trust-title">Your money stays in your name</div>
         <div class="trust-desc">Your Premium Reserve sits in a mutual fund folio registered to <strong>you</strong> — not to us. We never hold your money. You can verify your balance directly on the AMC's app any time.</div>
       </div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">📊</div>
-      <div class="trust-content">
+      <div class="trust-item">
+        <div class="trust-icon"><svg class="i"><use href="#i-trend"/></svg></div>
         <div class="trust-title">Conservative 8% planning</div>
         <div class="trust-desc">We calculate your plan assuming 8% annual growth — far below the 12–15% Indian mutual funds have historically delivered over 10+ years. The gap is your built-in safety buffer.</div>
       </div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">🏛️</div>
-      <div class="trust-content">
+      <div class="trust-item">
+        <div class="trust-icon"><svg class="i"><use href="#i-bank"/></svg></div>
         <div class="trust-title">Regulated by SEBI &amp; AMFI</div>
         <div class="trust-desc">Pay My Insurance operates as an AMFI-registered Mutual Fund Distributor. Every investment is in a SEBI-regulated mutual fund. We follow all distributor compliance norms.</div>
       </div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">🧑‍💼</div>
-      <div class="trust-content">
+      <div class="trust-item">
+        <div class="trust-icon"><svg class="i"><use href="#i-user"/></svg></div>
         <div class="trust-title">Real founder, real face</div>
         <div class="trust-desc">Built by an Indian founder who's worked in private sector and felt the same anxiety you feel about long-term premium commitments. Not a faceless company.</div>
       </div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">🚪</div>
-      <div class="trust-content">
+      <div class="trust-item">
+        <div class="trust-icon"><svg class="i"><use href="#i-exit"/></svg></div>
         <div class="trust-title">Exit anytime, no lock-in</div>
         <div class="trust-desc">Your Premium Reserve is yours. Stop contributing whenever you want. Withdraw your full balance whenever you want. You're in control — always.</div>
       </div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-icon">💬</div>
-      <div class="trust-content">
+      <div class="trust-item">
+        <div class="trust-icon"><svg class="i"><use href="#i-chat"/></svg></div>
         <div class="trust-title">Free 45-min consultation</div>
         <div class="trust-desc">Before you commit anything, we walk you through your complete plan in a one-on-one session — your premiums, your reserve, your numbers. Free. No commitment.</div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="founder-row">
-    <div class="founder">
-      <div class="founder-avatar">K</div>
-      <div class="founder-body">
-        <div class="founder-meta">From the founder</div>
-        <div class="founder-name">Keshav - Pay My Insurance</div>
-        <div class="founder-quote">When I bought my first life insurance policy to protect my family, I felt good about the decision — but a quiet anxiety stayed with me. I'd just committed to paying premiums for decades, and the alternatives the insurer offered upfront felt out of reach. No matter how stable life looks today, none of us really knows what's coming. One unexpected expense, one tough year, and the policy I was paying for to protect my family could lapse.<br><br>So one weekend, I sat down with the calculations to see if there was a way to fund my premiums once and stop worrying about them. The math worked. I built Pay My Insurance so it can work for you too.</div>
-        <div class="founder-tagline">Reach me directly: keshav@paymyinsurance.in · WhatsApp +91 88006 11923</div>
+<section class="band">
+  <div class="wrap founder-grid">
+    <div class="founder reveal">
+      <div class="eyebrow" style="margin-bottom:28px">From the founder</div>
+      <blockquote>
+        <span class="mark">“</span>
+        <p>When I bought my first life insurance policy to protect my family, I felt good about the decision — but a quiet anxiety stayed with me. I'd just committed to paying premiums for decades, and the alternatives the insurer offered upfront felt out of reach. No matter how stable life looks today, none of us really knows what's coming. One unexpected expense, one tough year, and the policy I was paying for to protect my family could lapse.</p>
+        <p>So one weekend, I sat down with the calculations to see if there was a way to fund my premiums once and stop worrying about them. The math worked. I built Pay My Insurance so it can work for you too.</p>
+      </blockquote>
+      <div class="founder-sig">
+        <div class="founder-avatar">K</div>
+        <div>
+          <div class="founder-name">Keshav</div>
+          <div class="founder-role">Founder, Pay My Insurance · <a href="mailto:keshav@paymyinsurance.in">keshav@paymyinsurance.in</a> · <a href="https://wa.me/918800611923" target="_blank" rel="noopener">WhatsApp +91 88006 11923</a></div>
+        </div>
       </div>
     </div>
-    <div class="testimonials">
-      <div class="testimonials-icon">⭐</div>
-      <div class="testimonials-title">Be one of our first members</div>
-      <div class="testimonials-desc">We're just getting started. Real customer testimonials will appear here as we grow. Want to be one of our first stories? <strong>Talk to us today</strong> — we'd love to build your Premium Freedom Plan personally.</div>
+    <div class="first-members reveal">
+      <div>
+        <div class="eyebrow">Early members</div>
+        <h3>Be one of our first members</h3>
+        <p>We're just getting started. Real customer testimonials will appear here as we grow. Want to be one of our first stories? <strong>Talk to us today</strong> — we'd love to build your Premium Freedom Plan personally.</p>
+      </div>
+      <div>
+        <div class="first-seats" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <a href="#contact" class="btn btn-solid" style="margin-top:20px;width:100%" onclick="track('cta_first_members')">Talk to us <svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="section-header" id="contact">
-    <div class="section-tag">Talk to Us</div>
-    <h2 class="section-h2">Have questions? <em>We're here.</em></h2>
-    <p class="section-sub">Three easy ways to reach us — or leave your details and we'll call you back within 24 hours.</p>
-  </div>
-
-  <div class="contact-block">
-    <div class="contact-grid">
+<section class="band tint" id="contact" style="scroll-margin-top:40px">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Talk to us</div>
+      <h2 class="h2">Have questions? <em>We're here.</em></h2>
+      <p class="lede">Three easy ways to reach us — or leave your details and we'll call you back within 24 hours.</p>
       <div class="contact-methods">
         <a href="https://wa.me/918800611923?text=Hi%2C%20I%27m%20interested%20in%20Pay%20My%20Insurance" target="_blank" rel="noopener" class="contact-btn" onclick="track('contact_whatsapp')">
-          <div class="contact-btn-icon wa">💬</div>
+          <div class="contact-btn-icon"><svg class="i"><use href="#i-chat"/></svg></div>
           <div class="contact-btn-content">
             <div class="contact-btn-label">WhatsApp</div>
             <div class="contact-btn-val">+91 88006 11923</div>
           </div>
+          <svg class="i arr"><use href="#i-arrow"/></svg>
         </a>
         <a href="mailto:keshav@paymyinsurance.in?subject=Pay%20My%20Insurance%20Enquiry" class="contact-btn" onclick="track('contact_email')">
-          <div class="contact-btn-icon email">✉️</div>
+          <div class="contact-btn-icon"><svg class="i"><use href="#i-mail"/></svg></div>
           <div class="contact-btn-content">
             <div class="contact-btn-label">Email</div>
             <div class="contact-btn-val">keshav@paymyinsurance.in</div>
           </div>
+          <svg class="i arr"><use href="#i-arrow"/></svg>
         </a>
         <button class="contact-btn disabled" onclick="track('contact_calendly_clicked');alert('Online booking opening soon. For now, please reach us via WhatsApp or email.')">
-          <div class="contact-btn-icon cal">📅</div>
+          <div class="contact-btn-icon"><svg class="i"><use href="#i-cal"/></svg></div>
           <div class="contact-btn-content">
-            <div class="contact-btn-label">Book a Free Consultation</div>
+            <div class="contact-btn-label">Book a free consultation</div>
             <div class="contact-btn-val">45-min planning session</div>
           </div>
           <div class="coming-soon-tag">Soon</div>
         </button>
       </div>
+    </div>
+    <div class="form-card">
       <form class="lead-form" id="leadForm" onsubmit="return submitLead(event)" novalidate>
-        <div class="lead-form-title">Or — get a callback</div>
+        <div class="lead-form-title">Get a callback</div>
         <div class="lead-form-sub">Leave your details. We'll personally walk you through your Premium Freedom Plan within 24 hours.</div>
-        <input type="text" name="name" id="leadName" placeholder="Your name" required>
-        <input type="tel" name="phone" id="leadPhone" placeholder="WhatsApp number (e.g. 98765 43210)" required>
-        <input type="email" name="email" id="leadEmail" placeholder="Email (optional)">
-        <textarea name="message" id="leadMessage" placeholder="Anything you'd like us to know? (optional)" style="padding:11px 14px;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;color:var(--text);outline:none;transition:all 0.15s;resize:vertical;min-height:60px"></textarea>
+        <label>Your name<input type="text" name="name" id="leadName" placeholder="e.g. Priya Sharma" required autocomplete="name"></label>
+        <label>WhatsApp number<input type="tel" name="phone" id="leadPhone" placeholder="98765 43210" required autocomplete="tel"></label>
+        <label><div>Email <span>(optional)</span></div><input type="email" name="email" id="leadEmail" placeholder="you@example.com" autocomplete="email"></label>
+        <label><div>Anything you'd like us to know? <span>(optional)</span></div><textarea name="message" id="leadMessage" placeholder="Your policy, your questions…"></textarea></label>
         <button type="submit" class="lead-form-btn" id="leadSubmitBtn">Request a callback</button>
+        <div class="lead-form-fine">We'll only use your details to contact you. <a href="privacy-policy.html">Privacy Policy</a></div>
       </form>
       <div class="lead-form-success" id="leadSuccess">Thank you! We'll reach out within 24 hours.</div>
     </div>
   </div>
+</section>
 
-  <div class="section-header" id="faq">
-    <div class="section-tag">Frequently Asked</div>
-    <h2 class="section-h2">Your questions, <em>answered</em></h2>
-    <p class="section-sub">The questions we hear most often from people exploring Pay My Insurance.</p>
-  </div>
-
-  <div class="faq-list">
+<section class="band" id="faq" style="scroll-margin-top:40px">
+  <div class="wrap faq-grid">
+    <div class="sec-head">
+      <div class="eyebrow">Frequently asked</div>
+      <h2 class="h2">Your questions, <em>answered</em></h2>
+      <p class="lede">The questions we hear most often from people exploring Pay My Insurance.</p>
+    </div>
+    <div class="faq-list">
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">What exactly is Pay My Insurance?<span class="faq-toggle">+</span></button>
       <div class="faq-a">Pay My Insurance is a premium coverage planning service. You contribute a small amount monthly for a few years, we build a dedicated Premium Reserve Fund in your own name across reputed Indian mutual funds, and once that fund is built, all your future insurance premiums are paid automatically from it — for the rest of your policy term. You don't have to worry about premium payments again, even if your job changes or income stops.</div>
@@ -807,60 +875,84 @@ canvas{width:100%;display:block}
       <button class="faq-q" onclick="toggleFaq(this)">What if I need to stop or withdraw early?<span class="faq-toggle">+</span></button>
       <div class="faq-a">You can stop or withdraw any time. Your Premium Reserve is your money in your folio — there's no lock-in, no exit penalty from us. We'll show you exactly what happens to your premium coverage if you withdraw early, so you can make an informed choice. Most customers continue because they understand the long-term value, but the option to exit is always yours.</div>
     </div>
-  </div>
-
-  <div class="seo-content">
-    <h3>Why long-term insurance premium planning matters in India today</h3>
-    <p>Indian insurance premiums have been rising steadily — health insurance premiums alone went up by over 25% in 2024 for more than half of policyholders. Add to this the reality that around two-thirds of Indian life insurance policies lapse within five years, mostly because policyholders couldn't sustain premium payments after a job change, salary cut, or unexpected expense.</p>
-    <p>The problem isn't that Indians don't want insurance. It's that <strong>insurance is structured as a 20–30 year financial commitment</strong> — but most people's incomes don't follow a stable, predictable path for that long. Job changes, career breaks, relocations, family responsibilities, medical events — any of these can break the premium chain and cost a family their entire investment in coverage.</p>
-    <h4>How Pay My Insurance solves this</h4>
-    <p>Instead of betting that your income will stay perfect for the next 20-30 years, you build a one-time <strong>Premium Reserve Fund</strong> over a shorter, manageable period — typically 3 to 7 years. Once built, this reserve quietly funds all your future premiums automatically. Your insurance keeps running. Your family stays protected. Even if your income changes, your coverage doesn't.</p>
-    <h4>Who is this for?</h4>
-    <ul>
-      <li><strong>Salaried professionals</strong> in private sector worried about job continuity over a long policy term</li>
-      <li><strong>Self-employed individuals</strong> and freelancers with variable income</li>
-      <li><strong>Parents</strong> who want to lock in their child's insurance protection regardless of their own future income</li>
-      <li><strong>Anyone with an existing life insurance policy</strong> (LIC, HDFC Life, ICICI Pru, SBI Life, Max Life, Tata AIA, and others) who wants long-term peace of mind</li>
-      <li><strong>Indians planning early retirement or career breaks</strong> who need their insurance to keep running without active income</li>
-    </ul>
-    <h4>What makes Pay My Insurance different from a regular SIP or mutual fund investment?</h4>
-    <p>A regular SIP grows your money for general goals. Pay My Insurance is purpose-built around your specific insurance premiums — calculating the exact monthly contribution required, managing the reserve actively across multiple reputed mutual funds, and automatically paying your premiums when due. It's the difference between "saving money" and "solving a specific long-term problem."</p>
-    <h4>Is Pay My Insurance safe?</h4>
-    <p>Your money never sits with Pay My Insurance. It goes into a mutual fund folio in your own name, regulated by SEBI. We're an AMFI-registered Mutual Fund Distributor. You can verify your reserve balance any time on the AMC's app. There is no lock-in — you can exit and withdraw whenever you choose. Returns are not guaranteed (no SEBI-regulated entity can guarantee returns), but our planning is conservative at 8% per year while Indian markets have historically delivered 12–15% over 10+ year periods.</p>
-  </div>
-
-  <div class="cta-block" style="margin:18px auto 0;max-width:780px">
-    <div class="cta-pill">Ready to build your plan?</div>
-    <div class="cta-tag">Use the calculator above. Then book a free 45-min planning session with us — no commitment.</div>
-    <button class="cta-btn" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'});track('cta_scroll_to_calc')">Try the Calculator</button>
-    <div class="cta-trust">Free • No signup needed • Built by Indians, for Indians</div>
-  </div>
-
-  <div class="footer">
-    <div class="footer-brand">Pay My <span>Insurance</span></div>
-    <div class="footer-tagline">Your insurance, funded for life — job or no job.</div>
-    <div class="footer-links">
-      <a href="#how-it-works">How It Works</a>
-      <a href="#why-trust-us">Why Trust Us</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms-of-service.html">Terms of Service</a>
-      <a href="disclaimer.html">Disclaimer</a>
     </div>
-    <div class="footer-divider"></div>
+  </div>
+</section>
+
+<section class="band tint">
+  <div class="wrap guide">
+    <div class="sec-head">
+      <div class="eyebrow">The bigger picture</div>
+      <h3 class="h2" style="font-size:clamp(28px,3.6vw,42px)">Why long-term insurance premium planning matters in India today</h3>
+    </div>
+    <div class="guide-body">
+      <p>Indian insurance premiums have been rising steadily — health insurance premiums alone went up by over 25% in 2024 for more than half of policyholders. Add to this the reality that around two-thirds of Indian life insurance policies lapse within five years, mostly because policyholders couldn't sustain premium payments after a job change, salary cut, or unexpected expense.</p>
+      <p>The problem isn't that Indians don't want insurance. It's that <strong>insurance is structured as a 20–30 year financial commitment</strong> — but most people's incomes don't follow a stable, predictable path for that long. Job changes, career breaks, relocations, family responsibilities, medical events — any of these can break the premium chain and cost a family their entire investment in coverage.</p>
+      <h4>How Pay My Insurance solves this</h4>
+      <p>Instead of betting that your income will stay perfect for the next 20-30 years, you build a one-time <strong>Premium Reserve Fund</strong> over a shorter, manageable period — typically 3 to 7 years. Once built, this reserve quietly funds all your future premiums automatically. Your insurance keeps running. Your family stays protected. Even if your income changes, your coverage doesn't.</p>
+      <h4>Who is this for?</h4>
+      <ul>
+        <li><strong>Salaried professionals</strong> in private sector worried about job continuity over a long policy term</li>
+        <li><strong>Self-employed individuals</strong> and freelancers with variable income</li>
+        <li><strong>Parents</strong> who want to lock in their child's insurance protection regardless of their own future income</li>
+        <li><strong>Anyone with an existing life insurance policy</strong> (LIC, HDFC Life, ICICI Pru, SBI Life, Max Life, Tata AIA, and others) who wants long-term peace of mind</li>
+        <li><strong>Indians planning early retirement or career breaks</strong> who need their insurance to keep running without active income</li>
+      </ul>
+      <h4>What makes Pay My Insurance different from a regular SIP or mutual fund investment?</h4>
+      <p>A regular SIP grows your money for general goals. Pay My Insurance is purpose-built around your specific insurance premiums — calculating the exact monthly contribution required, managing the reserve actively across multiple reputed mutual funds, and automatically paying your premiums when due. It's the difference between "saving money" and "solving a specific long-term problem."</p>
+      <h4>Is Pay My Insurance safe?</h4>
+      <p>Your money never sits with Pay My Insurance. It goes into a mutual fund folio in your own name, regulated by SEBI. We're an AMFI-registered Mutual Fund Distributor. You can verify your reserve balance any time on the AMC's app. There is no lock-in — you can exit and withdraw whenever you choose. Returns are not guaranteed (no SEBI-regulated entity can guarantee returns), but our planning is conservative at 8% per year while Indian markets have historically delivered 12–15% over 10+ year periods.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band deep closing">
+  <div class="wrap">
+    <div class="eyebrow">Ready to build your plan?</div>
+    <h2 class="h2">Job or no job, your insurance <em>keeps running.</em></h2>
+    <p class="lede">Use the calculator, then book a free 45-min planning session with us — no commitment.</p>
+    <div class="closing-actions">
+      <a href="#calculator" class="btn btn-amber" onclick="track('cta_scroll_to_calc')">Try the calculator <svg class="i"><use href="#i-arrow"/></svg></a>
+      <a href="https://wa.me/918800611923?text=Hi%2C%20I%27m%20interested%20in%20Pay%20My%20Insurance" target="_blank" rel="noopener" class="btn btn-ghost" onclick="track('contact_whatsapp',{source:'closing_cta'})">Chat on WhatsApp</a>
+    </div>
+    <div class="closing-trust">Free · No signup needed · Built by Indians, for Indians</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="brand"><div class="brand-mark">P</div><div class="brand-name">Pay My <em>Insurance</em></div></a>
+        <div class="footer-tagline">Your insurance, funded for life — job or no job.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#calculator">Calculator</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#why-trust-us">Why Trust Us</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
     <div class="footer-meta">
       <strong>Pay My Insurance</strong> is a premium coverage planning service operated by an AMFI-registered Mutual Fund Distributor. We do not sell insurance policies. We do not guarantee returns. All investments are in SEBI-regulated mutual funds and are subject to market risks. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future results. For grievances, write to us at keshav@paymyinsurance.in.
     </div>
     <div class="footer-domain">© 2026 Pay My Insurance · paymyinsurance.in</div>
-    <!-- VERSION: v59 (deployed: replace with actual upload date) -->
+    <!-- VERSION: v60 (redesign) -->
   </div>
-</div>
+</footer>
 
 <script>
 const RM = 0.08/12;
 const MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-const PC = ['#00d09c','#5367ff','#f5a623','#a060c8','#ff7a59'];
+const PC = ['#0f7a5a','#2f5d8a','#a86d12','#7a4b8c','#c4532a'];
 
 function track(eventName, params){
   try{
@@ -1055,11 +1147,11 @@ function updatePolicyResultBlocks(){
     const html=`
       ${hasMonthly?`<div class="policy-result-item">
         <div class="policy-result-label">${mode==='monthly'?'Monthly Contribution':'Period Needed'}</div>
-        <div class="policy-result-val" style="color:#5367ff">${mode==='monthly'?fmtINR(pol._monthly):pol._yrs.toFixed(1)+' yrs'}</div>
+        <div class="policy-result-val" style="color:#2f5d8a">${mode==='monthly'?fmtINR(pol._monthly):pol._yrs.toFixed(1)+' yrs'}</div>
       </div>`:''}
       ${pol._totalC!=null?`<div class="policy-result-item">
         <div class="policy-result-label">Total Contribution</div>
-        <div class="policy-result-val" style="color:#a060c8">${fmtINR(pol._totalC)}</div>
+        <div class="policy-result-val" style="color:#7a4b8c">${fmtINR(pol._totalC)}</div>
       </div>`:''}
       <div class="policy-result-item">
         <div class="policy-result-label">Reserve Required</div>
@@ -1126,11 +1218,11 @@ function renderPolicies(){
       <div class="policy-result">
         ${hasMonthly?`<div class="policy-result-item">
           <div class="policy-result-label">${mode==='monthly'?'Monthly Contribution':'Period Needed'}</div>
-          <div class="policy-result-val" style="color:#5367ff">${mode==='monthly'?fmtINR(pol._monthly):pol._yrs.toFixed(1)+' yrs'}</div>
+          <div class="policy-result-val" style="color:#2f5d8a">${mode==='monthly'?fmtINR(pol._monthly):pol._yrs.toFixed(1)+' yrs'}</div>
         </div>`:''}
         ${pol._totalC!=null?`<div class="policy-result-item">
           <div class="policy-result-label">Total Contribution</div>
-          <div class="policy-result-val" style="color:#a060c8">${fmtINR(pol._totalC)}</div>
+          <div class="policy-result-val" style="color:#7a4b8c">${fmtINR(pol._totalC)}</div>
         </div>`:''}
         <div class="policy-result-item">
           <div class="policy-result-label">Reserve Required</div>
@@ -1387,7 +1479,7 @@ function calculate(showAlerts){
 function showOutputEmpty(title,sub){
   const resDiv=document.getElementById('results');
   resDiv.innerHTML=`<div class="output-empty">
-    <div class="output-empty-icon">✨</div>
+    <div class="output-empty-icon"><svg viewBox="0 0 24 24"><use href="#i-calc"/></svg></div>
     <div class="output-empty-title">${title}</div>
     <div class="output-empty-sub">${sub}</div>
   </div>`;
@@ -1445,12 +1537,12 @@ function renderResults(){
     <div class="plan-summary">
       <div class="plan-cell">
         <div class="plan-cell-label">Monthly Contribution</div>
-        <div class="plan-cell-val" style="color:#00b386">${fmtINR(r.monthly)}</div>
+        <div class="plan-cell-val" style="color:#0b5e45">${fmtINR(r.monthly)}</div>
         <div class="plan-cell-sub">for ${r.cYrs.toFixed(1)} years only</div>
       </div>
       <div class="plan-cell">
         <div class="plan-cell-label">Insurance Covered For</div>
-        <div class="plan-cell-val" style="color:#00b386">${Math.round(avgCoverYrs)} yrs</div>
+        <div class="plan-cell-val" style="color:#0b5e45">${Math.round(avgCoverYrs)} yrs</div>
         <div class="plan-cell-sub">${coverSubText}</div>
       </div>
     </div>
@@ -1470,17 +1562,17 @@ function renderResults(){
       <div class="stats">
         <div class="stat">
           <div class="stat-label">Total Contribution</div>
-          <div class="stat-val" style="color:#a060c8">${fmtINR(r.tC)}</div>
+          <div class="stat-val" style="color:#7a4b8c">${fmtINR(r.tC)}</div>
           <div class="stat-sub">${r.anySu?'step-up included':'over the period'}</div>
         </div>
         <div class="stat">
           <div class="stat-label">Total Annual Premiums</div>
-          <div class="stat-val" style="color:#f5a623">${fmtINR(r.tY)}</div>
+          <div class="stat-val" style="color:#a86d12">${fmtINR(r.tY)}</div>
           <div class="stat-sub">across ${r.pd.length} polic${r.pd.length>1?'ies':'y'}</div>
         </div>
         <div class="stat">
           <div class="stat-label">Premium Reserve</div>
-          <div class="stat-val" style="color:#00d09c">${fmtINR(r.tR)}</div>
+          <div class="stat-val" style="color:#0f7a5a">${fmtINR(r.tR)}</div>
           <div class="stat-sub">funds ${Math.round(avgCoverYrs)} yrs of premiums</div>
         </div>
       </div>
@@ -1495,7 +1587,7 @@ function renderResults(){
           <div class="breakdown-dot" style="background:${p.col}"></div>
           <div class="breakdown-name">${p.name}</div>
           <div class="breakdown-meta">${p.term}yr · PMI covers ${p._coverYrs.toFixed(1)}yr</div>
-          ${p.coverMode==='day1'?`<span class="breakdown-tag" style="background:#eef0ff;color:#5367ff">Day 1</span>`:''}
+          ${p.coverMode==='day1'?`<span class="breakdown-tag" style="background:#e8eef5;color:#2f5d8a">Day 1</span>`:''}
           ${p.inflOn?`<span class="breakdown-tag warn">+${p.infl}%/yr</span>`:''}
           ${p.suOn?`<span class="breakdown-tag purple">SU ${p.su}%</span>`:''}
           <div class="breakdown-val" style="color:${p.col}">${fmtINR(p.reserve)}</div>
@@ -1512,11 +1604,11 @@ function renderResults(){
         <thead><tr>${['Year','Month','Policy','Premium Paid by PMI','Mode'].map(h=>`<th>${h}</th>`).join('')}</tr></thead>
         <tbody>${r.schedRows.map(row=>`
           <tr>
-            <td style="color:#44475a">Yr ${row.yr}</td>
+            <td style="color:#3d4842">Yr ${row.yr}</td>
             <td><span class="schedule-month-pill" style="background:${row.col}">${MN[row.mo-1]}</span></td>
-            <td style="color:#44475a">${row.name}</td>
-            <td style="color:#ff7a59;font-weight:600">${fmtINR(row.w)}</td>
-            <td style="color:#7d8493;font-size:11px">${row.coverMode==='day1'?'Day 1':'After contrib'}</td>
+            <td style="color:#3d4842">${row.name}</td>
+            <td style="color:#c4532a;font-weight:600">${fmtINR(row.w)}</td>
+            <td style="color:#6b736d;font-size:11px">${row.coverMode==='day1'?'Day 1':'After contrib'}</td>
           </tr>
         `).join('')}</tbody>
       </table></div>`:''}
@@ -1525,15 +1617,15 @@ function renderResults(){
       <div class="chart-head">
         <span class="chart-title">Premium Reserve Growth</span>
         <div class="chart-legend">
-          <span><span class="chart-dot" style="background:#5367ff"></span>Building</span>
-          <span><span class="chart-dot" style="background:#00d09c"></span>Covering</span>
-          <span><span class="chart-dot" style="background:#ff7a59"></span>Premium Paid</span>
+          <span><span class="chart-dot" style="background:#2f5d8a"></span>Building</span>
+          <span><span class="chart-dot" style="background:#0f7a5a"></span>Covering</span>
+          <span><span class="chart-dot" style="background:#c4532a"></span>Premium Paid</span>
         </div>
       </div>
       <div class="chart-body"><canvas id="chartCanvas"></canvas></div>
     </div>
     <div class="insight">
-      💡 Contribute <strong style="color:#5367ff">${fmtINR(r.monthly)}/month</strong> for <strong style="color:#5367ff">${r.cYrs.toFixed(1)} years</strong> to build a Premium Reserve of <strong style="color:#00d09c">${fmtINR(r.tR)}</strong>. Your reserve is then designed to handle all premiums for ${r.pd.map((p,i)=>`${i>0?', ':''}<strong style="color:${p.col}">${p.name}</strong>${p.inflOn?` <span style="color:#ff7a59">(+${p.infl}%/yr increase covered)</span>`:''}`).join('')}. Your insurance is designed to be funded for life — even if your income stops.
+      Contribute <strong style="color:#2f5d8a">${fmtINR(r.monthly)}/month</strong> for <strong style="color:#2f5d8a">${r.cYrs.toFixed(1)} years</strong> to build a Premium Reserve of <strong style="color:#0f7a5a">${fmtINR(r.tR)}</strong>. Your reserve is then designed to handle all premiums for ${r.pd.map((p,i)=>`${i>0?', ':''}<strong style="color:${p.col}">${p.name}</strong>${p.inflOn?` <span style="color:#c4532a">(+${p.infl}%/yr increase covered)</span>`:''}`).join('')}. Your insurance is designed to be funded for life — even if your income stops.
     </div>
     <div class="cta-block">
       <div class="cta-pill">Ready to start?</div>
@@ -1608,9 +1700,9 @@ function drawChart(){
   const xOf=i=>pad.l+i*(cW/(N-1));
   const yOf=v=>pad.t+cH-(v/maxV)*cH;
   ctx.clearRect(0,0,W,H);
-  ctx.strokeStyle='#eef0f3';ctx.lineWidth=1;
+  ctx.strokeStyle='#ece7dc';ctx.lineWidth=1;
   for(let i=0;i<=4;i++){const y=pad.t+i*cH/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke()}
-  ctx.fillStyle='#7d8493';ctx.font='500 11px Inter';ctx.textAlign='right';
+  ctx.fillStyle='#6b736d';ctx.font='500 11px Inter';ctx.textAlign='right';
   for(let i=0;i<=4;i++){const v=maxV*(1-i/4),y=pad.t+i*cH/4;const l=v>=1e7?'₹'+(v/1e7).toFixed(1)+'Cr':v>=1e5?'₹'+(v/1e5).toFixed(1)+'L':v>=1e3?'₹'+(v/1e3).toFixed(0)+'K':'₹'+Math.round(v);ctx.fillText(l,pad.l-6,y+4)}
   ctx.textAlign='center';const step=Math.max(1,Math.floor(N/8));
   labels.forEach((l,i)=>{if(i%step===0||i===N-1)ctx.fillText(l,xOf(i),H-pad.b+14)});
@@ -1629,11 +1721,11 @@ function drawChart(){
   if(conPts.length>0&&covPts.length>0){
     covPts.unshift(conPts[conPts.length-1]);
   }
-  drawArea(conPts,'#5367ff');
-  conPts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,3.5,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.lineWidth=2;ctx.strokeStyle='#5367ff';ctx.stroke()});
-  drawArea(covPts,'#00d09c');
-  dPay.forEach((v,i)=>{if(v==null)return;const x=xOf(i),y=yOf(v),sz=5;ctx.beginPath();ctx.moveTo(x,y-sz);ctx.lineTo(x+sz,y+sz*.6);ctx.lineTo(x-sz,y+sz*.6);ctx.closePath();ctx.fillStyle='#ff7a59';ctx.fill()});
-  if(cI>0&&cI<N-1){const x=xOf(cI);ctx.save();ctx.beginPath();ctx.moveTo(x,pad.t);ctx.lineTo(x,H-pad.b);ctx.strokeStyle='rgba(0,208,156,0.5)';ctx.lineWidth=1.5;ctx.setLineDash([5,4]);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#00b386';ctx.font='600 10px Inter';ctx.textAlign='center';ctx.fillText('Contribution Ends',x,pad.t+12);ctx.restore()}
+  drawArea(conPts,'#2f5d8a');
+  conPts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,3.5,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.lineWidth=2;ctx.strokeStyle='#2f5d8a';ctx.stroke()});
+  drawArea(covPts,'#0f7a5a');
+  dPay.forEach((v,i)=>{if(v==null)return;const x=xOf(i),y=yOf(v),sz=5;ctx.beginPath();ctx.moveTo(x,y-sz);ctx.lineTo(x+sz,y+sz*.6);ctx.lineTo(x-sz,y+sz*.6);ctx.closePath();ctx.fillStyle='#c4532a';ctx.fill()});
+  if(cI>0&&cI<N-1){const x=xOf(cI);ctx.save();ctx.beginPath();ctx.moveTo(x,pad.t);ctx.lineTo(x,H-pad.b);ctx.strokeStyle='rgba(15,122,90,0.45)';ctx.lineWidth=1.5;ctx.setLineDash([5,4]);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#0b5e45';ctx.font='600 10px Inter';ctx.textAlign='center';ctx.fillText('Contribution Ends',x,pad.t+12);ctx.restore()}
 }
 
 function toggleNav(){
@@ -1731,6 +1823,13 @@ window.addEventListener('resize',()=>{if(lastResult)drawChart()});
 
 document.getElementById('yrsIn').addEventListener('input',scheduleLiveCalc);
 document.getElementById('amtIn').addEventListener('input',scheduleLiveCalc);
+document.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>8)},{passive:true});
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(e=>io.observe(e));
+})();
 </script>
 </body>
 </html>
