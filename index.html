@@ -439,7 +439,7 @@ canvas{width:100%;display:block}
 .dark-glow.g2{background:#4f6bff;bottom:-420px;right:-200px}
 .bento{position:relative;display:grid;gap:14px}
 @media (min-width:700px){.bento{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:1024px){.bento{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1024px){.bento{grid-template-columns:repeat(4,1fr)}}
 .bento-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:22px;padding:28px;transition:border-color .25s,transform .25s,background .25s}
 .bento-item:hover{border-color:rgba(110,231,183,0.35);transform:translateY(-4px);background:rgba(255,255,255,0.06)}
 .bento-item.spot::before{background:radial-gradient(380px circle at var(--x,50%) var(--y,-200px),rgba(16,185,129,0.16),transparent 45%)}
@@ -636,7 +636,7 @@ canvas{width:100%;display:block}
     <div>
       <div class="pill reveal"><b>NEW</b> Premium Coverage Service for India</div>
       <h1 class="reveal" style="--d:.06s">Your insurance<br><span class="grad-text">funded for life</span></h1>
-      <p class="hero-sub reveal" style="--d:.12s">Tell us your premium. We'll show you a small monthly contribution that's designed to cover your premiums for life — even if your income stops.</p>
+      <p class="hero-sub reveal" style="--d:.12s">Contribute a small amount for a few years. Your reserve then pays your premiums for life — even if your income stops.</p>
       <div class="hero-actions reveal" style="--d:.18s">
         <a href="#calculator" class="btn btn-grad" onclick="track('cta_try_calculator')">Calculate my plan <svg class="i"><use href="#i-arrow"/></svg></a>
         <a href="#how-it-works" class="btn btn-light" onclick="track('nav_click',{section:'how_it_works_hero'})">How it works</a>
@@ -689,13 +689,13 @@ canvas{width:100%;display:block}
           </div>
         </div>
         <button class="btn btn-grad qe-go" onclick="qeToCalculator()">Get my detailed plan <svg class="i"><use href="#i-arrow"/></svg></button>
-        <div class="qe-note">Estimate for an annual premium with PMI paying from Day 1, at 8% conservative growth. Mutual fund investments are subject to market risks.</div>
+        <div class="qe-note">Estimate: annual premium, PMI pays from Day 1, 8% assumed growth. Mutual fund investments are subject to market risks.</div>
       </div>
     </div>
   </div>
 
   <div class="marquee-sec">
-    <div class="marquee-label">Works with the life insurance policy you already own</div>
+    <div class="marquee-label">Works with the policy you already own</div>
     <div class="marquee"><div class="marquee-track" id="marquee">
       <span class="marquee-item">LIC</span><span class="marquee-item">HDFC Life</span><span class="marquee-item">ICICI Prudential</span><span class="marquee-item">SBI Life</span><span class="marquee-item">Tata AIA</span><span class="marquee-item">Max Life</span><span class="marquee-item">Bajaj Allianz</span><span class="marquee-item">Kotak Life</span><span class="marquee-item">& more</span>
     </div></div>
@@ -705,10 +705,10 @@ canvas{width:100%;display:block}
 <section class="section" style="padding-top:56px">
   <div class="wrap">
     <div class="stats-strip">
-      <div class="stat-card reveal"><div class="num grad-text" data-count="8" data-suffix="%">8%</div><div class="cap">Conservative growth we plan with — well below historical averages</div></div>
-      <div class="stat-card reveal" style="--d:.08s"><div class="num grad-text" data-count="100" data-suffix="%">100%</div><div class="cap">Of your reserve sits in a folio in <b>your</b> name</div></div>
-      <div class="stat-card reveal" style="--d:.16s"><div class="num grad-text" data-count="0">0</div><div class="cap">Lock-in or exit penalty from us — withdraw any time</div></div>
-      <div class="stat-card reveal" style="--d:.24s"><div class="num grad-text" data-count="45" data-suffix=" min">45 min</div><div class="cap">Free one-on-one planning session before you commit</div></div>
+      <div class="stat-card reveal"><div class="num grad-text" data-count="8" data-suffix="%">8%</div><div class="cap">Conservative growth assumed</div></div>
+      <div class="stat-card reveal" style="--d:.08s"><div class="num grad-text" data-count="100" data-suffix="%">100%</div><div class="cap">Held in a folio in <b>your</b> name</div></div>
+      <div class="stat-card reveal" style="--d:.16s"><div class="num grad-text" data-count="0">0</div><div class="cap">Lock-in or exit penalty</div></div>
+      <div class="stat-card reveal" style="--d:.24s"><div class="num grad-text" data-count="45" data-suffix=" min">45 min</div><div class="cap">Free planning session</div></div>
     </div>
   </div>
 </section>
@@ -723,17 +723,17 @@ canvas{width:100%;display:block}
       <div class="why-card spot reveal">
         <div class="why-ic" style="background:linear-gradient(135deg,#10b981,#34d399)"><svg class="i"><use href="#i-shield"/></svg></div>
         <h3>Your insurance shouldn't depend on your income</h3>
-        <p>Life insurance is a 20–30 year commitment. But careers, salaries, and savings don't follow a stable path for that long.</p>
+        <p>Policies run 20–30 years. Careers and salaries rarely stay steady that long.</p>
       </div>
       <div class="why-card spot reveal" style="--d:.08s">
         <div class="why-ic" style="background:linear-gradient(135deg,#4f6bff,#60a5fa)"><svg class="i"><use href="#i-heart"/></svg></div>
         <h3>Insurance is meant to protect — not to add another worry</h3>
-        <p>A policy you bought to protect your family shouldn't become a source of anxiety about whether you will be able to keep paying.</p>
+        <p>The policy that protects your family shouldn't become a monthly worry.</p>
       </div>
       <div class="why-card spot reveal" style="--d:.16s">
         <div class="why-ic" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa)"><svg class="i"><use href="#i-trend"/></svg></div>
         <h3>Money that grows beats money that's spent</h3>
-        <p>Premiums paid year-by-year are gone the moment they're paid. Money built once and grown over time keeps working for you.</p>
+        <p>Premiums paid each year are gone. A reserve built once keeps working for you.</p>
       </div>
     </div>
   </div>
@@ -744,7 +744,7 @@ canvas{width:100%;display:block}
     <div class="sec-head center">
       <span class="tag blue">Full calculator</span>
       <h2 class="h2">Build your <span class="grad-text">Premium Freedom Plan</span></h2>
-      <p class="lede">Add one policy or several. Your plan updates live as you type — no signup needed.</p>
+      <p class="lede">Add one or more policies. Your plan updates as you type.</p>
     </div>
 
     <div class="calc-wrap" id="calculator">
@@ -813,29 +813,29 @@ canvas{width:100%;display:block}
     <div class="sec-head center">
       <span class="tag violet">How it works</span>
       <h2 class="h2">Four simple steps to <span class="grad-text">premium freedom</span></h2>
-      <p class="lede">No jargon. No surprises. Just a clear path from where you are today to insurance that's funded for life.</p>
+      <p class="lede">From your premium today to insurance that's funded for life.</p>
     </div>
     <div class="steps" id="steps">
       <div class="steps-line"><i id="stepsFill"></i></div>
       <div class="step reveal">
         <div class="step-num">1</div>
         <div class="step-title">Tell us about your insurance policy</div>
-        <div class="step-desc">Enter your premium amount, frequency, and how many years remain on your policy. Use the calculator above to see your personalised plan instantly — no signup needed.</div>
+        <div class="step-desc">Enter your premium, frequency and years left. See your plan instantly — no signup.</div>
       </div>
       <div class="step reveal" style="--d:.08s">
         <div class="step-num">2</div>
         <div class="step-title">Start a small monthly contribution</div>
-        <div class="step-desc">Set up an auto-debit from your bank account into your own dedicated <strong>Premium Reserve Fund</strong>. The money stays in <em>your name</em>, in <em>your folio</em> — managed across reputed funds like HDFC, Nippon, and Edelweiss for steady, conservative growth.</div>
+        <div class="step-desc">Auto-debit into your own <strong>Premium Reserve Fund</strong> — in your name, across reputed mutual funds.</div>
       </div>
       <div class="step reveal" style="--d:.16s">
         <div class="step-num">3</div>
         <div class="step-title">Your reserve grows over a few years</div>
-        <div class="step-desc">During your contribution period (typically 3–7 years), your Premium Reserve grows steadily at a target rate of 8% per year. We monitor and rebalance it monthly to keep it on track — no action needed from you.</div>
+        <div class="step-desc">Over 3–7 years it grows at a planned 8% a year. We monitor and rebalance it monthly.</div>
       </div>
       <div class="step reveal" style="--d:.24s">
         <div class="step-num">4</div>
         <div class="step-title">Your reserve pays your premiums — for life</div>
-        <div class="step-desc">Once your reserve is built, every premium is set up to be paid automatically from it — on time, until your policy term ends. Your insurance is designed to stay funded even if your job, income, or circumstances change. <strong>That's premium freedom.</strong></div>
+        <div class="step-desc">Every premium is paid on time from your reserve until the policy ends — job or no job.</div>
       </div>
     </div>
   </div>
@@ -847,38 +847,28 @@ canvas{width:100%;display:block}
     <div class="sec-head center">
       <span class="tag dark">Why trust Pay My Insurance</span>
       <h2 class="h2">Built on <span class="grad-text">transparency</span><span class="pn">,</span> not promises</h2>
-      <p class="lede">We're a young company. Here's exactly how we protect your money and your trust from Day 1.</p>
+      <p class="lede">Here's exactly how we protect your money.</p>
     </div>
     <div class="bento">
       <div class="bento-item spot reveal">
         <div class="bento-ic"><svg class="i"><use href="#i-lock"/></svg></div>
         <div class="bento-title">Your money stays in your name</div>
-        <div class="bento-desc">Your Premium Reserve sits in a mutual fund folio registered to <strong>you</strong> — not to us. We never hold your money. You can verify your balance directly on the AMC's app any time.</div>
+        <div class="bento-desc">Your reserve sits in a mutual fund folio registered to <strong>you</strong>. Check it anytime on the AMC's app.</div>
       </div>
       <div class="bento-item spot reveal" style="--d:.06s">
         <div class="bento-ic"><svg class="i"><use href="#i-trend"/></svg></div>
         <div class="bento-title">Conservative 8% planning</div>
-        <div class="bento-desc">We calculate your plan assuming 8% annual growth — far below the 12–15% Indian mutual funds have historically delivered over 10+ years. The gap is your built-in safety buffer.</div>
+        <div class="bento-desc">Well below the 12–15% Indian mutual funds have delivered historically. The gap is your safety buffer.</div>
       </div>
       <div class="bento-item spot reveal" style="--d:.12s">
         <div class="bento-ic"><svg class="i"><use href="#i-bank"/></svg></div>
         <div class="bento-title">Regulated by SEBI &amp; AMFI</div>
-        <div class="bento-desc">Pay My Insurance operates as an AMFI-registered Mutual Fund Distributor. Every investment is in a SEBI-regulated mutual fund. We follow all distributor compliance norms.</div>
+        <div class="bento-desc">We're an AMFI-registered Mutual Fund Distributor investing only in SEBI-regulated funds.</div>
       </div>
-      <div class="bento-item spot reveal">
-        <div class="bento-ic"><svg class="i"><use href="#i-user"/></svg></div>
-        <div class="bento-title">Real founder, real face</div>
-        <div class="bento-desc">Built by an Indian founder who's worked in private sector and felt the same anxiety you feel about long-term premium commitments. Not a faceless company.</div>
-      </div>
-      <div class="bento-item spot reveal" style="--d:.06s">
+      <div class="bento-item spot reveal" style="--d:.18s">
         <div class="bento-ic"><svg class="i"><use href="#i-exit"/></svg></div>
         <div class="bento-title">Exit anytime, no lock-in</div>
-        <div class="bento-desc">Your Premium Reserve is yours. Stop contributing whenever you want. Withdraw your full balance whenever you want. You're in control — always.</div>
-      </div>
-      <div class="bento-item spot reveal" style="--d:.12s">
-        <div class="bento-ic"><svg class="i"><use href="#i-chat"/></svg></div>
-        <div class="bento-title">Free 45-min consultation</div>
-        <div class="bento-desc">Before you commit anything, we walk you through your complete plan in a one-on-one session — your premiums, your reserve, your numbers. Free. No commitment.</div>
+        <div class="bento-desc">Stop contributing or withdraw your full balance whenever you want.</div>
       </div>
     </div>
   </div>
@@ -890,8 +880,7 @@ canvas{width:100%;display:block}
       <div class="founder-q">”</div>
       <span class="tag">From the founder</span>
       <div class="founder-text">
-        <p>When I bought my first life insurance policy to protect my family, I felt good about the decision — but a quiet anxiety stayed with me. I'd just committed to paying premiums for decades, and the alternatives the insurer offered upfront felt out of reach. No matter how stable life looks today, none of us really knows what's coming. One unexpected expense, one tough year, and the policy I was paying for to protect my family could lapse.</p>
-        <p>So one weekend, I sat down with the calculations to see if there was a way to fund my premiums once and stop worrying about them. The math worked. I built Pay My Insurance so it can work for you too.</p>
+        <p>When I bought life insurance for my family, a quiet worry stayed with me: decades of premiums, and one tough year could let the policy lapse. So I worked out how to fund my premiums once and stop worrying. The math worked — I built Pay My Insurance so it can work for you too.</p>
       </div>
       <div class="founder-sig">
         <div class="founder-avatar">K</div>
@@ -909,7 +898,7 @@ canvas{width:100%;display:block}
       <div>
         <span class="tag">Early members</span>
         <h3>Be one of our first members</h3>
-        <p>We're just getting started. Real customer testimonials will appear here as we grow. Want to be one of our first stories? <strong>Talk to us today</strong> — we'd love to build your Premium Freedom Plan personally.</p>
+        <p>We're just getting started. Talk to us and we'll build your Premium Freedom Plan personally.</p>
       </div>
       <div>
         <div class="avatars"><span>K</span><span>?</span><span>?</span><span>?</span><em>Your spot is open</em></div>
@@ -924,7 +913,7 @@ canvas{width:100%;display:block}
     <div>
       <span class="tag">Talk to us</span>
       <h2 class="h2">Have questions? <span class="grad-text">We're here</span></h2>
-      <p class="lede">Three easy ways to reach us — or leave your details and we'll call you back within 24 hours.</p>
+      <p class="lede">WhatsApp, email, or leave your details for a callback within 24 hours.</p>
       <div class="contact-methods">
         <a href="https://wa.me/918800611923?text=Hi%2C%20I%27m%20interested%20in%20Pay%20My%20Insurance" target="_blank" rel="noopener" class="contact-btn" onclick="track('contact_whatsapp')">
           <div class="contact-btn-icon wa"><svg class="i"><use href="#i-chat"/></svg></div>
@@ -955,7 +944,7 @@ canvas{width:100%;display:block}
     <div class="form-card reveal">
       <form class="lead-form" id="leadForm" onsubmit="return submitLead(event)" novalidate>
         <div class="lead-form-title">Get a callback</div>
-        <div class="lead-form-sub">Leave your details. We'll personally walk you through your Premium Freedom Plan within 24 hours.</div>
+        <div class="lead-form-sub">We'll call you within 24 hours.</div>
         <label>Your name<input type="text" name="name" id="leadName" placeholder="e.g. Priya Sharma" required autocomplete="name"></label>
         <label>WhatsApp number<input type="tel" name="phone" id="leadPhone" placeholder="98765 43210" required autocomplete="tel"></label>
         <label><div>Email <span>(optional)</span></div><input type="email" name="email" id="leadEmail" placeholder="you@example.com" autocomplete="email"></label>
@@ -975,81 +964,46 @@ canvas{width:100%;display:block}
       <h2 class="h2">Your questions<span class="pn">,</span> <span class="grad-text">answered</span></h2>
     </div>
     <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">What exactly is Pay My Insurance?<span class="faq-toggle">+</span></button>
-      <div class="faq-a">Pay My Insurance is a premium coverage planning service. You contribute a small amount monthly for a few years, we build a dedicated Premium Reserve Fund in your own name across reputed Indian mutual funds, and once that fund is built, all your future insurance premiums are paid automatically from it — for the rest of your policy term. You don't have to worry about premium payments again, even if your job changes or income stops.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Is my money safe? Where does it actually go?<span class="faq-toggle">+</span></button>
-      <div class="faq-a">Your money goes directly into a SEBI-regulated mutual fund folio registered in <strong>your name</strong> — not Pay My Insurance's name. We never hold or touch your money. You can verify your balance any time on the AMC's official app or website. If we ever ceased to exist, your money would still sit safely in your own folio, fully accessible to you.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">What's the catch? How does Pay My Insurance make money?<span class="faq-toggle">+</span></button>
-      <div class="faq-a">No hidden catch. We earn a small trail commission directly from the mutual fund AMCs (a standard industry practice for distributors) — typically around 0.5–1% per year on your reserve. <strong>You pay us nothing extra.</strong> The AMC pays us; you pay only the standard mutual fund expense ratio you'd pay anyway. We may also charge a one-time success fee on any surplus your reserve generates above your premium needs — but only on the surplus, never on your principal, and only if you choose to withdraw it.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Are you regulated by IRDAI?<span class="faq-toggle">+</span></button>
-      <div class="faq-a">Pay My Insurance is not an insurance company — we don't sell insurance, so we don't need IRDAI registration. We operate as an AMFI-registered Mutual Fund Distributor under SEBI's framework. Our service is to help you plan and fund the premiums of insurance policies you already own.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Insurers offer single-pay and 5-year pay options too. Why is Pay My Insurance cheaper than those?<span class="faq-toggle">+</span></button>
-      <div class="faq-a">Insurers do offer single-pay and limited-pay options — but the lump sum they ask for is typically much higher than what you'd build through Pay My Insurance for the same policy. Here's why: insurers price their lump-sum options using <strong>actuarial science</strong> — accounting for mortality risk, claim probabilities, regulatory reserves, and a margin for the protection they provide. That's their actual job, and it's legitimate. Pay My Insurance does something different — <strong>pure financial math</strong>, planning your premium funding at a conservative 8% growth assumption, which is roughly in line with what Indian fixed deposits and long-term bonds have historically delivered. We're not pricing risk; we're just funding payments that already exist on your insurance policy. If we used a lower assumption like 4–5%, our numbers would converge with what insurers quote. It's not that insurers are overcharging — they're solving one problem. We're just solving a different one: how to fund payments on a policy you already bought.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">What returns do you guarantee?<span class="faq-toggle">+</span></button>
-      <div class="faq-a">We don't guarantee returns — and any service that does in India is operating illegally under SEBI rules. What we do is plan conservatively at <strong>8% per year</strong>, while Indian mutual funds have historically delivered 12–15% over the long term. That gap is your built-in safety buffer. If markets underperform, your reserve still has cushion. If markets do well, you may end up with a surplus you can take back or roll into other coverage.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">How is this different from just doing a SIP myself?<span class="faq-toggle">+</span></button>
-      <div class="faq-a">Three things: <strong>(1) Goal-specific planning</strong> — we calculate the exact monthly amount for your specific premium and timeline, so you don't over-save or under-save; <strong>(2) Active management</strong> — we monitor your reserve monthly, rebalance across funds, and shift to safer assets as your coverage date approaches; <strong>(3) Automated premium payouts</strong> — once built, premiums get paid automatically from your reserve. You can technically do it yourself, but most people don't because it requires consistent attention.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Does this work with my existing insurance policy?<span class="faq-toggle">+</span></button>
-      <div class="faq-a">Yes — Pay My Insurance works with any Indian life insurance policy you already own (LIC, HDFC Life, ICICI Pru, SBI Life, Tata AIA, Max Life, and others). You don't need to buy a new policy. Just tell us your existing premium and remaining term, and we'll calculate your plan. Health insurance support is coming soon.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">What if I need to stop or withdraw early?<span class="faq-toggle">+</span></button>
-      <div class="faq-a">You can stop or withdraw any time. Your Premium Reserve is your money in your folio — there's no lock-in, no exit penalty from us. We'll show you exactly what happens to your premium coverage if you withdraw early, so you can make an informed choice. Most customers continue because they understand the long-term value, but the option to exit is always yours.</div>
-    </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What exactly is Pay My Insurance?<span class="faq-toggle">+</span></button>
+        <div class="faq-a">You contribute a small amount monthly for a few years. We build a Premium Reserve Fund in your name across reputed mutual funds, and it pays your insurance premiums for the rest of your policy term.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is my money safe? Where does it go?<span class="faq-toggle">+</span></button>
+        <div class="faq-a">Into a SEBI-regulated mutual fund folio in <strong>your name</strong>. We never hold your money, and you can check your balance anytime on the AMC's app.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How does Pay My Insurance make money?<span class="faq-toggle">+</span></button>
+        <div class="faq-a">Mutual fund companies pay us a standard distributor trail commission (about 0.5–1% a year). <strong>You pay us nothing extra.</strong> We may charge a one-time fee on any surplus above your premium needs — only if you withdraw it, never on your principal.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Are you regulated by IRDAI?<span class="faq-toggle">+</span></button>
+        <div class="faq-a">We don't sell insurance, so IRDAI registration isn't needed. We're an AMFI-registered Mutual Fund Distributor under SEBI's framework.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Why is this cheaper than an insurer's single-pay or 5-year pay option?<span class="faq-toggle">+</span></button>
+        <div class="faq-a">Insurers price lump sums actuarially — mortality risk, reserves and margins. We simply fund premiums you already owe, planning at a conservative 8% growth. Different problem, different maths.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you guarantee returns?<span class="faq-toggle">+</span></button>
+        <div class="faq-a">No — guaranteed returns aren't permitted under SEBI rules. We plan at <strong>8% a year</strong>, below the 12–15% Indian mutual funds have historically delivered, so your reserve has a buffer.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How is this different from doing a SIP myself?<span class="faq-toggle">+</span></button>
+        <div class="faq-a">We calculate the exact amount for your premiums, rebalance the reserve monthly, and pay your premiums automatically when due.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Does it work with my existing policy?<span class="faq-toggle">+</span></button>
+        <div class="faq-a">Yes — any Indian life insurance policy (LIC, HDFC Life, ICICI Pru, SBI Life and more). Health insurance support is coming soon.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I stop or withdraw early?<span class="faq-toggle">+</span></button>
+        <div class="faq-a">Anytime. No lock-in and no exit penalty from us — we'll show you how it affects your coverage first.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section soft">
-  <div class="wrap">
-    <div class="sec-head center" style="margin-bottom:36px">
-      <span class="tag violet">Learn more</span>
-      <h2 class="h2" style="font-size:clamp(26px,3.4vw,38px)">Why long-term insurance premium planning matters in India today</h2>
-    </div>
-    <div class="guide-grid">
-      <div class="guide-card reveal">
-        <h3>The problem</h3>
-        <p>Indian insurance premiums have been rising steadily — health insurance premiums alone went up by over 25% in 2024 for more than half of policyholders. Add to this the reality that around two-thirds of Indian life insurance policies lapse within five years, mostly because policyholders couldn't sustain premium payments after a job change, salary cut, or unexpected expense.</p>
-        <p>The problem isn't that Indians don't want insurance. It's that <strong>insurance is structured as a 20–30 year financial commitment</strong> — but most people's incomes don't follow a stable, predictable path for that long. Job changes, career breaks, relocations, family responsibilities, medical events — any of these can break the premium chain and cost a family their entire investment in coverage.</p>
-      </div>
-      <div class="guide-card reveal" style="--d:.06s">
-        <h4>How Pay My Insurance solves this</h4>
-        <p>Instead of betting that your income will stay perfect for the next 20-30 years, you build a one-time <strong>Premium Reserve Fund</strong> over a shorter, manageable period — typically 3 to 7 years. Once built, this reserve quietly funds all your future premiums automatically. Your insurance keeps running. Your family stays protected. Even if your income changes, your coverage doesn't.</p>
-        <h4 style="margin-top:18px">What makes it different from a regular SIP?</h4>
-        <p>A regular SIP grows your money for general goals. Pay My Insurance is purpose-built around your specific insurance premiums — calculating the exact monthly contribution required, managing the reserve actively across multiple reputed mutual funds, and automatically paying your premiums when due. It's the difference between "saving money" and "solving a specific long-term problem."</p>
-      </div>
-      <div class="guide-card reveal">
-        <h4>Who is this for?</h4>
-        <ul>
-          <li><strong>Salaried professionals</strong> in private sector worried about job continuity over a long policy term</li>
-          <li><strong>Self-employed individuals</strong> and freelancers with variable income</li>
-          <li><strong>Parents</strong> who want to lock in their child's insurance protection regardless of their own future income</li>
-          <li><strong>Anyone with an existing life insurance policy</strong> (LIC, HDFC Life, ICICI Pru, SBI Life, Max Life, Tata AIA, and others) who wants long-term peace of mind</li>
-          <li><strong>Indians planning early retirement or career breaks</strong> who need their insurance to keep running without active income</li>
-        </ul>
-      </div>
-      <div class="guide-card reveal" style="--d:.06s">
-        <h4>Is Pay My Insurance safe?</h4>
-        <p>Your money never sits with Pay My Insurance. It goes into a mutual fund folio in your own name, regulated by SEBI. We're an AMFI-registered Mutual Fund Distributor. You can verify your reserve balance any time on the AMC's app. There is no lock-in — you can exit and withdraw whenever you choose. Returns are not guaranteed (no SEBI-regulated entity can guarantee returns), but our planning is conservative at 8% per year while Indian markets have historically delivered 12–15% over 10+ year periods.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section" style="padding-bottom:0">
   <div class="wrap">
@@ -1057,7 +1011,7 @@ canvas{width:100%;display:block}
       <div class="dark-glow g1"></div><div class="dark-glow g2"></div>
       <span class="tag dark" style="position:relative">Ready to build your plan?</span>
       <h2>Job or no job<span class="pn">,</span> your insurance <span class="grad-text">keeps running</span></h2>
-      <p>Use the calculator, then book a free 45-min planning session with us — no commitment.</p>
+      <p>Try the calculator, then book a free 45-min session — no commitment.</p>
       <div class="closing-actions">
         <a href="#calculator" class="btn btn-grad" onclick="track('cta_scroll_to_calc')">Try the calculator <svg class="i"><use href="#i-arrow"/></svg></a>
         <a href="https://wa.me/918800611923?text=Hi%2C%20I%27m%20interested%20in%20Pay%20My%20Insurance" target="_blank" rel="noopener" class="btn btn-light" onclick="track('contact_whatsapp',{source:'closing_cta'})">Chat on WhatsApp</a>
